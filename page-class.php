@@ -6,6 +6,10 @@ $wp_url = get_template_directory_uri();
 $form_pref = $_GET['pref'];
 $form_address = $_GET['address'];
 $form_keywords = $_GET['keywords'];
+$form_weeks = $_GET['weeks'];
+$form_times = $_GET['times'];
+$form_price = $_GET['price'];
+$form_tags = $_GET['tags'];
 
 $user_per_page = 10;
 $paged = get_query_var('page', 1);
@@ -35,6 +39,42 @@ if ($form_address != '' && $form_address != null) {
         'key' => 'calss_address_1',
         'value' => $form_address,
         'compare' => 'LIKE'
+    ];
+}
+
+// フィルター：曜日
+if ($form_weeks != '' && $form_weeks != null) {
+    $args['meta_query'][] = [
+        'key' => 'class_week',
+        'value' => $form_weeks,
+        'compare' => 'IN'
+    ];
+}
+
+// フィルター：曜日
+if ($form_times != '' && $form_times != null) {
+    $args['meta_query'][] = [
+        'key' => 'calss_times',
+        'value' => $form_times,
+        'compare' => 'IN'
+    ];
+}
+
+// フィルター：費用
+if ($form_price != '' && $form_price != null) {
+    $args['meta_query'][] = [
+        'key' => 'calss_price',
+        'value' => $form_price,
+        'compare' => 'IN'
+    ];
+}
+
+// フィルター：費用
+if ($form_tags != '' && $form_tags != null) {
+    $args['meta_query'][] = [
+        'key' => 'calss_search_tags',
+        'value' => $form_tags,
+        'compare' => 'IN'
     ];
 }
 
@@ -122,7 +162,17 @@ foreach ($calss_search_tags as $key => $tag): ?>
 <?php endforeach; ?>
 <?php else: ?>
 <?php endif; ?>
+<?php wp_reset_postdata(); ?>
 </div>
+
+<div class="pagenavi">
+<?php
+if (function_exists('wp_pagenavi')) {
+    wp_pagenavi(['query' => $user_query]);
+}
+?>
+</div>
+
 </div>
 
 <div class="col-md-4 p-0 hidden-xs">

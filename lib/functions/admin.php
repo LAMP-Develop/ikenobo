@@ -56,3 +56,77 @@ function sort_posts_column($columns)
     return $columns;
 }
 add_filter('manage_posts_columns', 'sort_posts_column');
+
+
+function extended_user_search($user_query)
+{
+    if ($user_query->query_vars['search']) {
+        $search = trim($user_query->query_vars['search'], '*');
+        if ($_REQUEST['s'] == $search) {
+            global $wpdb;
+            $user_query->query_from .= " JOIN wp_usermeta UM1 ON UM1.user_id = {$wpdb->users}.ID AND UM1.meta_key = 'teacher_no'";
+            $user_query->query_from .= " JOIN wp_usermeta UM2 ON UM2.user_id = {$wpdb->users}.ID AND UM2.meta_key = 'teacher_montei_no'";
+            $user_query->query_from .= " JOIN wp_usermeta UM3 ON UM3.user_id = {$wpdb->users}.ID AND UM3.meta_key = 'teacher_tel'";
+            $user_query->query_from .= " JOIN wp_usermeta UM4 ON UM4.user_id = {$wpdb->users}.ID AND UM4.meta_key = 'class_branch_name'";
+            $user_query->query_where = 'WHERE 1' . $user_query->get_search_sql($search, array( 'user_login', 'user_email', 'user_nicename', 'UM1.meta_value', 'UM2.meta_value', 'UM3.meta_value', 'UM4.meta_value'), 'both');
+        }
+    }
+}
+add_action('pre_user_query', 'extended_user_search');
+
+/* 【管理画面】ユーザー一覧に項目を追加する */
+function custom_users_columns($columns)
+{
+    $columns['teacher_birthday'] = '生年月日';
+    $columns['teacher_profile_pict'] = '写真';
+    $columns['class_branch_name'] = '支部名';
+    $columns['class_branch_code'] = '支部コード';
+    $columns['teacher_no'] = '会員番号';
+    $columns['teacher_montei_no'] = '門弟番号';
+    $columns['teacher_address'] = '住所';
+    $columns['teacher_tel'] = '電話番号';
+    return $columns;
+}
+function custom_users_custom_column($dummy, $column, $user_id)
+{
+    if ($column == 'teacher_birthday') {
+        $user_info = get_userdata($user_id);
+        return $user_info->teacher_birthday;
+    }
+    if ($column == 'teacher_profile_pict') {
+        $user_info = get_userdata($user_id);
+        return $user_info->teacher_profile_pict;
+    }
+    if ($column == 'class_branch_name') {
+        $user_info = get_userdata($user_id);
+        return $user_info->class_branch_name;
+    }
+    if ($column == 'class_branch_code') {
+        $user_info = get_userdata($user_id);
+        return $user_info->class_branch_code;
+    }
+    if ($column == 'teacher_no') {
+        $user_info = get_userdata($user_id);
+        return $user_info->teacher_no;
+    }
+    if ($column == 'teacher_montei_no') {
+        $user_info = get_userdata($user_id);
+        return $user_info->teacher_montei_no;
+    }
+    if ($column == 'teacher_address') {
+        $user_info = get_userdata($user_id);
+        return $user_info->teacher_address;
+    }
+    if ($column == 'teacher_tel') {
+        $user_info = get_userdata($user_id);
+        return $user_info->teacher_tel;
+    }
+}
+function remove_users_columns($columns)
+{
+    unset($columns['role'], $columns['posts']);
+    return $columns;
+}
+add_filter('manage_users_columns', 'custom_users_columns');
+add_filter('manage_users_columns', 'remove_users_columns');
+add_filter('manage_users_custom_column', 'custom_users_custom_column', 10, 3);
