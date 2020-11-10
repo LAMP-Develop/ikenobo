@@ -95,35 +95,35 @@
 
 /* WEBPACK VAR INJECTION */(function(jQuery) {(function ($) {
   /*--------------------------------------------------------------------------------*/
-  $(window).on('load', function () {
-    $('#js_loading').fadeOut();
+  $(window).on("load", function () {
+    $("#js_loading").fadeOut();
   });
   /*----------------------------------------
   ページ内スクロール
   ----------------------------------------*/
 
   $(function () {
-    var topBtn = $('.md_pageTop');
+    var topBtn = $(".md_pageTop");
     topBtn.hide();
-    $(window).scroll(function () {
+    $(window).on('scroll', function () {
       if ($(this).scrollTop() > 500) {
         topBtn.fadeIn();
       } else {
         topBtn.fadeOut();
       }
     });
-    topBtn.click(function () {
-      $('body,html').animate({
+    topBtn.on('click', function () {
+      $("body,html").animate({
         scrollTop: 0
       }, 500);
       return false;
     });
   });
   $(function () {
-    $('a[href^="#"]').click(function () {
+    $('a[href^="#"]').on('click', function () {
       var speed = 500;
       var href = $(this).attr("href");
-      var target = $(href == "#" || href == "" ? 'html' : href);
+      var target = $(href == "#" || href == "" ? "html" : href);
       var position = target.offset().top;
       $("html, body").animate({
         scrollTop: position
@@ -137,15 +137,15 @@
 
   var startPos = 0,
       winScrollTop = 0;
-  $(window).on('scroll', function () {
+  $(window).on("scroll", function () {
     winScrollTop = $(this).scrollTop();
 
     if (winScrollTop >= startPos) {
       if (winScrollTop >= 200) {
-        $('#header').addClass('hide');
+        $("#header").addClass("hide");
       }
     } else {
-      $('#header').removeClass('hide');
+      $("#header").removeClass("hide");
     }
 
     startPos = winScrollTop;
@@ -155,12 +155,12 @@
   ----------------------------------------*/
 
   $(function () {
-    $('.md_js_accordion_slide').find('.md_js_contents').hide();
-    $('.md_js_accordion_slide .md_js_boss').click(function () {
-      $(this).toggleClass('close');
+    $(".md_js_accordion_slide").find(".md_js_contents").hide();
+    $(".md_js_accordion_slide .md_js_boss").click(function () {
+      $(this).toggleClass("close");
     });
-    $('.md_js_accordion_slide .md_js_boss').click(function () {
-      $(this).parents('.md_js_accordion_slide').find('.md_js_contents').slideToggle("fast");
+    $(".md_js_accordion_slide .md_js_boss").click(function () {
+      $(this).parents(".md_js_accordion_slide").find(".md_js_contents").slideToggle("fast");
     });
   });
   /*----------------------------------------
@@ -168,7 +168,7 @@
   ----------------------------------------*/
 
   $(function () {
-    $('a').hover(function () {
+    $("a").hover(function () {
       $(this).stop().fadeTo(300, 0.8);
     }, function () {
       $(this).stop().fadeTo(300, 1.0);
@@ -180,13 +180,13 @@
 
   function toggleNav() {
     var body = document.body;
-    var hamburger = document.getElementById('js-hamburger');
-    var blackBg = document.getElementById('js-black-bg');
-    hamburger.addEventListener('click', function () {
-      body.classList.toggle('nav-open');
+    var hamburger = document.getElementById("js-hamburger");
+    var blackBg = document.getElementById("js-black-bg");
+    hamburger.addEventListener("click", function () {
+      body.classList.toggle("nav-open");
     });
-    blackBg.addEventListener('click', function () {
-      body.classList.remove('nav-open');
+    blackBg.addEventListener("click", function () {
+      body.classList.remove("nav-open");
     });
   }
 
@@ -194,102 +194,38 @@
   /*----------------------------------------
   ブロックの高さ揃える
   ----------------------------------------*/
+  // $(function () {
+  //   $(".md_js_matchheight").matchHeight();
+  //   $(".md_js_matchheight01").matchHeight();
+  //   $(".md_js_matchheight02").matchHeight();
+  //   $(".md_js_matchheight03").matchHeight();
+  //   $(".md_js_matchheight04").matchHeight();
+  //   $(".md_js_matchheight05").matchHeight();
+  // });
 
-  $(function () {
-    $('.md_js_matchheight').matchHeight();
-    $('.md_js_matchheight01').matchHeight();
-    $('.md_js_matchheight02').matchHeight();
-    $('.md_js_matchheight03').matchHeight();
-    $('.md_js_matchheight04').matchHeight();
-    $('.md_js_matchheight05').matchHeight();
-  });
   /*----------------------------------------
   チェックボックス（全てをチェック）
   ----------------------------------------*/
 
   $(function () {
     // 1. 「全選択」する
-    $('.md_js_all').on('click', function () {
-      $("input[name='chk[]']").prop('checked', this.checked);
+    $(".md_js_all").on("click", function () {
+      $("input[name='chk[]']").prop("checked", this.checked);
     }); // 2. 「全選択」以外のチェックボックスがクリックされたら、
 
-    $("input[name='chk[]']").on('click', function () {
-      if ($('.md_js_chkContent :checked').length == $('.md_js_chkContent :input').length) {
+    $("input[name='chk[]']").on("click", function () {
+      if ($(".md_js_chkContent :checked").length == $(".md_js_chkContent :input").length) {
         // 全てのチェックボックスにチェックが入っていたら、「全選択」 = checked
-        $('.md_js_all').prop('checked', true);
+        $(".md_js_all").prop("checked", true);
       } else {
         // 1つでもチェックが入っていたら、「全選択」 = checked
-        $('.md_js_all').prop('checked', false);
+        $(".md_js_all").prop("checked", false);
       }
     });
   });
   /*--------------------------------------------------------------------------------*/
 })(jQuery);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
-
-/***/ }),
-
-/***/ "./assets/js/commons/index.js":
-/*!************************************!*\
-  !*** ./assets/js/commons/index.js ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(jQuery, $) {(function ($) {
-  /*--------------------------------------------------------------------------------*/
-
-  /*----------------------------------------
-  マウスオーバーアコーディオンメニュー（トップ）
-  ----------------------------------------*/
-  // ドロップダウンメニュー
-  $('.md_js_hover_slide').hover(function () {
-    //カーソルが重なった時
-    $(this).children('.md_js_dropdown').slideDown("fast");
-  }, function () {
-    //カーソルが離れた時
-    $(this).children('.md_js_dropdown').hide();
-  });
-  /*----------------------------------------
-  bxslider
-  ----------------------------------------*/
-
-  $(function () {
-    $(".bxslider01").bxSlider({
-      auto: true,
-      pause: 5000,
-      speed: 3000,
-      mode: "fade",
-      controls: false,
-      pager: false,
-      touchEnabled: false
-    });
-  });
-  /*--------------------------------------------------------------------------------*/
-})(jQuery);
-/*----------------------------------------
-swiper
-----------------------------------------*/
-
-
-$(function () {
-  var mySwiper = new Swiper('.swiper-container', {
-    loop: true,
-    slidesPerView: 5,
-    spaceBetween: 60,
-    centeredSlides: true,
-    pagination: '.swiper-pagination',
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
-    breakpoints: {
-      640: {
-        slidesPerView: 1,
-        spaceBetween: 10
-      }
-    }
-  });
-});
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"), __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
@@ -308,15 +244,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _commons_global__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./commons/global */ "./assets/js/commons/global.js");
 /* harmony import */ var _commons_global__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_commons_global__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _commons_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./commons/index */ "./assets/js/commons/index.js");
-/* harmony import */ var _commons_index__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_commons_index__WEBPACK_IMPORTED_MODULE_3__);
 // CSSインポート
  // JSインポート
 
 
+ // import './commons/index';
 
-
-$(document).ready(function () {
+$(function () {
   /*-- よくあるご質問 --*/
   $(".ac dt").on("click", function () {
     $(this).next().slideToggle();

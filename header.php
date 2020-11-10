@@ -86,4 +86,4 @@ $wp_url = get_template_directory_uri(); ?>
 
 <main>
 
-<?php include('mv.php') ?>
+<?php get_template_part('mv'); ?>

@@ -5,9 +5,9 @@ import '../sass/app.scss';
 import 'bootstrap';
 
 import './commons/global';
-import './commons/index';
+// import './commons/index';
 
-$(document).ready(function() {
+$(function() {
   /*-- よくあるご質問 --*/
   $(".ac dt").on("click", function() {
     $(this).next().slideToggle();

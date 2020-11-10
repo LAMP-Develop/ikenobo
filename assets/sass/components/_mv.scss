@@ -16,7 +16,7 @@
       width: 79%;
       min-width: 860px;
       margin: 0 auto;
-      background-color: rgba(255,255,255,0.8);
+      background-color: rgba(255, 255, 255, 0.8);
       padding: 3rem 5rem;
       color: $body-color;
       @include media-breakpoint-down(md) {
@@ -58,9 +58,9 @@
   &__mv {
     width: 100%;
     height: 400px;
-    margin-bottom: 6rem!important;
+    margin-bottom: 6rem !important;
     @include media-breakpoint-down(md) {
-      margin-bottom: 3rem!important;
+      margin-bottom: 3rem !important;
     }
 
     &.guide-1 {
@@ -155,7 +155,7 @@
         border: 5px solid $secondary;
         background: $white;
         text-align: center;
-            margin-top: 1rem;
+        margin-top: 1rem;
         @include media-breakpoint-down(md) {
           display: block;
         }
