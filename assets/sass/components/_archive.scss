@@ -1,0 +1,50 @@
+.archive {
+
+  &__inner {
+    margin: 0;
+    padding: 0 1rem 2rem 0;
+    @include media-breakpoint-down(md) {
+      padding: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    a {
+      &:hover {
+        img {
+          transform: scale(1.1);
+          transition-duration: 0.5s;
+        }
+      }
+    }
+
+    .img-wrap {
+      width: 100%;
+      height: 242px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+      }
+    }
+
+    h3 {
+      margin: 1rem 0 0.5rem;
+    }
+
+    p {
+      color: #777;
+      font-size: 0.75em;
+      vertical-align: middle;
+    }
+  }
+
+  &.column {
+    .img-wrap {
+      height: 199px;
+    }
+  }
+}

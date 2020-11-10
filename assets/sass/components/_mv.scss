@@ -1,0 +1,184 @@
+.home {
+  // .home__mv
+  &__mv {
+    width: 100%;
+    background: url("../images/mv_bg_pc@2x.png");
+    background-size: cover;
+    background-position: center;
+    padding-top: 90px;
+    @include media-breakpoint-down(md) {
+      background: url("../images/mv_bg_sp@2x.png");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .search {
+      width: 79%;
+      min-width: 860px;
+      margin: 0 auto;
+      background-color: rgba(255,255,255,0.8);
+      padding: 3rem 5rem;
+      color: $body-color;
+      @include media-breakpoint-down(md) {
+        padding: 1.5rem;
+        width: 100%;
+        min-width: 100%;
+      }
+
+      h2 {
+        position: relative;
+        font-size: 1.25rem;
+        width: 9em;
+        margin: 0 auto 2rem;
+        @include media-breakpoint-down(md) {
+          font-size: 0.94rem;
+        }
+
+        &:before {
+          content: url("../images/search_flower_l.png");
+          position: absolute;
+          top: 0;
+          left: calc(-25px - 1rem);
+          display: inline;
+        }
+
+        &:after {
+          content: url("../images/search_flower_r.png");
+          position: absolute;
+          top: 0;
+          right: calc(-25px - 1rem);
+          display: inline;
+        }
+      }
+    }
+  }
+}
+
+.sub {
+  &__mv {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 6rem!important;
+    @include media-breakpoint-down(md) {
+      margin-bottom: 3rem!important;
+    }
+
+    &.guide-1 {
+      background: url("../images/mv_guide-1_pc@2x.png");
+      background-size: cover;
+      background-position: center;
+      @include media-breakpoint-down(md) {
+        background: url("../images/mv_guide-1_sp@2x.png");
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    &.guide-2 {
+      background: url("../images/mv_guide-2_pc@2x.png");
+      background-size: cover;
+      background-position: center;
+      @include media-breakpoint-down(md) {
+        background: url("../images/mv_guide-2_sp@2x.png");
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    &.guide-3 {
+      background: url("../images/mv_guide-3_pc@2x.png");
+      background-size: cover;
+      background-position: center;
+      @include media-breakpoint-down(md) {
+        background: url("../images/mv_guide-3_sp@2x.png");
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    &.guide-4 {
+      background: url("../images/mv_guide-4_pc@2x.png");
+      background-size: cover;
+      background-position: center;
+      @include media-breakpoint-down(md) {
+        background: url("../images/mv_guide-4_sp@2x.png");
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    &.faq {
+      background: url("../images/mv_faq_pc@2x.png");
+      background-size: cover;
+      background-position: center;
+      @include media-breakpoint-down(md) {
+        background: url("../images/mv_faq_sp@2x.png");
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    &.column {
+      background: url("../images/mv_column_pc@2x.png");
+      background-size: cover;
+      background-position: center;
+      @include media-breakpoint-down(md) {
+        background: url("../images/mv_column_sp@2x.png");
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    &.media {
+      background: url("../images/mv_media_pc@2x.png");
+      background-size: cover;
+      background-position: center;
+      @include media-breakpoint-down(md) {
+        background: url("../images/mv_media_sp@2x.png");
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    &__class {
+      margin-top: 90px;
+      padding: 3rem 0;
+      height: auto;
+      @include media-breakpoint-down(md) {
+        margin-top: 60px;
+      }
+
+      .filter {
+        display: none;
+        padding: 10px;
+        width: 100%;
+        border: 5px solid $secondary;
+        background: $white;
+        text-align: center;
+            margin-top: 1rem;
+        @include media-breakpoint-down(md) {
+          display: block;
+        }
+
+        img {
+          position: relative;
+          top: -3px;
+          margin: 0 5px 0 0;
+        }
+      }
+    }
+  }
+}
+//パンくず
+
+.bread {
+  margin: 90px 0;
+  padding: 1rem;
+  @include media-breakpoint-down(md) {
+    margin: 60px 0;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+}

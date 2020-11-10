@@ -1,0 +1,153 @@
+@charset "utf-8";
+
+@media only screen and (max-width: 640px) {
+
+/*============================
+input
+============================*/
+input { border-radius: 3px; }
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="url"] { padding: 10px; }
+
+input[type="checkbox"] { margin-right: 6px; }
+
+/*============================
+md_container
+============================*/
+.md_allContainer { margin-top: 60px; margin-bottom: 0; }
+
+/*============================
+md_container
+============================*/
+.md_container { width: inherit; min-width: inherit; padding: 0 15px; }
+
+/*============================
+md_panelArea
+============================*/
+
+.md_panelArea { padding: 40px 0; }
+.md_panelArea h1 { font-size: 1.5em; }
+
+/*============================
+md_pankuzuArea
+============================*/
+.md_pankuzuArea { min-width: inherit; }
+.md_pankuzuArea ul { width: inherit; padding: 10px 20px; }
+.md_pankuzuArea ul li { margin-right: 25px; }
+.md_pankuzuArea ul li::after { right: -15px; top: 4px; }
+.md_pankuzuArea ul li a {}
+.md_pankuzuArea ul li:nth-last-child(1)::after {}
+.md_pankuzuArea ul li em {}
+.md_pankuzuArea.top { display: none; }
+.md_pankuzuArea.bottom { margin-top: 30px; }
+
+/*============================
+icon
+============================*/
+.md_icon_normal { font-size: 0.675em; }
+.md_icon_white { font-size: 0.675em; }
+.md_icon_grey { font-size: 0.675em; }
+.md_icon_purple { font-size: 0.675em; }
+.md_icon_pick { font-size: 0.675em; }
+
+/*============================
+md_title
+============================*/
+.md_topTitle { font-size: 1.5em; padding-bottom: 0; width: 100%; padding-left: 10px; }
+.md_topTitle::before { left: -30px; top: -25px; background-size: 50px auto; }
+.md_topTitle::after { display: none; }
+
+.md_mainTitle { font-size: 1.5em; padding-bottom: 0; width: 100%; padding-left: 10px; }
+.md_mainTitle::before { left: -30px; top: -25px; background-size: 50px auto; }
+.md_mainTitle::after { display: none; }
+
+.md_title { font-size: 1.125em; padding-left: 12px; padding-bottom: 0; border-bottom: none; }
+.md_title::before { width: 3px; height: 100%; }
+
+.md_subTitle { font-size: 1.125em; padding-left: 50px; position: relative; letter-spacing: 0.1em; font-weight: bold; }
+.md_subTitle::before { width: 40px; }
+
+/*============================
+md_catchArea
+============================*/
+.md_catchArea { font-size: 1em; padding: 20px; text-align: left; }
+.md_catchArea br { display: none; }
+
+/*============================
+md_btn
+============================*/
+.md_btn_lineWhite { padding: 12px 10px 12px 0; width: 100%; text-align: center; }
+.md_btn_lineWhite::after {}
+
+.md_btn_prev_lineWhite { padding: 12px 0  12px 10px; width: 100%; text-align: center; }
+.md_btn_prev_lineWhite::after {}
+
+.md_btn_purple { padding: 12px 10px 12px 0; width: 100%; text-align: center; }
+.md_btn_purple::after {}
+
+/*============================
+#md_pageTop
+============================*/
+.md_pageTop { right: 10px; bottom: 10px; }
+.md_pageTop a { width: 40px; height: 40px; }
+.md_pageTop a::after { right: 16px; top: 50%; width: 8px; height: 8px; margin-top: -2px; }
+
+/*============================
+.md_paging
+============================*/
+.md_paging { margin-top: 20px; }
+.md_paging ul {}
+.md_paging ul li {}
+.md_paging ul li a {}
+.md_paging ul li.active {}
+.md_paging ul li.active a {}
+.md_paging ul li:first-child {}
+.md_paging ul li:last-child {}
+
+/*============================
+.md_sumNumber
+============================*/
+.md_sumNumber { margin-top: 0; }
+.md_sumNumber em { font-size: 1.5em; }
+
+/*============================
+.md_tab4
+============================*/
+.md_tab4 {}
+.md_tab4 ul {}
+.md_tab4 ul li {}
+.md_tab4 ul li:nth-child(4n) {}
+.md_tab4 ul li a {}
+
+/*============================
+.md_column2
+============================*/
+.md_column2 {}
+.md_column2 ul {}
+.md_column2 ul li { float: inherit; width: inherit; margin-right: 0; margin-top: 20px; }
+.md_column2 ul li:nth-child(2n) { margin-right: 0; }
+.md_column2 ul li a {}
+
+/*============================
+.md_column3
+============================*/
+.md_column3 {}
+.md_column3 ul {}
+.md_column3 ul li { float: inherit; width: inherit; margin-right: 0; margin-top: 20px; }
+.md_column3 ul li:nth-child(3n) { margin-right: 0; }
+.md_column3 ul li a {}
+
+/*============================
+.md_column4
+============================*/
+.md_column4 {}
+.md_column4 ul {}
+.md_column4 ul li { float: inherit; width: inherit; margin-right: 0; margin-top: 20px; }
+.md_column4 ul li:nth-child(4n) {}
+.md_column4 ul li a {}
+
+}

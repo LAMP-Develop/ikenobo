@@ -1,0 +1,405 @@
+/*============================
+トップページ デフォルト設定
+============================*/
+.row {
+  width: 100%;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.md_topTitle {
+  padding-bottom: 7px!important;
+  z-index: 0;
+
+  &.border-line {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background: -webkit-gradient(linear, left top, right bottom, from(#9b98ba), to(transparent));
+      background: -moz-linear-gradient(left, #9b98ba, transparent);
+      background: linear-gradient(to right, #9b98ba, transparent);
+    }
+  }
+}
+
+a {
+  text-decoration: none!important;
+}
+
+.button {
+  margin-top: 3rem;
+  @include media-breakpoint-down(md) {
+    margin-top: 1rem;
+  }
+}
+
+.btn-primary {
+  position: relative;
+  padding: 1rem 0;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 3px);
+    right: 1rem;
+    width: 6px;
+    height: 6px;
+    border-right: 1px solid $light;
+    border-bottom: 1px solid $light;
+    transform: rotate(-45deg);
+  }
+}
+
+input[type="checkbox"]:checked::after {
+  margin-left: -7px;
+  width: 13px;
+  height: 13px;
+  background: url("../images/icon_check.png") no-repeat center;
+  background-size: 13px auto;
+}
+
+.bg-info {
+  z-index: -1;
+}
+
+.md_icon_normal {
+  display: inline-block;
+  border: solid 1px $primary;
+  background: $white;
+  color: $body-color!important;
+  padding: 4px 4px 3px;
+  font-size: 0.75em;
+  margin: 0 4px 8px;
+  padding: 4px 12px;
+}
+/*============================
+トップページ セクションごとの設定
+============================*/
+.home {
+  // .home__mv
+  &__mv {
+    .search {
+      width: 79%;
+      min-width: 860px;
+      margin: 0 auto;
+      background-color: rgba(255,255,255,0.8);
+      padding: 3rem 5rem;
+      @include media-breakpoint-down(md) {
+        padding: 1.5rem;
+        width: 100%;
+        min-width: 100%;
+      }
+
+      h2 {
+        position: relative;
+        font-size: 1.25rem;
+        width: 9em;
+        margin: 0 auto 2rem;
+        @include media-breakpoint-down(md) {
+          font-size: 0.94rem;
+        }
+
+        &:before {
+          content: url("../images/search_flower_l.png");
+          position: absolute;
+          top: 0;
+          left: calc(-25px - 1rem);
+          display: inline;
+        }
+
+        &:after {
+          content: url("../images/search_flower_r.png");
+          position: absolute;
+          top: 0;
+          right: calc(-25px - 1rem);
+          display: inline;
+        }
+      }
+    }
+  }
+  // .home__column
+  &__column {
+    position: relative;
+    @include media-breakpoint-down(md) {
+      background: $info;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: 8%;
+      background: $info;
+      width: 48%;
+      height: 65%;
+      z-index: -1;
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+    }
+  }
+  // .home__guide
+  &__guide {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 20%;
+      left: 0;
+      width: 80%;
+      height: 56%;
+      background: $info;
+      z-index: -1;
+      @include media-breakpoint-down(md) {
+        width: 50%;
+        height: 60%;
+      }
+    }
+
+    .md_container {
+      padding: 0 60px;
+      @include media-breakpoint-down(md) {
+        padding: 0 15px!important !important;
+      }
+    }
+
+    &__list {
+      &__inner {
+        position: relative;
+        padding: 0 0 0 3rem;
+        margin: 0;
+        @include media-breakpoint-down(md) {
+          padding: 0;
+          margin: 0 0 3rem;
+        }
+
+        &:after {
+          content: '01';
+          font-family: "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W2" , "Hiragino Mincho Pro" , "HiraMinProN-W2" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho";
+          font-size: 5rem;
+          position: absolute;
+          top: -2.5rem;
+          left: 2rem;
+          color: rgba(87,70,130,.2);
+          @include media-breakpoint-down(md) {
+            font-size: 4rem;
+            left: 0.5rem;
+          }
+        }
+
+        &:nth-child(2n) {
+          margin-top: 2rem;
+          @include media-breakpoint-down(md) {
+            margin-top: 0;
+          }
+        }
+
+        &:nth-child(2) {
+          &:after {
+            content: '02';
+          }
+        }
+
+        &:nth-child(3) {
+          &:after {
+            content: '03';
+          }
+        }
+
+        &:nth-child(4) {
+          &:after {
+            content: '04';
+          }
+        }
+
+        img {
+          width: 100%;
+        }
+
+        .info {
+          width: 100%;
+          background: #fff;
+          margin-top: -100px;
+          margin-left: 30px;
+          padding: 40px;
+          position: relative;
+          box-shadow: 5px 5px 25px 25px rgba(0,0,0,0.04);
+          @include media-breakpoint-down(md) {
+            margin-top: 0;
+            margin-left: 0;
+            padding: 20px;
+          }
+        }
+      }
+    }
+  }
+  // .home__faq
+  &__faq {
+    @include media-breakpoint-down(md) {
+      margin-top: 0!important;
+      padding-top: 0!important;
+    }
+
+    .md_container {
+      a {
+        position: relative;
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+        padding: 4rem 0;
+        @include media-breakpoint-down(md) {
+          width: 90%;
+        }
+
+        .row {
+          width: 80%;
+          margin: 0 auto;
+        }
+
+        &:hover {
+          &:before {
+            right: -50px;
+          }
+        }
+
+        &:before {
+          content: url("../images/faq_arrow.svg");
+          position: absolute;
+          top: calc(50% - 12px);
+          right: -30px;
+          transition-duration: 0.3s;
+          transition-timing-function: ease-out;
+        }
+
+        &:after {
+          content: url("../images/faq_flower.png");
+          position: absolute;
+          left: -20px;
+          bottom: -40px;
+          @include media-breakpoint-down(md) {
+            left: -60px;
+          }
+        }
+      }
+    }
+
+    .md_topTitle {
+      flex: 0 0 33.33333%;
+      max-width: 33.33333%;
+      font-size: 1.6rem;
+      margin: 0;
+      padding: 0;
+      line-height: 2;
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        min-width: 100%;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .col-sm-8 {
+      padding: 0;
+    }
+  }
+  // .home__keyword
+  &__keyword {
+    margin: 6rem 0 3rem;
+    @include media-breakpoint-down(md) {
+      margin: 4rem 0 3rem;
+    }
+
+    .md_container {
+      position: relative;
+      display: block;
+      width: 90%;
+      margin: 0 auto;
+      padding: 4rem 0 3rem;
+      @include media-breakpoint-down(md) {
+        width: 90%;
+        padding: 2rem 0 1rem;
+      }
+    }
+
+    .md_topTitle {
+      position: absolute;
+      top: -1.5rem;
+      @include media-breakpoint-down(md) {
+        top: -1rem;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 70%;
+      margin: 0 auto;
+      @include media-breakpoint-down(md) {
+        width: 100%;
+      }
+    }
+  }
+  // .home__link
+  &__link {
+    @include media-breakpoint-down(md) {
+      padding-top: 1rem!important;
+    }
+
+    &__list {
+      justify-content: space-between;
+
+      &__inner {
+        border: 1px solid $body-color;
+        flex: 0 0 24%;
+        max-width: 24%;
+        padding: 0;
+        @include media-breakpoint-down(md) {
+          margin: 0 0 1rem;
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+
+        &:nth-child(1) {
+          background: url("../images/links_flower_1.png") no-repeat left;
+        }
+
+        &:nth-child(2) {
+          background: url("../images/links_flower_2.png") no-repeat left;
+        }
+
+        &:nth-child(3) {
+          background: url("../images/links_flower_3.png") no-repeat left;
+        }
+
+        &:nth-child(4) {
+          background: url("../images/links_flower_4.png") no-repeat left;
+        }
+
+        a {
+          display: block;
+          padding: 1.5rem;
+          width: 100%;
+          color: $body-color;
+
+          &::before {
+            right: 13px;
+          }
+
+          &::after {
+            right: 21px;
+          }
+        }
+      }
+    }
+  }
+}

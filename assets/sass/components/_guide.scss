@@ -1,0 +1,187 @@
+.guide {
+  p {
+    font-size: 0.9rem;
+    line-height: 1.9;
+  }
+
+  &__about {
+    .md_topTitle {
+      @include media-breakpoint-down(md) {
+        margin-bottom: 1.5rem!important;
+      }
+
+      &:after {
+        display: none!important;
+      }
+    }
+
+    .text-wrap {
+      padding-right: 3rem;
+      @include media-breakpoint-down(md) {
+        padding: 0;
+        margin-bottom: 2rem;
+      }
+
+      h3 {
+        font-size: 1.625rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        @include media-breakpoint-down(md) {
+          font-size: 1.125rem;
+          line-height: 1.8;
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+
+    .img-wrap {
+      margin: 0;
+      padding: 0;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &__step {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 45%;
+      height: 441px;
+      background: $info;
+      z-index: -1;
+      @include media-breakpoint-down(md) {
+        width: 30%;
+        height: 70%;
+      }
+    }
+
+    &:nth-child(2n) {
+      &:after {
+        left: 0;
+        right: auto;
+      }
+    }
+
+    .md_topTitle {
+      display: block;
+      width: 100%;
+      border-bottom: 1px solid $light;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+
+      span {
+        font-size: 1.625rem;
+        color: $success;
+        line-height: 2.7;
+        @include media-breakpoint-down(md) {
+          font-size: 1.125rem;
+        }
+      }
+    }
+
+    &-about {
+      text-align: center;
+      @include media-breakpoint-down(md) {
+        text-align: left;
+      }
+    }
+  }
+
+  &__more {
+    .md_topTitle {
+      line-height: 2.5;
+      @include media-breakpoint-down(md) {
+        margin-bottom: 2rem;
+      }
+
+      span {
+        position: relative;
+        font-size: 1.625rem;
+        padding: 13px 2rem;
+        border-radius: 2rem;
+        line-height: 3;
+        background: $success;
+        @include media-breakpoint-down(md) {
+          font-size: 1.125rem;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: calc(50% - 19px);
+          bottom: -2px;
+          width: 38px;
+          height: 38px;
+          transform: rotate(45deg);
+          background: $success;
+          z-index: -1;
+        }
+      }
+    }
+
+    &__list {
+      &__inner {
+        padding: 6rem 2rem;
+        @include media-breakpoint-down(md) {
+          padding: 3rem 15px;
+        }
+
+        &:nth-child(2) {
+          border-left: 1px solid $white;
+          border-right: 1px solid $white;
+          @include media-breakpoint-down(md) {
+            border: none;
+            border-top: 1px solid $white;
+            border-bottom: 1px solid $white;
+          }
+        }
+
+        &.guide-1 {
+          background: url("../images/more_bg_1@2x.png");
+          background-size: cover;
+          background-position: center;
+        }
+
+        &.guide-2 {
+          background: url("../images/more_bg_2@2x.png");
+          background-size: cover;
+          background-position: center;
+        }
+
+        &.guide-3 {
+          background: url("../images/more_bg_3@2x.png");
+          background-size: cover;
+          background-position: center;
+        }
+
+        &.guide-4 {
+          background: url("../images/more_bg_4@2x.png");
+          background-size: cover;
+          background-position: center;
+        }
+
+        p {
+          color: $white;
+        }
+
+        .ttl {
+          font-size: 1.625rem;
+          font-weight: bold;
+          text-align: center;
+          margin-bottom: 1.5rem;
+          @include media-breakpoint-down(md) {
+            margin-bottom: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

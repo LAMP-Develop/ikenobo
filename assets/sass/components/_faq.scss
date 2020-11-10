@@ -1,0 +1,90 @@
+.faq {
+  &__list {
+    &__inner {
+      margin-bottom: 2rem;
+
+      &-table {
+        width: 100%;
+        border: 1px solid $light;
+        margin-bottom: 10px;
+
+        &.active {
+          dl {
+            &::after {
+              transform: rotate(-45deg);
+              top: 34px;
+            }
+          }
+        }
+
+        dl {
+          margin: 0;
+          cursor: pointer;
+          position: relative;
+          @include media-breakpoint-down(md) {
+            margin: 0;
+            cursor: pointer;
+          }
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 26px;
+            right: 20px;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #777;
+            border-radius: 20px;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            right: 26px;
+            top: 31px;
+            width: 7px;
+            height: 7px;
+            border-top: 1px solid #777;
+            border-right: 1px solid #777;
+            -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+            transition-duration: 0.3s;
+            transition-timing-function: ease-out;
+          }
+
+          dt {
+            position: relative;
+            display: block;
+            font-weight: bold;
+            padding: 1.5rem 3.5rem 1.5rem 4rem;
+            font-size: 1.125rem;
+            @include media-breakpoint-down(md) {
+              padding: 1.5rem 2.5rem 1.5rem 3rem;
+              font-size: 1rem;
+            }
+
+            &::before {
+              content: 'Q.';
+              font-family: "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W2" , "Hiragino Mincho Pro" , "HiraMinProN-W2" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho";
+              position: absolute;
+              left: 1.5rem;
+              bottom: 0.7em;
+              font-size: 26px;
+              margin-right: 1rem;
+              color: $primary;
+              @include media-breakpoint-down(md) {
+                left: 1rem;
+              }
+            }
+          }
+
+          dd {
+            display: none;
+            font-size: 0.9rem;
+            padding: 0 15px 1.5rem 3rem;
+          }
+        }
+      }
+    }
+  }
+}

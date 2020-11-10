@@ -1,0 +1,186 @@
+/*============================
+教室検索用サイドバー
+============================*/
+.sidebar {
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+  &-layout {
+    .row {
+      justify-content: space-between;
+    }
+
+    .col-md-8 {
+      flex: 0 0 68%;
+      max-width: 68%;
+      @include media-breakpoint-down(md) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+
+    .col-md-4 {
+      flex: 0 0 28%;
+      max-width: 28%;
+      @include media-breakpoint-down(md) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
+  .md_topTitle {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    padding: 0;
+    font-weight: lighter;
+  }
+}
+
+.sidebar {
+  // sidebar 検索エリア
+  &__search {
+    .search {
+      &__form {
+        border: 1px solid $success;
+
+        table {
+          tr {
+            display: inline-grid;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            // フォーム 見出し
+            th {
+              width: 100%;
+              background: $success;
+              font-family: "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W2" , "Hiragino Mincho Pro" , "HiraMinProN-W2" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho";
+              font-size: 0.9rem;
+              font-weight: lighter;
+              padding: 7px 10px;
+            }
+            // フォーム 内容
+            &.content {
+              width: 100%;
+              padding: 1rem 10px;
+
+              td {
+                margin-bottom: 8px;
+
+                input {
+                  font-size: 0.9rem;
+                }
+                // フォーム チェックボックス
+                input[type="checkbox"] {
+                  position: relative;
+                  width: 15px;
+                  height: 15px;
+                  top: -6px;
+                  margin-right: 1px;
+                }
+
+                .check-list {
+                  display: flex;
+                  justify-content: flex-start;
+                  flex-wrap: wrap;
+
+                  &-item {
+                    margin-right: 1rem;
+                    margin-bottom: 6px;
+                  }
+                }
+                // フォーム メニュー
+                select {
+                  position: relative;
+                  padding: 6px 10px 10px;
+                  width: 100%;
+                  border: 1px solid #ccc;
+                  color: #555;
+                  background: $info;
+                  font-size: 0.9rem;
+                }
+                // フォーム 小見出し
+                p {
+                  margin-bottom: 9px;
+                }
+              }
+
+              label {
+                margin: 0;
+                padding: 0;
+                font-size: 0.85rem;
+                display: flex;
+                align-items: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__blog {
+    .archive__inner {
+      position: relative;
+      align-items: center;
+      padding: 0 0 5px 0;
+
+      &::after {
+        content: '01';
+        position: absolute;
+        top: 9px;
+        right: 4px;
+        color: $info;
+        font-size: 60px;
+        font-family: "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W2" , "Hiragino Mincho Pro" , "HiraMinProN-W2" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho";
+        z-index: -1;
+      }
+
+      &:nth-child(2) {
+        &::after {
+          content: '02';
+        }
+      }
+
+      &:nth-child(3) {
+        &::after {
+          content: '03';
+        }
+      }
+
+      &:nth-child(4) {
+        &::after {
+          content: '04';
+        }
+      }
+
+      &:nth-child(5) {
+        &::after {
+          content: '05';
+        }
+      }
+
+      .img-wrap {
+        padding: 0;
+        height: 87px;
+      }
+
+      .txt-wrap {
+        padding-right: 0;
+      }
+
+      h3 {
+        font-size: 0.875rem;
+        margin: 0 0 5px 0 ;
+        font-weight: bold;
+      }
+    }
+  }
+
+  &__more {
+    .guide__more__list__inner {
+      display: block;
+      width: 100%;
+    }
+  }
+}

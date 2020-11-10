@@ -1,0 +1,31 @@
+/*============================
+footer 検索エリア
+============================*/
+.footer {
+  &__search {
+    @include media-breakpoint-down(md) {
+      padding: 0 15px!important;
+    }
+
+    .md_container {
+      @include media-breakpoint-down(md) {
+        padding: 2rem 0!important;
+      }
+    }
+
+    h2,
+    p {
+      @include media-breakpoint-down(md) {
+        text-align: center;
+        margin: 0 0 1rem;
+        padding: 0;
+      }
+
+      form {
+        @include media-breakpoint-down(md) {
+          margin: 1rem 0 0;
+        }
+      }
+    }
+  }
+}
