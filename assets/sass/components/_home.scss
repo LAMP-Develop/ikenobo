@@ -9,7 +9,7 @@
 }
 
 .md_topTitle {
-  padding-bottom: 7px!important;
+  padding-bottom: 7px !important;
   z-index: 0;
 
   &.border-line {
@@ -31,7 +31,7 @@
 }
 
 a {
-  text-decoration: none!important;
+  text-decoration: none !important;
 }
 
 .button {
@@ -46,7 +46,7 @@ a {
   padding: 1rem 0;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: calc(50% - 3px);
     right: 1rem;
@@ -74,7 +74,7 @@ input[type="checkbox"]:checked::after {
   display: inline-block;
   border: solid 1px $primary;
   background: $white;
-  color: $body-color!important;
+  color: $body-color !important;
   padding: 4px 4px 3px;
   font-size: 0.75em;
   margin: 0 4px 8px;
@@ -90,7 +90,7 @@ input[type="checkbox"]:checked::after {
       width: 79%;
       min-width: 860px;
       margin: 0 auto;
-      background-color: rgba(255,255,255,0.8);
+      background-color: rgba(255, 255, 255, 0.8);
       padding: 3rem 5rem;
       @include media-breakpoint-down(md) {
         padding: 1.5rem;
@@ -133,7 +133,7 @@ input[type="checkbox"]:checked::after {
     }
 
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       right: 0;
       bottom: 8%;
@@ -151,7 +151,7 @@ input[type="checkbox"]:checked::after {
     position: relative;
 
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       top: 20%;
       left: 0;
@@ -183,13 +183,13 @@ input[type="checkbox"]:checked::after {
         }
 
         &:after {
-          content: '01';
-          font-family: "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W2" , "Hiragino Mincho Pro" , "HiraMinProN-W2" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho";
+          content: "01";
+          font-family: "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W2", "Hiragino Mincho Pro", "HiraMinProN-W2", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho";
           font-size: 5rem;
           position: absolute;
           top: -2.5rem;
           left: 2rem;
-          color: rgba(87,70,130,.2);
+          color: rgba(87, 70, 130, 0.2);
           @include media-breakpoint-down(md) {
             font-size: 4rem;
             left: 0.5rem;
@@ -205,19 +205,19 @@ input[type="checkbox"]:checked::after {
 
         &:nth-child(2) {
           &:after {
-            content: '02';
+            content: "02";
           }
         }
 
         &:nth-child(3) {
           &:after {
-            content: '03';
+            content: "03";
           }
         }
 
         &:nth-child(4) {
           &:after {
-            content: '04';
+            content: "04";
           }
         }
 
@@ -232,7 +232,7 @@ input[type="checkbox"]:checked::after {
           margin-left: 30px;
           padding: 40px;
           position: relative;
-          box-shadow: 5px 5px 25px 25px rgba(0,0,0,0.04);
+          box-shadow: 5px 5px 25px 25px rgba(0, 0, 0, 0.04);
           @include media-breakpoint-down(md) {
             margin-top: 0;
             margin-left: 0;
@@ -245,8 +245,8 @@ input[type="checkbox"]:checked::after {
   // .home__faq
   &__faq {
     @include media-breakpoint-down(md) {
-      margin-top: 0!important;
-      padding-top: 0!important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
     }
 
     .md_container {
@@ -256,6 +256,7 @@ input[type="checkbox"]:checked::after {
         width: 90%;
         margin: 0 auto;
         padding: 4rem 0;
+        background-color: $info;
         @include media-breakpoint-down(md) {
           width: 90%;
         }
@@ -352,7 +353,7 @@ input[type="checkbox"]:checked::after {
   // .home__link
   &__link {
     @include media-breakpoint-down(md) {
-      padding-top: 1rem!important;
+      padding-top: 1rem !important;
     }
 
     &__list {

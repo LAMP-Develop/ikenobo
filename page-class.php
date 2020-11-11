@@ -12,8 +12,7 @@ $form_price = $_GET['price'];
 $form_tags = $_GET['tags'];
 
 $user_per_page = 10;
-$paged = get_query_var('page', 1);
-$paged = $paged > 1 ? $paged : 1;
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 $args = [
     'number' => $user_per_page,
@@ -30,6 +29,15 @@ if ($form_pref != '' && $form_pref != null) {
         'key' => 'class_pref',
         'value' => $form_pref,
         'compare' => '='
+    ];
+}
+
+// フィルター：キーワード
+if ($form_keywords != '' && $form_keywords != null) {
+    $args['meta_query'][] = [
+        'key' => 'calss_address_1',
+        'value' => $form_keywords,
+        'compare' => 'LIKE'
     ];
 }
 
@@ -79,9 +87,6 @@ if ($form_tags != '' && $form_tags != null) {
 }
 
 $user_query = new WP_User_Query($args);
-$user_query->total_users;
-$user_query->results;
-
 get_header(); ?>
 
 <div class="sub__mv sub__mv__class bg-info pb-5">
@@ -98,7 +103,15 @@ get_header(); ?>
 
 <section class="class__list sidebar-layout">
 <div class="container">
-<p class="mb-3">1〜10件を表示中／全<?php echo number_format($user_query->total_users); ?>件</p>
+<p class="mb-3"><?php echo $paged * $user_per_page - ($user_per_page-1); ?>〜<?php if($user_query->total_users >= $user_per_page) {
+    if ($paged == ceil($user_query->total_users / $user_per_page)) {
+        echo $user_query->total_users;
+    } else {
+        echo $paged * $user_per_page;
+    }
+} else {
+    echo $user_query->total_users;
+} ?>件を表示中／全<?php echo number_format($user_query->total_users); ?>件</p>
 <div class="row">
 
 <div class="col-md-8 p-0">
@@ -114,7 +127,7 @@ $thumbnail = get_field('class_pict_1', 'user_'.$user_id) != null ? get_field('cl
 <a href="<?php echo $home; ?>/class/detail?id=<?php echo $user_id; ?>">
 <div class="img-wrap"><img src="<?php echo $thumbnail; ?>" alt="<?php echo $class_name; ?>"></div>
 <h3 class="md_mincho"><?php echo $class_name; ?></h3>
-<table>
+<table class="w-100">
 <tr class="row">
 <td class="col-3 bg-info">住所</td>
 <td class="col-9">
@@ -132,10 +145,13 @@ $thumbnail = get_field('class_pict_1', 'user_'.$user_id) != null ? get_field('cl
 <td class="col-3 bg-info">曜日</td>
 <td class="col-9">毎週<?php
 $weeks = get_field('class_week', 'user_'.$user_id);
-foreach ($weeks as $week) {
-    echo $week;
+foreach ($weeks as $i => $week) {
+    if ($i > 0) {
+        echo '、';
+    }
+    echo $week.'曜日';
 }
-?>曜日</td>
+?></td>
 </tr>
 <tr class="row">
 <td class="col-3 bg-info">時間帯</td>
@@ -167,9 +183,17 @@ foreach ($calss_search_tags as $key => $tag): ?>
 
 <div class="pagenavi">
 <?php
-if (function_exists('wp_pagenavi')) {
-    wp_pagenavi(['query' => $user_query]);
-}
+$total_user = $user_query->total_users;
+$total_pages = ceil($total_user / $user_per_page);
+echo paginate_links(array(
+    'current' => $paged,
+    'total' => $total_pages,
+    'prev_text' => '<i class="fas fa-chevron-left"></i>',
+    'next_text' => '<i class="fas fa-chevron-right"></i>',
+    'type' => 'list',
+    'end_size' => 1,
+    'mid_size' => 1,
+));
 ?>
 </div>
 

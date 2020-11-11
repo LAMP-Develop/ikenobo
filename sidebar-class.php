@@ -15,8 +15,8 @@ $form_tags = $_GET['tags'];
 <div class="sidebar">
 <div class="sidebar__search search">
 <div class="md_topTitle">教室検索</div>
-<form id="form" class="search__form" method="get" action="<?php $home; ?>/class/">
-<table>
+<form id="form" class="search__form" method="GET" action="<?php $home; ?>/class/">
+<table class="w-100">
 <tr>
 <th>エリア指定</th>
 </tr>

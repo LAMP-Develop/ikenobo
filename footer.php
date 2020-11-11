@@ -23,11 +23,11 @@ $form_tags = $_GET['tags'];
 <p>あなたに合ったいけばな教室を検索</p>
 </div>
 <div class="col-sm-8">
-<form id="form" class="search__form" method="get" action="<?php $home; ?>/class/">
+<form id="form" class="search__form" method="GET" action="<?php $home; ?>/class/">
 <div class="row">
 <div class="form-group row col-sm-6">
-<label class="col-4" for="form-pref">都道府県</label>
-<select class="col-8" name="pref" id="form-pref">
+<label class="col-4">都道府県</label>
+<select class="col-8" name="pref">
 <option value="" selected>都道府県</option>
 <option value="北海道" <?php echo $form_pref == '北海道' ? 'selected' : ''; ?>>北海道</option>
 <option value="青森県" <?php echo $form_pref == '青森県' ? 'selected' : ''; ?>>青森県</option>
@@ -79,13 +79,13 @@ $form_tags = $_GET['tags'];
 </select>
 </div>
 <div class="form-group row col-sm-6">
-<label class="col-4" for="address">市区町村</label>
-<input type="text" class="form-control col-8" id="address" name="address" placeholder="" value="<?php echo $form_address; ?>">
+<label class="col-4">市区町村</label>
+<input type="text" class="form-control col-8" name="address" placeholder="" value="<?php echo $form_address; ?>">
 </div>
 </div>
 <div class="form-group row">
-<label class="col-3" for="keywords">フリーワード</label>
-<input type="text" class="form-control col-9" id="keywords" name="keywords" placeholder="〇〇駅" value="<?php echo $form_keywords; ?>">
+<label class="col-3">フリーワード</label>
+<input type="text" class="form-control col-9" name="keywords" placeholder="〇〇駅" value="<?php echo $form_keywords; ?>">
 </div>
 <div class="row">
 <div class="search-btn border-light col-6">

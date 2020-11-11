@@ -20,6 +20,48 @@ $thumbnail = get_field('class_pict_1', 'user_'.$user_id);
 <div class="class__single__about mb-5">
 <div class="md_topTitle mb-3 flower-01"><?php echo $class_name; ?></div>
 <?php if ($thumbnail): ?>
+<div id="class-slides" class="carousel slide" data-ride="carousel">
+<ol class="carousel-indicators">
+<li data-target="#class-slides" data-slide-to="0" class="active"></li>
+<?php if (get_field('class_pict_2', 'user_'.$user_id)): ?>
+<li data-target="#class-slides" data-slide-to="1"></li>
+<?php endif; ?>
+<?php if (get_field('class_pict_3', 'user_'.$user_id)): ?>
+<li data-target="#class-slides" data-slide-to="2"></li>
+<?php endif; ?>
+<?php if (get_field('class_pict_4', 'user_'.$user_id)): ?>
+<li data-target="#class-slides" data-slide-to="3"></li>
+<?php endif; ?>
+</ol>
+<div class="carousel-inner">
+<div class="carousel-item active">
+<img src="<?php echo $thumbnail; ?>" class="d-block w-100" alt="<?php echo $class_name; ?>">
+</div>
+<?php if (get_field('class_pict_2', 'user_'.$user_id)): ?>
+<div class="carousel-item">
+<img src="<?php echo get_field('class_pict_2', 'user_'.$user_id); ?>" class="d-block w-100" alt="<?php echo $class_name; ?>">
+</div>
+<?php endif; ?>
+<?php if (get_field('class_pict_3', 'user_'.$user_id)): ?>
+<div class="carousel-item">
+<img src="<?php echo get_field('class_pict_3', 'user_'.$user_id); ?>" class="d-block w-100" alt="<?php echo $class_name; ?>">
+</div>
+<?php endif; ?>
+<?php if (get_field('class_pict_4', 'user_'.$user_id)): ?>
+<div class="carousel-item">
+<img src="<?php echo get_field('class_pict_4', 'user_'.$user_id); ?>" class="d-block w-100" alt="<?php echo $class_name; ?>">
+</div>
+<?php endif; ?>
+</div>
+<a class="carousel-control-prev" href="#class-slides" role="button" data-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#class-slides" role="button" data-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="sr-only">Next</span>
+</a>
+</div>
 <?php else: ?>
 <div class="img-wrap">
 <img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="<?php echo $class_name; ?>">
@@ -38,7 +80,7 @@ foreach ($calss_search_tags as $key => $tag): ?>
 
 <div class="class__single__info bg-info py-5  mb-3">
 <div class="md_topTitle mb-3 text-center arrow">基本情報</div>
-<table>
+<table class="w-100">
 <tr class="row">
 <td class="col-3 bg-secondary">住所</td>
 <td class="col-9 bg-white"><?php echo '〒'.get_field('class_zipcode', 'user_'.$user_id); ?><br>
@@ -58,10 +100,13 @@ foreach ($calss_search_tags as $key => $tag): ?>
 <td class="col-3 bg-secondary">曜日</td>
 <td class="col-9 bg-white">毎週<?php
 $weeks = get_field('class_week', 'user_'.$user_id);
-foreach ($weeks as $week) {
-    echo $week;
+foreach ($weeks as $i => $week) {
+    if ($i > 0) {
+        echo '、';
+    }
+    echo $week.'曜日';
 }
-?>曜日</td>
+?></td>
 </tr>
 <tr class="row">
 <td class="col-3 bg-secondary">時間帯</td>
