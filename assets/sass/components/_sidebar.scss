@@ -2,9 +2,6 @@
 教室検索用サイドバー
 ============================*/
 .sidebar {
-  @include media-breakpoint-down(md) {
-    display: none;
-  }
   &-layout {
     .row {
       justify-content: space-between;
@@ -40,6 +37,10 @@
 .sidebar {
   // sidebar 検索エリア
   &__search {
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+
     .search {
       &__form {
         border: 1px solid $success;
@@ -123,7 +124,7 @@
     .archive__inner {
       position: relative;
       align-items: center;
-      padding: 0 0 5px 0;
+      padding: 0 0 5px;
 
       &::after {
         content: '01';
@@ -171,7 +172,7 @@
 
       h3 {
         font-size: 0.875rem;
-        margin: 0 0 5px 0 ;
+        margin: 0 0 5px;
         font-weight: bold;
       }
     }
@@ -181,6 +182,76 @@
     .guide__more__list__inner {
       display: block;
       width: 100%;
+    }
+  }
+}
+/*============================
+その他詳記事細用サイドバー
+============================*/
+.sidebar {
+  &__more {
+    .md_topTitle {
+      line-height: 2.5;
+      margin-bottom: 0!important;
+      @include media-breakpoint-down(md) {
+        margin-bottom: 1rem;
+      }
+
+      span {
+        position: relative;
+        font-size: 0.8rem;
+        padding: 13px 2rem;
+        border-radius: 2rem;
+        line-height: 3;
+        background: $success;
+        @include media-breakpoint-down(md) {
+          font-size: 1.125rem;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          left: calc(50% - 9px);
+          bottom: -2px;
+          width: 18px;
+          height: 18px;
+          transform: rotate(45deg);
+          background: $success;
+          z-index: -1;
+        }
+      }
+    }
+
+    .guide {
+      &__more {
+        &__list {
+          &__inner {
+            padding: 4.2rem 0;
+            border: none;
+
+            p {
+              font-size: 1.125rem;
+              font-weight: normal;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.nomal {
+    .sidebar {
+      &__blog {
+        .archive__inner {
+          position: relative;
+          align-items: center;
+          padding: 0 0 5px;
+
+          &::after {
+            display: none;
+          }
+        }
+      }
     }
   }
 }
