@@ -12,6 +12,7 @@ get_header(); ?>
 <div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
 <h3 class="md_mincho">ブログタイトルが入ります。</h3>
 <p>2020.01.01</p>
+
 </a>
 </div>
 <div class="archive__inner col-sm-4">
