@@ -94,10 +94,10 @@ $form_tags = $_GET['tags'];
 <button type="button" class="search-btn border-light col-6" data-toggle="modal" data-target="#exampleModal">
 <a class="md_mincho text-center d-block bg-white" href="###"><img class="mr-2" src="<?php echo $wp_url; ?>/dist/images/icon_search.svg" alt="検索アイコン">こだわり検索</a>
 </button>
-<?php include('modal.php'); ?>
 </div>
 <button type="submit" class="btn btn-primary col-12">検索</button>
 </form>
+<?php include('modal.php'); ?>
 </div>
 </div>
 </div>
