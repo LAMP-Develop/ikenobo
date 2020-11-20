@@ -24,7 +24,7 @@
       border: 1px solid $light;
       background: $white;
 
-      &:after {
+      &::after {
         content: '';
         position: absolute;
         top: calc(50% - 2.39px);

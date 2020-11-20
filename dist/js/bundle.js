@@ -266,9 +266,9 @@ $(function () {
   !*** ./assets/sass/app.scss ***!
   \******************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: Invalid CSS after \".single {\": expected \"}\", was \"<<<<<<< HEAD\"\n        on line 1 of assets/sass/components/_single.scss\n        from line 9 of assets/sass/_component.scss\n        from line 9 of /Users/oonishiyuka/Local Sites/ikenobo/app/public/wp-content/themes/ikenobo/assets/sass/app.scss\n>> .single {\n\n   ---------^\n\n    at /Users/oonishiyuka/Local Sites/ikenobo/app/public/wp-content/themes/ikenobo/node_modules/webpack/lib/NormalModule.js:316:20\n    at /Users/oonishiyuka/Local Sites/ikenobo/app/public/wp-content/themes/ikenobo/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /Users/oonishiyuka/Local Sites/ikenobo/app/public/wp-content/themes/ikenobo/node_modules/loader-runner/lib/LoaderRunner.js:233:18\n    at context.callback (/Users/oonishiyuka/Local Sites/ikenobo/app/public/wp-content/themes/ikenobo/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at Object.callback (/Users/oonishiyuka/Local Sites/ikenobo/app/public/wp-content/themes/ikenobo/node_modules/sass-loader/dist/index.js:73:7)\n    at Object.done [as callback] (/Users/oonishiyuka/Local Sites/ikenobo/app/public/wp-content/themes/ikenobo/node_modules/neo-async/async.js:8067:18)\n    at options.error (/Users/oonishiyuka/Local Sites/ikenobo/app/public/wp-content/themes/ikenobo/node_modules/node-sass/lib/index.js:294:32)");
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 

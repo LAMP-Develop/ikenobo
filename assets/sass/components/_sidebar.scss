@@ -37,9 +37,6 @@
 .sidebar {
   // sidebar 検索エリア
   &__search {
-    @include media-breakpoint-down(md) {
-      display: none;
-    }
 
     .search {
       &__form {

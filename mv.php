@@ -87,9 +87,10 @@ $form_tags = $_GET['tags'];
 <div class="search-btn border-light col-6">
 <a class="md_mincho text-center d-block bg-white" href="###"><img class="mr-2" src="<?php echo $wp_url; ?>/dist/images/icon_map.svg" alt="マップアイコン">現在地から検索</a>
 </div>
-<div class="search-btn border-light col-6">
+<button type="button" class="search-btn border-light col-6" data-toggle="modal" data-target="#exampleModal">
 <a class="md_mincho text-center d-block bg-white" href="###"><img class="mr-2" src="<?php echo $wp_url; ?>/dist/images/icon_search.svg" alt="検索アイコン">こだわり検索</a>
-</div>
+</button>
+<?php include('modal.php'); ?>
 </div>
 <button type="submit" class="btn btn-primary col-12">検索</button>
 </form>
@@ -97,7 +98,7 @@ $form_tags = $_GET['tags'];
 </div>
 </div>
 <!-- トップページメインビジュアル終了 -->
-<?php elseif ( is_page('contact-teacher') || is_page('cotact') || is_page('cotact-thanks') || is_single() ) : ?>
+<?php elseif ( is_page('contact-teacher') || is_page('contact-class') || is_page('contact-conecting') || is_page('contact-help') ||is_page('contact') || is_page('contact-thanks') || is_page('contact-thanks') || is_single() ) : ?>
 
 <!-- MVなしページ -->
 <div class="bread bg-info">
@@ -112,9 +113,10 @@ $form_tags = $_GET['tags'];
 <div class="container">
 <div class="md_topTitle mb-3 flower-03 border-line">検索結果</div>
 <p>京都府,中京区,平日すべて</p>
-<a class="filter" href="#">
-  <img src="<?php echo $wp_url; ?>/dist/images/icon_search.svg" alt="虫眼鏡アイコン">絞り込み
-</a>
+<button type="button" class="filter" data-toggle="modal" data-target="#exampleModal">
+<img src="<?php echo $wp_url; ?>/dist/images/icon_search.svg" alt="虫眼鏡アイコン">絞り込み
+</button>
+<?php include('modal.php'); ?>
 </div>
 </div>
 <!-- 記事一覧ページ終了 -->

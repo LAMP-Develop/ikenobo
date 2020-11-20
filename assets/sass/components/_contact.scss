@@ -1,9 +1,16 @@
 .contact {
+  &__text {
+    font-size: 0.8rem;
+  }
   /*============================
   講師へ直接お問い合わせ
   ============================*/
   &-teacher {
-    h3 {
+    p {
+      font-size: 0.85rem;
+    }
+
+    &-ttl {
       font-size: 1.125rem;
       padding: 1rem 0;
       border-top: 1px solid $light;
@@ -13,15 +20,208 @@
       }
     }
 
-    p {
-      font-size: 0.85rem;
-    }
-
-    ul {
-      li {
+    &-list {
+      &-item {
         position: relative;
         margin-bottom: 3px;
         padding: 0 0 0 1.5rem;
+
+        &::before {
+          content: '◇';
+          display: inline-block;
+          color: $primary;
+          position: absolute;
+          top: 2px;
+          left: 0;
+        }
+      }
+    }
+
+    &__help {
+      margin-top: 1rem;
+
+      &-ttl {
+        font-size: 1.125rem;
+        @include media-breakpoint-down(md) {
+          font-size: 0.9375rem;
+        }
+      }
+    }
+  }
+  /*============================
+  お問い合せステップ
+  ============================*/
+  &__step {
+    &__list {
+      &-item {
+        position: relative;
+        border: 1px solid $success;
+
+        &.check {
+          background: $success;
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -14px;
+            border-top: 28.5px solid transparent;
+            border-bottom: 28.5px solid transparent;
+            border-left: 13px solid $success;
+          }
+        }
+
+        &-num {
+          font-size: 10px;
+          margin-bottom: 3px;
+        }
+      }
+    }
+  }
+  /*============================
+  お問い合せフォーム
+  ============================*/
+  &__form {
+    &-wrap {
+      border: 1px solid $success;
+
+      &-ttl2 {
+        font-family: "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W2" , "Hiragino Mincho Pro" , "HiraMinProN-W2" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho";
+        font-size: 0.9375rem;
+        font-weight: bold;
+        background: $info;
+        padding: 1rem;
+        @include media-breakpoint-down(md) {
+          padding: 6px 1rem;
+        }
+
+        &.required {
+          &::after {
+            font-family: "Yu Gothic", メイリオ, Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+            font-weight: nomal;
+            content: '必須';
+            background: $white;
+            font-size: 0.8125rem;
+            margin-left: 10px;
+            padding: 3px 5px;
+          }
+        }
+      }
+
+      &-ttl3 {
+        font-family: "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W2" , "Hiragino Mincho Pro" , "HiraMinProN-W2" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho";
+        font-size: 1.125rem;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="email"],
+      input[type="number"],
+      input[type="tel"],
+      input[type="url"],
+      select {
+        padding: 10px;
+        border: 1px solid #ccc;
+        color: #555;
+        outline: 0;
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+
+      select {
+        position: relative;
+        padding: 10px 30px 10px 10px;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: calc(50% - 2.39px);
+          right: 1rem;
+          width: 4.78px;
+          height: 4.78px;
+          border-right: 1px solid $light;
+          border-bottom: 1px solid $light;
+          transform: rotate(-45deg);
+        }
+      }
+
+      .radio {
+        label {
+          span {
+            position: relative;
+            color: $light;
+            width: 152px;
+            padding: 10px 0;
+            border: 1px solid $light;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            @include media-breakpoint-down(md) {
+              width: 48%;
+            }
+          }
+
+          input[type=radio] {
+            display: none;
+          }
+
+          input:checked + span {
+            color: $primary;
+            border: 1px solid $primary;
+            background: $info;
+            position: relative;
+
+            &:after {
+              content: url("../images/checked.svg");
+              position: absolute;
+              top: 10px;
+              right: 8px;
+            }
+          }
+        }
+      }
+
+      .checkbox {
+        .horizontal-item {
+          margin: 0 0 12px 0!important;
+          display: block;
+        }
+      }
+
+      .age {
+        input {
+          width: 125px;
+        }
+      }
+
+      input[type="checkbox"]:checked::after {
+        top: 4px;
+      }
+    }
+
+    &-inner {
+      padding: 1.5rem 1rem;
+
+      &-ttl {
+        margin-bottom: 8px;
+      }
+    }
+  }
+  /*============================
+  注意事項
+  ============================*/
+  &__attention {
+    &__list {
+      margin-bottom: 1.6rem;
+
+      &-item {
+        position: relative;
+        margin-bottom: 3px;
+        padding: 0 0 0 1.5rem;
+        font-size: 0.85rem;
 
         &::before {
           content: '◇';

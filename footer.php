@@ -91,9 +91,10 @@ $form_tags = $_GET['tags'];
 <div class="search-btn border-light col-6">
 <a class="md_mincho text-center d-block" href="#"><img class="mr-2" src="<?php echo $wp_url; ?>/dist/images/icon_map.svg" alt="マップアイコン">現在地から検索</a>
 </div>
-<div class="search-btn border-light col-6">
-<a class="md_mincho text-center d-block" href="#"><img class="mr-2" src="<?php echo $wp_url; ?>/dist/images/icon_search.svg" alt="検索アイコン">こだわり検索</a>
-</div>
+<button type="button" class="search-btn border-light col-6" data-toggle="modal" data-target="#exampleModal">
+<a class="md_mincho text-center d-block bg-white" href="###"><img class="mr-2" src="<?php echo $wp_url; ?>/dist/images/icon_search.svg" alt="検索アイコン">こだわり検索</a>
+</button>
+<?php include('modal.php'); ?>
 </div>
 <button type="submit" class="btn btn-primary col-12">検索</button>
 </form>
@@ -105,6 +106,10 @@ $form_tags = $_GET['tags'];
 <?php else: ?>
 
 <?php endif; ?>
+
+<div id="formLink">
+	<a href="###" class="md_tategaki md_mincho">教室お問い合わせ窓口</a>
+</div>
 
 <footer id="footer" class="mt-3">
 <div class="md_container">

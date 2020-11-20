@@ -98,12 +98,10 @@ get_header(); ?>
           <div class="md_topTitle mb-3 text-center">生徒の声</div>
           <div class="row">
             <div class="class__single__voice__inner col-sm-6">
-              <p>日本の伝統文化に興味があって、体験しました。先生も丁寧に教えて下さり、大変楽しかったです。</p>
-              <div class="user text-right"><p>40歳女性</p></div>
+              <p>日本の伝統文化に興味があって、体験しました。先生も丁寧に教えて下さり、大変楽しかったです。(40歳女性)</p>
             </div>
             <div class="class__single__voice__inner col-sm-6">
-              <p>日本の伝統文化に興味があって、体験しました。先生も丁寧に教えて下さり、大変楽しかったです。</p>
-              <div class="user text-right"><p>40歳女性</p></div>
+              <p>日本の伝統文化に興味があって、体験しました。先生も丁寧に教えて下さり、大変楽しかったです。(40歳女性)</p>
             </div>
           </div>
         </div>

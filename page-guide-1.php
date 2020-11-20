@@ -21,7 +21,7 @@ get_header(); the_post(); ?>
 
   <div class="guide__step pb-5">
     <div class="md_container">
-      <h2 class="md_topTitle text-center"><span>STEP01</span><br>いけばなとはなにか知ろう！</h2>
+      <h2 class="md_topTitle text-center">いけばなとはなにか知ろう！</h2>
       <p class="guide__step-about">いけばなに興味があるけれど、私にもできるの？どんなふうにお花をいけるの？など、はじめてで気になることがある方は多いと思います。<br>まずいけばなとはどういっことなのか、いままで知らなかった発見ができます。</p>
       <div class="row archive media py-5">
           <div class="archive__inner col-sm-4">
@@ -51,7 +51,7 @@ get_header(); the_post(); ?>
 
   <div class="guide__step">
     <div class="md_container">
-      <h2 class="md_topTitle text-center"><span>STEP02</span><br>いけばなを通して得られること</h2>
+      <h2 class="md_topTitle text-center">いけばなを通して得られること</h2>
       <p class="guide__step-about">いけばながどんなことかはわかったけれど、どんなことが身につくのか、身に着けるメリットなど、<br>いけばなを通して体験・得られることをご紹介します。</p>
       <div class="row archive py-5">
           <div class="archive__inner col-sm-4">

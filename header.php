@@ -32,7 +32,7 @@ $wp_url = get_template_directory_uri(); ?>
 <div class="leftLink">
 <ul class="clearFix">
 <li><a href="ikebanaikenobo/" class="md_mincho">池坊について</a></li>
-<li><a href="kyoshitsu/" class="md_mincho">いけばなを習う</a></li>
+<li><a href="kyoshitsu/" class="md_mincho text-primary">いけばなを習う</a></li>
 <li><a href="event/index.html" class="md_mincho">花展・イベントを探す</a></li>
 </ul>
 </div>
