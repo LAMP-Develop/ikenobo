@@ -97,27 +97,46 @@ $form_tags = $_GET['tags'];
 </div>
 </div>
 <!-- トップページメインビジュアル終了 -->
-<?php elseif (is_page(['cotact', 'cotact-thanks', 'detail']) || is_single()) : ?>
+<?php elseif ( is_page('contact-teacher') || is_page('cotact') || is_page('cotact-thanks') || is_single() ) : ?>
+
 <!-- MVなしページ -->
 <div class="bread bg-info">
-<?php
-if (function_exists('yoast_breadcrumb')) {
-    yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
-}
-?>
+  <p>サイトトップ > <a>華道家元池坊会館　外国人向けいけばな体験レッスン</a></p>
 </div>
 <!-- MVなしページ終了 -->
-<?php elseif (is_archive()) : ?>
+
+<?php elseif ( is_archive('class') ) : ?>
+
+<!-- 記事一覧ページ -->
+<div class="sub__mv sub__mv__class bg-info pb-5">
+<div class="container">
+<div class="md_topTitle mb-3 flower-03 border-line">検索結果</div>
+<p>京都府,中京区,平日すべて</p>
+<a class="filter" href="#">
+  <img src="<?php echo $wp_url; ?>/dist/images/icon_search.svg" alt="虫眼鏡アイコン">絞り込み
+</a>
+</div>
+</div>
+<!-- 記事一覧ページ終了 -->
+
+<?php elseif ( is_archive() ) : ?>
+
 <!-- 記事一覧ページ -->
 <?php echo esc_html(get_post_type_object(get_post_type())->name); ?>
 <?php echo $cp_slug = get_query_var('post_type'); ?>
 <div class="sub__mv <?php echo $cp_slug ?> pb-5"></div>
 <!-- 記事一覧ページ終了 -->
-<?php else:
-global $post;
-$slug = $post->post_name;
+
+<?php else: ?>
+
+<!-- 下層ページメインビジュアル -->
+<?php
+  global $post;
+  $slug = $post->post_name;
 ?>
 <div class="sub__mv <?php echo $slug ?> pb-5"></div>
+
 <!-- 下層ページメインビジュアル終了 -->
+
 <?php endif; ?>
 <?php endif; ?>
