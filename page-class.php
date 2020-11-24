@@ -114,8 +114,6 @@ if (is_array($form_tags)) {
     }
 }
 
-var_dump($args);
-
 $user_query = new WP_User_Query($args);
 get_header(); ?>
 
