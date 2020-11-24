@@ -93,35 +93,17 @@ $form_tags = $_GET['tags'];
 </div>
 <button type="submit" class="btn btn-primary col-12">検索</button>
 </form>
-<?php include('modal.php'); ?>
 </div>
 </div>
 </div>
 <!-- トップページメインビジュアル終了 -->
-<?php elseif ( is_page('contact-teacher') || is_page('contact-class') || is_page('contact-conecting') || is_page('contact-help') ||is_page('contact') || is_page('contact-thanks') || is_page('contact-thanks') || is_single() ) : ?>
-
-<!-- MVなしページ -->
-<div class="bread bg-info">
-  <p>サイトトップ > <a>華道家元池坊会館　外国人向けいけばな体験レッスン</a></p>
-</div>
-<!-- MVなしページ終了 -->
-
-<?php elseif ( is_archive('class') ) : ?>
-
-<!-- 記事一覧ページ -->
-<div class="sub__mv sub__mv__class bg-info pb-5">
-<div class="container">
-<div class="md_topTitle mb-3 flower-03 border-line">検索結果</div>
-<p>京都府,中京区,平日すべて</p>
-<button type="button" class="filter" data-toggle="modal" data-target="#exampleModal">
-<img src="<?php echo $wp_url; ?>/dist/images/icon_search.svg" alt="虫眼鏡アイコン">絞り込み
-</button>
-<?php include('modal.php'); ?>
-</div>
-</div>
-<!-- 記事一覧ページ終了 -->
-
-<?php elseif ( is_archive() ) : ?>
+<?php elseif (is_page(['contact-teacher', 'contact-class', 'contact-conecting', 'contact-help', 'contact', 'contact-thanks', 'detail']) || is_single()) : ?>
+<?php
+if (function_exists('yoast_breadcrumb')) {
+    yoast_breadcrumb('<div class="bread bg-info"><p>', '</p></div>');
+}
+?>
+<?php elseif (is_archive()) : ?>
 
 <!-- 記事一覧ページ -->
 <?php echo esc_html(get_post_type_object(get_post_type())->name); ?>

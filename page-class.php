@@ -9,7 +9,7 @@ $form_keywords = isset($_GET['keywords']) ? $_GET['keywords'] : null;
 $form_weeks = isset($_GET['weeks']) ? $_GET['weeks'] : null;
 $form_times = isset($_GET['times']) ? $_GET['times'] : null;
 $form_price = isset($_GET['price']) ? $_GET['price'] : null;
-$form_tags = isset($_GET['tags']) ? $_GET['tags'] : null;
+$form_tags = isset($_GET['tags']) && $_GET['tags'] != '' ? $_GET['tags'] : null;
 
 $user_per_page = 10;
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -19,7 +19,6 @@ $args = [
     'paged' => $paged,
     'role' => 'author',
     'meta_query' => [
-        'relation' => 'AND',
     ],
 ];
 
@@ -34,31 +33,33 @@ if ($form_pref != '' && $form_pref != null) {
 
 // フィルター：キーワード
 if ($form_keywords != '' && $form_keywords != null) {
-    $args['meta_query']['relation'] = 'OR';
-    $args['meta_query'][] = [ // 住所
-        'key' => 'calss_address_1',
-        'value' => $form_keywords,
-        'compare' => 'LIKE'
-    ];
-    $args['meta_query'][] = [ // 駅名
-        'key' => 'calss_station',
-        'value' => $form_keywords,
-        'compare' => 'LIKE'
-    ];
-    $args['meta_query'][] = [ // 教室名
-        'key' => 'class_name',
-        'value' => $form_keywords,
-        'compare' => 'LIKE'
-    ];
-    $args['meta_query'][] = [ // 名
-        'key' => 'first_name',
-        'value' => $form_keywords,
-        'compare' => 'LIKE'
-    ];
-    $args['meta_query'][] = [ // 姓
-        'key' => 'last_name',
-        'value' => $form_keywords,
-        'compare' => 'LIKE'
+    $args['meta_query'][] = [
+        'relation' => 'OR',
+        [
+            'key' => 'calss_address_1', // 住所
+            'value' => $form_keywords,
+            'compare' => 'LIKE'
+        ],
+        [
+            'key' => 'calss_station',
+            'value' => $form_keywords,
+            'compare' => 'LIKE'
+        ],
+        [
+            'key' => 'class_name',
+            'value' => $form_keywords,
+            'compare' => 'LIKE'
+        ],
+        [
+            'key' => 'first_name',
+            'value' => $form_keywords,
+            'compare' => 'LIKE'
+        ],
+        [
+            'key' => 'last_name',
+            'value' => $form_keywords,
+            'compare' => 'LIKE'
+        ],
     ];
 }
 
@@ -73,20 +74,24 @@ if ($form_address != '' && $form_address != null) {
 
 // フィルター：曜日
 if ($form_weeks != '' && $form_weeks != null) {
-    $args['meta_query'][] = [
-        'key' => 'class_week',
-        'value' => $form_weeks,
-        'compare' => 'IN'
-    ];
+    foreach ($form_weeks as $val) {
+        $args['meta_query'][] = [
+            'key' => 'class_week',
+            'value' => $val,
+            'compare' => 'LIKE'
+        ];
+    }
 }
 
-// フィルター：曜日
+// フィルター：時間
 if ($form_times != '' && $form_times != null) {
-    $args['meta_query'][] = [
-        'key' => 'calss_times',
-        'value' => $form_times,
-        'compare' => 'IN'
-    ];
+    foreach ($form_times as $val) {
+        $args['meta_query'][] = [
+            'key' => 'calss_times',
+            'value' => $val,
+            'compare' => 'LIKE'
+        ];
+    }
 }
 
 // フィルター：費用
@@ -94,18 +99,22 @@ if ($form_price != '' && $form_price != null) {
     $args['meta_query'][] = [
         'key' => 'calss_price',
         'value' => $form_price,
-        'compare' => 'IN'
+        'compare' => '='
     ];
 }
 
-// フィルター：費用
-if ($form_tags != '' && $form_tags != null) {
-    $args['meta_query'][] = [
-        'key' => 'calss_search_tags',
-        'value' => $form_tags,
-        'compare' => 'IN'
-    ];
+// フィルター：タグ
+if (is_array($form_tags)) {
+    foreach ($form_tags as $val) {
+        $args['meta_query'][] = [
+            'key' => 'calss_search_tags',
+            'value' =>$val,
+            'compare' => 'LIKE'
+        ];
+    }
 }
+
+var_dump($args);
 
 $user_query = new WP_User_Query($args);
 get_header(); ?>
@@ -118,13 +127,13 @@ get_header(); ?>
 <?php echo $form_address != '' ? $form_address.',' : ''; ?>
 <?php echo $form_keywords != '' ? '”'.$form_keywords.'”' : ''; ?>
 </p>
-<a class="filter" href="#"><img src="<?php echo $wp_url; ?>/dist/images/icon_search.svg" alt="虫眼鏡アイコン">絞り込み</a>
+<a class="filter" data-toggle="modal" data-target="#exampleModal"><img src="<?php echo $wp_url; ?>/dist/images/icon_search.svg" alt="虫眼鏡アイコン">絞り込み</a>
 </div>
 </div>
 
 <section class="class__list sidebar-layout">
 <div class="container">
-<p class="mb-3"><?php echo $paged * $user_per_page - ($user_per_page-1); ?>〜<?php if($user_query->total_users >= $user_per_page) {
+<p class="mb-3"><?php echo $paged * $user_per_page - ($user_per_page-1); ?>〜<?php if ($user_query->total_users >= $user_per_page) {
     if ($paged == ceil($user_query->total_users / $user_per_page)) {
         echo $user_query->total_users;
     } else {

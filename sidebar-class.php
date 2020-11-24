@@ -1,6 +1,8 @@
 <?php
 $home = esc_url(home_url());
 $wp_url = get_template_directory_uri();
+
+$form_pref = isset($_GET['pref']) ? $_GET['pref'] : null;
 ?>
 
 <div class="sidebar">
@@ -10,8 +12,9 @@ $wp_url = get_template_directory_uri();
 <?php include('search.php'); ?>
 </div>
 
+<?php if($form_pref != '' && $form_pref != null): ?>
 <div class="sidebar__blog mt-5">
-<div class="md_topTitle">京都エリアの人気ブログ</div>
+<div class="md_topTitle"><?php echo $form_pref; ?>エリアの人気ブログ</div>
 <div class="archive">
 <a href="#" class="archive__inner row">
 <div class="col-5 img-wrap">
@@ -59,7 +62,7 @@ $wp_url = get_template_directory_uri();
 </div>
 </a>
 </div>
-
-</select>
 </div>
+<?php endif; ?>
+
 </div>
