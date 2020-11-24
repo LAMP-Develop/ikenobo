@@ -25,21 +25,21 @@ get_header(); the_post(); ?>
       <p class="guide__step-about">いけばなに興味があるけれど、私にもできるの？どんなふうにお花をいけるの？など、はじめてで気になることがある方は多いと思います。<br>まずいけばなとはどういっことなのか、いままで知らなかった発見ができます。</p>
       <div class="row archive media py-5">
           <div class="archive__inner col-sm-4">
-            <a href="###">
+            <a href="#">
             <div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
             <h3 class="md_mincho">ブログタイトルが入ります。</h3>
             <p>ブログのあらすじや簡単な説明文が入ります。ブログのあらすじや簡単な説明文が入ります。</p>
             </a>
           </div>
           <div class="archive__inner col-sm-4">
-            <a href="###">
+            <a href="#">
             <div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
             <h3 class="md_mincho">ブログタイトルが入ります。</h3>
             <p>ブログのあらすじや簡単な説明文が入ります。ブログのあらすじや簡単な説明文が入ります。</p>
             </a>
           </div>
           <div class="archive__inner col-sm-4">
-            <a href="###">
+            <a href="#">
             <div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
             <h3 class="md_mincho">ブログタイトルが入ります。</h3>
             <p>ブログのあらすじや簡単な説明文が入ります。ブログのあらすじや簡単な説明文が入ります。</p>
@@ -55,21 +55,21 @@ get_header(); the_post(); ?>
       <p class="guide__step-about">いけばながどんなことかはわかったけれど、どんなことが身につくのか、身に着けるメリットなど、<br>いけばなを通して体験・得られることをご紹介します。</p>
       <div class="row archive py-5">
           <div class="archive__inner col-sm-4">
-            <a href="###">
+            <a href="#">
             <div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
             <h3 class="md_mincho">ブログタイトルが入ります。</h3>
             <p>ブログのあらすじや簡単な説明文が入ります。ブログのあらすじや簡単な説明文が入ります。</p>
             </a>
           </div>
           <div class="archive__inner col-sm-4">
-            <a href="###">
+            <a href="#">
             <div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
             <h3 class="md_mincho">ブログタイトルが入ります。</h3>
             <p>ブログのあらすじや簡単な説明文が入ります。ブログのあらすじや簡単な説明文が入ります。</p>
             </a>
           </div>
           <div class="archive__inner col-sm-4">
-            <a href="###">
+            <a href="#">
             <div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
             <h3 class="md_mincho">ブログタイトルが入ります。</h3>
             <p>ブログのあらすじや簡単な説明文が入ります。ブログのあらすじや簡単な説明文が入ります。</p>

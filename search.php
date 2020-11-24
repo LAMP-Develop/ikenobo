@@ -10,7 +10,7 @@ $form_tags = $_GET['tags'];
 ?>
 
 <div class="sidebar__search search">
-<form id="form" class="search__form" method="GET" action="<?php $home; ?>/class/">
+<form class="search__form" method="GET" action="<?php $home; ?>/class/">
 <table class="w-100">
 <tr>
 <th>エリア指定</th>
@@ -71,11 +71,11 @@ $form_tags = $_GET['tags'];
 </td>
 <td class="row">
 <label class="col-4" for="name">市区町村</label>
-<input type="text" class="form-control col-8" id="" name="address" placeholder="" value="<?php echo $form_address; ?>">
+<input type="text" class="form-control col-8" name="address" placeholder="" value="<?php echo $form_address; ?>">
 </td>
 <td class="row">
 <label class="col-4" for="name">フリーワード</label>
-<input type="text" class="form-control col-8" id="" name="keywords" placeholder="〇〇駅" value="<?php echo $form_keywords; ?>">
+<input type="text" class="form-control col-8" name="keywords" placeholder="〇〇駅" value="<?php echo $form_keywords; ?>">
 </select>
 </td>
 </tr>

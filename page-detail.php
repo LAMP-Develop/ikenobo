@@ -75,7 +75,7 @@ foreach ($calss_search_tags as $key => $tag): ?>
 <p class="md_icon_normal"><?php echo $tag['label']; ?></p>
 <?php endforeach; ?>
 </div>
-<a href="###" class="btn btn-primary col-12">お問い合わせ</a>
+<a href="#" class="btn btn-primary col-12">お問い合わせ</a>
 </div>
 
 <div class="class__single__info bg-info py-5  mb-3">
@@ -208,52 +208,52 @@ foreach ($times as $i => $time) {
 <div class="md_topTitle mb-5 border-line">講師コラム</div>
 <div class="row archive column">
 <div class="archive__inner col-sm-4">
-<a href="###">
+<a href="#">
 <div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
 <h3 class="md_mincho">ブログタイトルが入ります。</h3>
 <p>2020.01.01</p>
 </a>
 </div>
 <div class="archive__inner col-sm-4">
-<a href="###">
+<a href="#">
 <div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
 <h3 class="md_mincho">ブログタイトルが入ります。</h3>
 <p>2020.01.01</p>
 </a>
 </div>
 <div class="archive__inner col-sm-4">
-<a href="###">
+<a href="#">
 <div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
 <h3 class="md_mincho">ブログタイトルが入ります。</h3>
 <p>2020.01.01</p>
 </a>
 </div>
 <div class="archive__inner col-sm-4">
-<a href="###">
+<a href="#">
 <div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
 <h3 class="md_mincho">ブログタイトルが入ります。</h3>
 <p>2020.01.01</p>
 </a>
 </div>
 <div class="archive__inner col-sm-4">
-<a href="###">
+<a href="#">
 <div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
 <h3 class="md_mincho">ブログタイトルが入ります。</h3>
 <p>2020.01.01</p>
 </a>
 </div>
 <div class="archive__inner col-sm-4">
-<a href="###">
+<a href="#">
 <div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
 <h3 class="md_mincho">ブログタイトルが入ります。</h3>
 <p>2020.01.01</p>
 </a>
 </div>
 </div>
-<div class="button  text-center"><a href="###" class="md_btn_lineWhite">一覧を見る</a></div>
+<div class="button  text-center"><a href="#" class="md_btn_lineWhite">一覧を見る</a></div>
 </div>
 
-<a href="###" class="btn btn-primary col-12 mb-5">お問い合わせ</a>
+<a href="#" class="btn btn-primary col-12 mb-5">お問い合わせ</a>
 
 </div>
 
