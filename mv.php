@@ -98,11 +98,13 @@ $form_tags = $_GET['tags'];
 </div>
 <!-- トップページメインビジュアル終了 -->
 <?php elseif (is_page(['contact-teacher', 'contact-class', 'contact-conecting', 'contact-help', 'contact', 'contact-thanks', 'detail']) || is_single()) : ?>
+<div class="mt-5 pt-5">
 <?php
 if (function_exists('yoast_breadcrumb')) {
     yoast_breadcrumb('<div class="bread bg-info"><p>', '</p></div>');
 }
 ?>
+</div>
 <?php elseif (is_archive()) : ?>
 
 <!-- 記事一覧ページ -->
