@@ -30,7 +30,7 @@ get_header(); ?>
 </a>
 </div>
 </div>
-<div class="button  text-center"><a href="#" class="md_btn_lineWhite">詳しく見る</a></div>
+<div class="button  text-center"><a href="<?php echo $home; ?>/media/" class="md_btn_lineWhite">詳しく見る</a></div>
 </div>
 </div>
 
@@ -44,7 +44,7 @@ get_header(); ?>
 <div class="info">
 <div class="md_subTitle mb-3">いけばなを始める前に</div>
 <div class="subText md_js_matchheight">いけばなをはじめてみたい方やいけばなを体験してみたい人を対象にした回数制のレッスンとなります。持ち物など特に不要ですので、気軽にレッスンにお越し下さい。</div>
-<div class="button text-right"><a href="#" class="md_textLink_normal">STEP1のコラムをみる</a></div>
+<div class="button text-right"><a href="<?php echo $home; ?>/guide-1/" class="md_textLink_normal">STEP1のコラムをみる</a></div>
 </div>
 </div>
 <div class="home__guide__list__inner col-sm-6">
@@ -52,7 +52,7 @@ get_header(); ?>
 <div class="info">
 <div class="md_subTitle mb-3">お稽古の基礎知識</div>
 <div class="subText md_js_matchheight">いけばなをはじめてみたい方やいけばなを体験してみたい人を対象にした回数制のレッスンとなります。持ち物など特に不要ですので、気軽にレッスンにお越し下さい。</div>
-<div class="button text-right"><a href="#" class="md_textLink_normal">STEP2のコラムをみる</a></div>
+<div class="button text-right"><a href="<?php echo $home; ?>/guide-2/" class="md_textLink_normal">STEP2のコラムをみる</a></div>
 </div>
 </div>
 <div class="home__guide__list__inner col-sm-6">
@@ -60,7 +60,7 @@ get_header(); ?>
 <div class="info">
 <div class="md_subTitle mb-3">道具の選び方</div>
 <div class="subText md_js_matchheight">いけばなをはじめてみたい方やいけばなを体験してみたい人を対象にした回数制のレッスンとなります。持ち物など特に不要ですので、気軽にレッスンにお越し下さい。</div>
-<div class="button text-right"><a href="#" class="md_textLink_normal">STEP3のコラムをみる</a></div>
+<div class="button text-right"><a href="<?php echo $home; ?>/guide-3/" class="md_textLink_normal">STEP3のコラムをみる</a></div>
 </div>
 </div>
 <div class="home__guide__list__inner col-sm-6">
@@ -68,7 +68,7 @@ get_header(); ?>
 <div class="info">
 <div class="md_subTitle mb-3">お花の楽しみ方</div>
 <div class="subText md_js_matchheight">いけばなをはじめてみたい方やいけばなを体験してみたい人を対象にした回数制のレッスンとなります。持ち物など特に不要ですので、気軽にレッスンにお越し下さい。</div>
-<div class="button text-right"><a href="#" class="md_textLink_normal">STEP4のコラムをみる</a></div>
+<div class="button text-right"><a href="<?php echo $home; ?>/guide-4/" class="md_textLink_normal">STEP4のコラムをみる</a></div>
 </div>
 </div>
 </div>
@@ -148,7 +148,7 @@ get_header(); ?>
 </a>
 </div>
 </div>
-<div class="button  text-center"><a href="#" class="md_btn_lineWhite">一覧を見る</a></div>
+<div class="button  text-center"><a href="<?php echo $home; ?>/column/" class="md_btn_lineWhite">一覧を見る</a></div>
 </div>
 </div>
 
@@ -175,16 +175,17 @@ get_header(); ?>
 <div class="md_container">
 <div class="home__link__list row">
 <div class="home__link__list__inner col-sm-3">
-<a class="md_textLink_normal md_mincho" href="#">池坊TOP</a>
+<a class="md_textLink_normal md_mincho" href="https://www.ikenobo.jp/lp/bl.html">ビギナーズレッスン</a>
 </div>
 <div class="home__link__list__inner col-sm-3">
-<a class="md_textLink_normal md_mincho" href="#">社中展</a>
+<a class="md_textLink_normal md_mincho" href="https://www.ikenobo.jp/lp/tagcampaign/index.html
+">花をいけよう</a>
 </div>
 <div class="home__link__list__inner col-sm-3">
-<a class="md_textLink_normal md_mincho" href="#">池坊TOP</a>
+<a class="md_textLink_normal md_mincho" href="#">いけばな写真集</a>
 </div>
 <div class="home__link__list__inner col-sm-3">
-<a class="md_textLink_normal md_mincho" href="#">池坊TOP</a>
+<a class="md_textLink_normal md_mincho" href="https://www.kadosha.co.jp/" target="_blank">オンラインストア花楽</a>
 </div>
 </div>
 </div>

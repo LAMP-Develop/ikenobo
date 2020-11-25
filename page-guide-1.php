@@ -83,15 +83,15 @@ get_header(); the_post(); ?>
     <div class="md_container">
       <h2 class="md_topTitle border-light text-center"><span>より深く</span><br>いけばなを知りたい方はこちら</h2>
       <div class="guide__more__list row">
-        <a class="guide__more__list__inner guide-2 col-sm-4">
+        <a href="<?php echo $home; ?>/guide-2/" class="guide__more__list__inner guide-2 col-sm-4">
           <p class="ttl md_mincho">2.お稽古の基礎知識</p>
           <p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
         </a>
-        <a class="guide__more__list__inner guide-3 col-sm-4">
+        <a href="<?php echo $home; ?>/guide-3/" class="guide__more__list__inner guide-3 col-sm-4">
           <p class="ttl md_mincho">3.道具の選び方</p>
           <p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
         </a>
-        <a class="guide__more__list__inner guide-4 col-sm-4">
+        <a href="<?php echo $home; ?>/guide-4/" class="guide__more__list__inner guide-4 col-sm-4">
           <p class="ttl md_mincho">4.お花の楽しみ方</p>
           <p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
         </a>

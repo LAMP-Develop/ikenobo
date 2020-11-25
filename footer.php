@@ -108,7 +108,7 @@ $form_tags = $_GET['tags'];
 <?php endif; ?>
 
 <div id="formLink">
-<a href="#" class="md_tategaki md_mincho">教室お問い合わせ窓口</a>
+<a href="<?php echo $home; ?>/contact/" class="md_tategaki md_mincho">教室お問い合わせ窓口</a>
 </div>
 
 <footer id="footer" class="mt-3">

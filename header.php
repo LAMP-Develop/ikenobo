@@ -48,7 +48,7 @@ $wp_url = get_template_directory_uri(); ?>
 <!-- /sideMenu start -->
 
 <nav class="global-nav">
-<div class="lang">
+<!-- <div class="lang">
 <div class="md_selectBox md_mincho">Language:
 <select name="language" id="language" class="md_mincho" onChange="location.href=value;">
 <option value="https://www.ikenobo.jp">日本語</option>
@@ -57,8 +57,8 @@ $wp_url = get_template_directory_uri(); ?>
 <option value="https://cht.ikenobo.jp">繁體中文</option>
 </select>
 </div>
-</div>
-<div class="member"><a href="member/" class="md_btn_lineWhite md_mincho">会員専用ページ</a></div>
+</div> -->
+<!-- <div class="member"><a href="member/" class="md_btn_lineWhite md_mincho">会員専用ページ</a></div> -->
 <ul class="global-nav__list">
 <li class="global-nav__item">
 </li>
@@ -67,10 +67,10 @@ $wp_url = get_template_directory_uri(); ?>
 <li class="global-nav__item"><a href="<?php echo $home; ?>" class="linkRight md_mincho">いけばなを習う</a></li>
 <li class="global-nav__item"><a href="event/index.html" class="linkRight md_mincho">花展・イベントを探す</a></li>
 <li class="global-nav__item"><a href="info/index.html" class="linkRight md_mincho">お知らせ</a></li>
-<li class="global-nav__item"><a href="" class="linkRight md_mincho">会員の方へ</a></li>
+<!-- <li class="global-nav__item"><a href="" class="linkRight md_mincho">会員の方へ</a></li>
 <li class="global-nav__item"><a href="" class="linkRight md_mincho">企業・学校関係者の方へ</a></li>
 <li class="global-nav__item"><a href="" class="linkRight md_mincho">アクセス</a></li>
-<li class="global-nav__item"><a href="" class="linkRight md_mincho">プレスリリース</a></li>
+<li class="global-nav__item"><a href="" class="linkRight md_mincho">プレスリリース</a></li> -->
 <li class="global-nav__item"><a href="event/index.html" class="linkContact md_mincho">お問い合わせ</a></li>
 </ul>
 </nav>
