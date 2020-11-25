@@ -7,7 +7,7 @@ get_header(); the_post(); ?>
   <div class="faq__list md_container">
     <div class="faq__list__inner">
       <div class="md_topTitle text-center mb-5">よくあるご質問</div>
-      <div class="faq__list__inner-table">
+
         <?php
         $args = [
             'posts_per_page' => -1,
@@ -22,12 +22,13 @@ get_header(); the_post(); ?>
         $ttl = get_the_title();
         $content = get_the_content();
         ?>
+        <div class="faq__list__inner-table">
         <dl class="ac">
           <dt class="md_mincho"><?php echo $ttl ?></dt>
           <dd><?php echo $content ?></dd>
         </dl>
+        </div>
         <?php endforeach; wp_reset_postdata(); ?>
-      </div>
     </div>
   </div>
 </div>
