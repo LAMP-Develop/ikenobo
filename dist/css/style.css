@@ -17255,16 +17255,23 @@ class 詳細
   padding: 0 0 0 10px;
   margin: 0; }
 
+.search__form .form-group.col-sm-6 {
+  position: relative; }
+  .search__form .form-group.col-sm-6::after {
+    content: '';
+    position: absolute;
+    top: calc(50% - 2.39px);
+    right: 1rem;
+    width: 4.78px;
+    height: 4.78px;
+    border-right: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    transform: rotate(45deg); }
+
 .search__form select {
-  position: relative;
   width: calc(100% - 30px);
   border: 1px solid #dddddd;
   background: #fff; }
-  .search__form select::after {
-    content: 'あああ';
-    position: absolute;
-    top: 0;
-    height: 0; }
 
 .search__form input[type="text"],
 .search__form input[type="password"],
@@ -17343,6 +17350,18 @@ class 詳細
 
 .sidebar__search .search__form {
   border: 1px solid #d4cfe5; }
+  .sidebar__search .search__form table .select-wrap {
+    position: relative; }
+    .sidebar__search .search__form table .select-wrap::after {
+      content: '';
+      position: absolute;
+      top: calc(50% - 2.39px);
+      right: 1rem;
+      width: 4.78px;
+      height: 4.78px;
+      border-right: 1px solid #dddddd;
+      border-bottom: 1px solid #dddddd;
+      transform: rotate(45deg); }
   .sidebar__search .search__form table tr {
     display: inline-grid;
     width: 100%;

@@ -37,12 +37,27 @@
 .sidebar {
   // sidebar 検索エリア
   &__search {
-
     .search {
       &__form {
         border: 1px solid $success;
 
         table {
+          .select-wrap {
+            position: relative;
+
+            &::after {
+              content: '';
+              position: absolute;
+              top: calc(50% - 2.39px);
+              right: 1rem;
+              width: 4.78px;
+              height: 4.78px;
+              border-right: 1px solid $light;
+              border-bottom: 1px solid $light;
+              transform: rotate(45deg);
+            }
+          }
+
           tr {
             display: inline-grid;
             width: 100%;
@@ -236,6 +251,7 @@
       }
     }
   }
+
   &.nomal {
     .sidebar {
       &__blog {

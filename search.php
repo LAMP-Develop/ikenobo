@@ -16,7 +16,7 @@ $form_tags = $_GET['tags'];
 <th>エリア指定</th>
 </tr>
 <tr class="content">
-<td class="row">
+<td class="row select-wrap">
 <label class="col-4" for="">都道府県</label>
 <select class="col-8" name="pref">
 <option value="" selected>都道府県</option>
@@ -69,7 +69,7 @@ $form_tags = $_GET['tags'];
 <option value="沖縄県" <?php echo $form_pref == '沖縄県' ? 'selected' : ''; ?>>沖縄県</option>
 </select>
 </td>
-<td class="row">
+<td class="row select-wrap">
 <label class="col-4" for="name">市区町村</label>
 <input type="text" class="form-control col-8" name="address" placeholder="" value="<?php echo $form_address; ?>">
 </td>
