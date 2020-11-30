@@ -85,14 +85,14 @@ $form_tags = $_GET['tags'];
 </div>
 <div class="form-group row">
 <label class="col-3">フリーワード</label>
-<input type="text" class="form-control col-9" name="keywords" placeholder="〇〇駅" value="<?php echo $form_keywords; ?>">
+<input type="text" class="form-control col-9" name="keywords" placeholder="○○駅、教室名、講師名" value="<?php echo $form_keywords; ?>">
 </div>
 <div class="row">
 <div class="search-btn border-light col-6">
-<a class="md_mincho text-center d-block js-get-geo" href="#"><img class="mr-2" src="<?php echo $wp_url; ?>/dist/images/icon_map.svg" alt="マップアイコン">現在地から検索</a>
+<a class="md_mincho text-center d-block js-get-geo" href="#"><img class="mr-2" src="<?php echo $wp_url; ?>/dist/images/icon_map.svg" alt="マップアイコン">現在地で検索</a>
 </div>
 <button type="button" class="search-btn border-light col-6" data-toggle="modal" data-target="#exampleModal">
-<a class="md_mincho text-center d-block bg-white" href="#"><img class="mr-2" src="<?php echo $wp_url; ?>/dist/images/icon_search.svg" alt="検索アイコン">こだわり検索</a>
+<a class="md_mincho text-center d-block bg-white" href="#"><img class="mr-2" src="<?php echo $wp_url; ?>/dist/images/icon_search.svg" alt="検索アイコン">詳細検索</a>
 </button>
 </div>
 <button type="submit" class="btn btn-primary col-12">検索</button>

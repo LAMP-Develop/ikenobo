@@ -1,3 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="15.381" height="15.381" viewBox="0 0 15.381 15.381">
-  <path id="icon_search" d="M2253.235,1676.844a5.636,5.636,0,0,0,3.705-1.389l5.318,5.318a.4.4,0,1,0,.573-.572l-5.318-5.318a5.66,5.66,0,1,0-4.277,1.961Zm0-10.524a4.857,4.857,0,1,1-4.857,4.857A4.863,4.863,0,0,1,2253.235,1666.32Z" transform="translate(-2247.568 -1665.511)"/>
+  <g id="グループ_123" data-name="グループ 123" transform="translate(0 0)">
+    <path id="パス_63" data-name="パス 63" d="M2253.235,1676.844a5.636,5.636,0,0,0,3.705-1.389l5.318,5.318a.4.4,0,1,0,.573-.572l-5.318-5.318a5.66,5.66,0,1,0-4.277,1.961Zm0-10.524a4.857,4.857,0,1,1-4.857,4.857A4.863,4.863,0,0,1,2253.235,1666.32Z" transform="translate(-2247.568 -1665.511)"/>
+    <g id="グループ_122" data-name="グループ 122" transform="translate(0 0.068)">
+      <line id="線_59" data-name="線 59" y2="5" transform="translate(5.5 2.966)" fill="none" stroke="#000" stroke-width="1"/>
+      <line id="線_60" data-name="線 60" y2="5" transform="translate(8 5.466) rotate(90)" fill="none" stroke="#000" stroke-width="1"/>
+    </g>
+  </g>
 </svg>

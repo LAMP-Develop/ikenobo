@@ -75,7 +75,7 @@ $form_tags = $_GET['tags'];
 </td>
 <td class="row">
 <label class="col-4" for="name">フリーワード</label>
-<input type="text" class="form-control col-8" name="keywords" placeholder="〇〇駅" value="<?php echo $form_keywords; ?>">
+<input type="text" class="form-control col-8" name="keywords" placeholder="○○駅、教室名、講師名" value="<?php echo $form_keywords; ?>">
 </select>
 </td>
 </tr>

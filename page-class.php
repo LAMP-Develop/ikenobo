@@ -125,7 +125,7 @@ get_header(); ?>
 <?php echo $form_address != '' ? $form_address.',' : ''; ?>
 <?php echo $form_keywords != '' ? '”'.$form_keywords.'”' : ''; ?>
 </p>
-<a class="filter" data-toggle="modal" data-target="#exampleModal"><img src="<?php echo $wp_url; ?>/dist/images/icon_search.svg" alt="虫眼鏡アイコン">絞り込み</a>
+<a class="filter" data-toggle="modal" data-target="#exampleModal"><img src="<?php echo $wp_url; ?>/dist/images/icon_search.svg" alt="虫眼鏡アイコン">詳細検索</a>
 </div>
 </div>
 
