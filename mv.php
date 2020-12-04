@@ -105,6 +105,10 @@ if (function_exists('yoast_breadcrumb')) {
 }
 ?>
 </div>
+<?php elseif (is_category()) : ?>
+<!-- 記事一覧ページ -->
+<div class="sub__mv column pb-5"></div>
+<!-- 記事一覧ページ終了 -->
 <?php elseif (is_archive()) : ?>
 
 <!-- 記事一覧ページ -->

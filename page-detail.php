@@ -96,30 +96,30 @@ foreach ($calss_search_tags as $key => $tag): ?>
 <td class="col-3 bg-secondary">コース</td>
 <td class="col-9 bg-white"><?php echo get_field('class_schedule', 'user_'.$user_id); ?></td>
 </tr>
-<tr class="row">
+<!-- <tr class="row">
 <td class="col-3 bg-secondary">曜日</td>
 <td class="col-9 bg-white">毎週<?php
-$weeks = get_field('class_week', 'user_'.$user_id);
-foreach ($weeks as $i => $week) {
-    if ($i > 0) {
-        echo '、';
-    }
-    echo $week.'曜日';
-}
+// $weeks = get_field('class_week', 'user_'.$user_id);
+// foreach ($weeks as $i => $week) {
+//     if ($i > 0) {
+//         echo '、';
+//     }
+//     echo $week.'曜日';
+// }
 ?></td>
 </tr>
 <tr class="row">
 <td class="col-3 bg-secondary">時間帯</td>
 <td class="col-9 bg-white"><?php
-$times = get_field('calss_times', 'user_'.$user_id);
-foreach ($times as $i => $time) {
-    if ($i > 0) {
-        echo "<br>";
-    }
-    echo $time;
-}
+// $times = get_field('calss_times', 'user_'.$user_id);
+// foreach ($times as $i => $time) {
+//     if ($i > 0) {
+//         echo "<br>";
+//     }
+//     echo $time;
+// }
 ?></td>
-</tr>
+</tr> -->
 <tr class="row">
 <td class="col-3 bg-secondary">レッスン費用</td>
 <td class="col-9 bg-white">1回 <?php echo get_field('class_lesson', 'user_'.$user_id); ?></td>

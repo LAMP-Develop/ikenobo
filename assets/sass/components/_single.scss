@@ -3,7 +3,7 @@
   タイトル + アイキャッチ
   ============================*/
   .md_topTitle {
-    margin: 1.3rem 0!important !important;
+    margin: 1.3rem 0 !important;
     padding: 0;
     letter-spacing: 0.01em;
   }
@@ -34,94 +34,8 @@
     border-bottom: 1px solid $light;
     margin-bottom: 2rem;
 
-    .col-md-8 {
-      h2,
-      h3,
-      h4,
-      h5 {
-        font-family: "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W2" , "Hiragino Mincho Pro" , "HiraMinProN-W2" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho";
-      }
-
-      h2 {
-        font-size: 1.625rem;
-        margin: 2.5em 0 1em;
-        padding: 1.6rem 0;
-        border-top: 1px solid $light;
-        border-bottom: 1px solid $light;
-        @include media-breakpoint-down(md) {
-          font-size: 1.125rem;
-          padding: 1rem 0;
-        }
-      }
-
-      h3 {
-        font-size: 1.125rem;
-        margin: 2em 0 1em;
-        @include media-breakpoint-down(md) {
-          font-size: 1.1rem;
-        }
-
-        &::before {
-          content: '▶';
-          color: $primary;
-          margin-right: 8px;
-        }
-      }
-
-      h4 {
-        font-size: 1.1rem;
-        margin: 1.6em 0 1em;
-        padding-left: 21px;
-        position: relative;
-        @include media-breakpoint-down(md) {
-          font-size: 1rem;
-        }
-
-        &::before {
-          content: '';
-          background: $primary;
-          width: 13px;
-          height: 1px;
-          position: absolute;
-          top: 50%;
-          left: 0;
-          margin-right: 8px;
-        }
-      }
-
-      ul {
-        margin-bottom: 1.6rem;
-
-        li {
-          position: relative;
-          margin-bottom: 3px;
-          padding: 0 0 0 1.5rem;
-
-          &::before {
-            content: '◇';
-            display: inline-block;
-            color: $primary;
-            position: absolute;
-            top: 2px;
-            left: 0;
-          }
-        }
-      }
-
-      a {
-        color: $primary;
-        text-decoration: underline!important;
-      }
-
-      p {
-        margin-bottom: 1.6rem;
-        line-height: 25.6px;
-        letter-spacing: 0.1em;
-      }
-    }
-
     .md_topTitle {
-      margin: 1.3rem 0!important !important;
+      margin: 1.3rem 0 !important;
       padding: 0;
       letter-spacing: 0.01em;
     }
@@ -144,6 +58,92 @@
         height: 100%;
         object-fit: cover;
       }
+    }
+  }
+
+  &-main {
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W2", "Hiragino Mincho Pro", "HiraMinProN-W2", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho";
+    }
+
+    h2 {
+      font-size: 1.625rem;
+      margin: 2.5em 0 1em;
+      padding: 1.6rem 0;
+      border-top: 1px solid $light;
+      border-bottom: 1px solid $light;
+      @include media-breakpoint-down(md) {
+        font-size: 1.125rem;
+        padding: 1rem 0;
+      }
+    }
+
+    h3 {
+      font-size: 1.125rem;
+      margin: 2em 0 1em;
+      @include media-breakpoint-down(md) {
+        font-size: 1.1rem;
+      }
+
+      &::before {
+        content: "▶";
+        color: $primary;
+        margin-right: 8px;
+      }
+    }
+
+    h4 {
+      font-size: 1.1rem;
+      margin: 1.6em 0 1em;
+      padding-left: 21px;
+      position: relative;
+      @include media-breakpoint-down(md) {
+        font-size: 1rem;
+      }
+
+      &::before {
+        content: "";
+        background: $primary;
+        width: 13px;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-right: 8px;
+      }
+    }
+
+    ul {
+      margin-bottom: 1.6rem;
+
+      li {
+        position: relative;
+        margin-bottom: 3px;
+        padding: 0 0 0 1.5rem;
+
+        &::before {
+          content: "◇";
+          display: inline-block;
+          color: $primary;
+          position: absolute;
+          top: 2px;
+          left: 0;
+        }
+      }
+    }
+
+    a {
+      color: $primary;
+      text-decoration: underline !important;
+    }
+
+    p {
+      margin-bottom: 1.6rem;
+      line-height: 25.6px;
+      letter-spacing: 0.1em;
     }
   }
 }

@@ -170,29 +170,33 @@ $thumbnail = get_field('class_pict_1', 'user_'.$user_id) != null ? get_field('cl
 <td class="col-9"><?php echo get_field('calss_station', 'user_'.$user_id); ?></td>
 </tr>
 <tr class="row">
+<td class="col-3 bg-info">コース</td>
+<td class="col-9"><?php echo get_field('class_schedule', 'user_'.$user_id); ?></td>
+</tr>
+<!-- <tr class="row">
 <td class="col-3 bg-info">曜日</td>
 <td class="col-9">毎週<?php
-$weeks = get_field('class_week', 'user_'.$user_id);
-foreach ($weeks as $i => $week) {
-    if ($i > 0) {
-        echo '、';
-    }
-    echo $week.'曜日';
-}
+// $weeks = get_field('class_week', 'user_'.$user_id);
+// foreach ($weeks as $i => $week) {
+//     if ($i > 0) {
+//         echo '、';
+//     }
+//     echo $week.'曜日';
+// }
 ?></td>
-</tr>
-<tr class="row">
+</tr> -->
+<!-- <tr class="row">
 <td class="col-3 bg-info">時間帯</td>
 <td class="col-9"><?php
-$times = get_field('calss_times', 'user_'.$user_id);
-foreach ($times as $i => $time) {
-    if ($i > 0) {
-        echo "<br>";
-    }
-    echo $time;
-}
+// $times = get_field('calss_times', 'user_'.$user_id);
+// foreach ($times as $i => $time) {
+//     if ($i > 0) {
+//         echo "<br>";
+//     }
+//     echo $time;
+// }
 ?></td>
-</tr>
+</tr> -->
 </table>
 <div class="home__keyword-list mt-3">
 <?php
@@ -201,6 +205,7 @@ foreach ($calss_search_tags as $key => $tag): ?>
 <p class="md_icon_normal"><?php echo $tag['label']; ?></p>
 <?php endforeach; ?>
 </div>
+<small class="d-block mt-1 text-right" style="font-size: 10px;">ID：<?php echo get_field('teacher_montei_no', 'user_'.$user_id); ?></small>
 </a>
 </div>
 <?php endforeach; ?>
