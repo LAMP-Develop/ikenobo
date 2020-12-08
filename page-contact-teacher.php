@@ -34,7 +34,7 @@ if (isset($_GET['email'])) {
 </div>
 </div>
 </div>
-<div class="contact-teacher__help bg-info col-sm-6 rounded py-4">
+<div class="contact-teacher__help bg-info col-sm-6 rounded py-4" style="z-index: 1;">
 <h3 class="contact-teacher__help-ttl md_mincho text-center">講師への連絡が取れない方</h3>
 <ul class="contact-teacher-list my-4">
 <li class="contact-teacher-list-item">何度電話しても繋がらない</li>
