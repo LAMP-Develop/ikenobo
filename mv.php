@@ -13,7 +13,7 @@ $form_tags = $_GET['tags'];
 ?>
 
 <?php if (!is_page('class')): ?>
-<?php if (is_home() || is_front_page()): ?>
+<?php if (is_front_page()): ?>
 <!-- トップページメインビジュアル -->
 <div class="home__mv pb-5">
 <div class="md_container">
@@ -106,7 +106,7 @@ if (function_exists('yoast_breadcrumb')) {
 ?>
 <?php
 // カテゴリーページ
-elseif (is_category()) : ?>
+elseif (is_category() || is_home()) : ?>
 <div class="sub__mv column pb-5"></div>
 <?php
 // アーカイブページ

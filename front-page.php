@@ -47,7 +47,7 @@ if (has_post_thumbnail()) {
 <div class="info">
 <div class="md_subTitle mb-3">いけばなを始める前に</div>
 <div class="subText md_js_matchheight">いけばなをはじめてみたい方やいけばなを体験してみたい人を対象にした回数制のレッスンとなります。持ち物など特に不要ですので、気軽にレッスンにお越し下さい。</div>
-<div class="button text-right"><a href="<?php echo $home; ?>/guide-1/" class="md_textLink_normal">STEP1のコラムをみる</a></div>
+<div class="button text-right"><a href="<?php echo $home; ?>/beginner/" class="md_textLink_normal">STEP1のコラムをみる</a></div>
 </div>
 </div>
 <div class="home__guide__list__inner col-sm-6">
@@ -55,7 +55,7 @@ if (has_post_thumbnail()) {
 <div class="info">
 <div class="md_subTitle mb-3">お稽古の基礎知識</div>
 <div class="subText md_js_matchheight">いけばなをはじめてみたい方やいけばなを体験してみたい人を対象にした回数制のレッスンとなります。持ち物など特に不要ですので、気軽にレッスンにお越し下さい。</div>
-<div class="button text-right"><a href="<?php echo $home; ?>/guide-2/" class="md_textLink_normal">STEP2のコラムをみる</a></div>
+<div class="button text-right"><a href="<?php echo $home; ?>/beginner#step2" class="md_textLink_normal">STEP2のコラムをみる</a></div>
 </div>
 </div>
 <div class="home__guide__list__inner col-sm-6">
@@ -63,7 +63,7 @@ if (has_post_thumbnail()) {
 <div class="info">
 <div class="md_subTitle mb-3">道具の選び方</div>
 <div class="subText md_js_matchheight">いけばなをはじめてみたい方やいけばなを体験してみたい人を対象にした回数制のレッスンとなります。持ち物など特に不要ですので、気軽にレッスンにお越し下さい。</div>
-<div class="button text-right"><a href="<?php echo $home; ?>/guide-3/" class="md_textLink_normal">STEP3のコラムをみる</a></div>
+<div class="button text-right"><a href="<?php echo $home; ?>/beginner#step3" class="md_textLink_normal">STEP3のコラムをみる</a></div>
 </div>
 </div>
 <div class="home__guide__list__inner col-sm-6">
@@ -71,7 +71,7 @@ if (has_post_thumbnail()) {
 <div class="info">
 <div class="md_subTitle mb-3">お花の楽しみ方</div>
 <div class="subText md_js_matchheight">いけばなをはじめてみたい方やいけばなを体験してみたい人を対象にした回数制のレッスンとなります。持ち物など特に不要ですので、気軽にレッスンにお越し下さい。</div>
-<div class="button text-right"><a href="<?php echo $home; ?>/guide-4/" class="md_textLink_normal">STEP4のコラムをみる</a></div>
+<div class="button text-right"><a href="<?php echo $home; ?>/beginner#step4" class="md_textLink_normal">STEP4のコラムをみる</a></div>
 </div>
 </div>
 </div>
@@ -94,64 +94,36 @@ if (has_post_thumbnail()) {
 <div class="md_container">
 <div class="md_topTitle mb-5 flower-01 border-line">全国講師コラム</div>
 <div class="row archive column">
+<?php
+$args = [
+  'posts_per_page' => 8,
+  'orderby' => 'date',
+  'order' => 'DESC',
+];
+$posts = get_posts($args);
+foreach ($posts as $post):
+setup_postdata($post);
+$t = get_the_title();
+$p = get_the_permalink();
+if (has_post_thumbnail()) {
+    $i = get_the_post_thumbnail_url(get_the_ID(), 'large');
+} else {
+    $i = $wp_url.'/dist/images/guide-1_main.png';
+}
+
+$author_id = get_the_author_meta('ID');
+$class_name = get_field('class_name', 'user_'. $author_id);
+?>
 <div class="archive__inner col-sm-3">
-<a href="#">
-<div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
-<h3 class="md_mincho">ブログタイトルが入ります。</h3>
-<p><span class="md_icon_purple mr-2">教室名</span>池坊いけばな教室</p>
+<a href="<?php echo $p; ?>">
+<div class="img-wrap"><img src="<?php echo $i; ?>" alt="<?php echo $t; ?>"></div>
+<h3 class="md_mincho"><?php echo $t; ?></h3>
+<p><span class="md_icon_purple mr-2">教室名</span><?php echo $class_name; ?></p>
 </a>
 </div>
-<div class="archive__inner col-sm-3">
-<a href="#">
-<div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
-<h3 class="md_mincho">ブログタイトルが入ります。</h3>
-<p><span class="md_icon_purple mr-2">教室名</span>池坊いけばな教室</p>
-</a>
+<?php endforeach; wp_reset_postdata(); ?>
 </div>
-<div class="archive__inner col-sm-3">
-<a href="#">
-<div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
-<h3 class="md_mincho">ブログタイトルが入ります。</h3>
-<p><span class="md_icon_purple mr-2">教室名</span>池坊いけばな教室</p>
-</a>
-</div>
-<div class="archive__inner col-sm-3">
-<a href="#">
-<div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
-<h3 class="md_mincho">ブログタイトルが入ります。</h3>
-<p><span class="md_icon_purple mr-2">教室名</span>池坊いけばな教室</p>
-</a>
-</div>
-<div class="archive__inner col-sm-3">
-<a href="#">
-<div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
-<h3 class="md_mincho">ブログタイトルが入ります。</h3>
-<p><span class="md_icon_purple mr-2">教室名</span>池坊いけばな教室</p>
-</a>
-</div>
-<div class="archive__inner col-sm-3">
-<a href="#">
-<div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
-<h3 class="md_mincho">ブログタイトルが入ります。</h3>
-<p><span class="md_icon_purple mr-2">教室名</span>池坊いけばな教室</p>
-</a>
-</div>
-<div class="archive__inner col-sm-3">
-<a href="#">
-<div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
-<h3 class="md_mincho">ブログタイトルが入ります。</h3>
-<p><span class="md_icon_purple mr-2">教室名</span>池坊いけばな教室</p>
-</a>
-</div>
-<div class="archive__inner col-sm-3">
-<a href="#">
-<div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
-<h3 class="md_mincho">ブログタイトルが入ります。</h3>
-<p><span class="md_icon_purple mr-2">教室名</span>池坊いけばな教室</p>
-</a>
-</div>
-</div>
-<div class="button  text-center"><a href="<?php echo $home; ?>/column/" class="md_btn_lineWhite">一覧を見る</a></div>
+<div class="button  text-center"><a href="<?php echo $home; ?>/blog/" class="md_btn_lineWhite">一覧を見る</a></div>
 </div>
 </div>
 

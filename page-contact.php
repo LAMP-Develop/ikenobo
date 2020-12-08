@@ -9,40 +9,40 @@ global $post;
 $ttl = $post->post_title; ?>
 
 <div class="contact">
-  <div class="md_container">
-    <h2 class="md_topTitle mb-3 p-0"><?php echo $ttl; ?></h2>
+<div class="md_container">
+<h2 class="md_topTitle mb-3 p-0"><?php echo $ttl; ?></h2>
 
-    <?php if (is_page('contact') || is_page('contact-help')): ?>
-      <!-- 事務局へ直接お問い合わせ -->
-      <!-- 教室紹介お問い合わせ窓口 -->
-      <p class="contact__text mb-4">※こちらのお問い合わせは、<span class="text-primary">当サイト運営事務局宛</span>のお問い合せ窓口です。講師の方へのお問い合わせは、各教室詳細ページの「お問い合わせ」ボタンからお問い合わせください。</p>
-    <?php elseif (is_page('contact-class')): ?>
-      <!-- 教室紹介のお問い合わせ -->
-      <p class="contact__text mb-4">こちらのお問い合わせは講師への直接のお問い合わせになります。<br>内容を確認後、講師からあなたにご連絡をいたします。あなたのご希望に合うかどうかをお確かめください。</p>
-    <?php else: ?>
-      <!-- 講師への連絡が取れない方 -->
-      <p class="contact__text mb-4">こちらのお問い合わせは<span class="text-primary">当サイト運営事務局宛</span>のお問い合わせになります。<br>お問い合わせがあった旨を教室の講師にお伝えします。<br>内容の確認後、講師からあなたにご連絡をいたします。あなたのご希望に合うかどうかをお確かめください。</p>
-    <?php endif; ?>
+<?php if (is_page('contact') || is_page('contact-help')): ?>
+<!-- 事務局へ直接お問い合わせ -->
+<!-- 教室紹介お問い合わせ窓口 -->
+<p class="contact__text mb-4">※こちらのお問い合わせは、<span class="text-primary">当サイト運営事務局宛</span>のお問い合せ窓口です。講師の方へのお問い合わせは、各教室詳細ページの「お問い合わせ」ボタンからお問い合わせください。</p>
+<?php elseif (is_page('contact-class')): ?>
+<!-- 教室紹介のお問い合わせ -->
+<!-- <p class="contact__text mb-4">こちらのお問い合わせは講師への直接のお問い合わせになります。<br>内容を確認後、講師からあなたにご連絡をいたします。あなたのご希望に合うかどうかをお確かめください。</p> -->
+<?php else: ?>
+<!-- 講師への連絡が取れない方 -->
+<p class="contact__text mb-4">こちらのお問い合わせは<span class="text-primary">当サイト運営事務局宛</span>のお問い合わせになります。<br>お問い合わせがあった旨を教室の講師にお伝えします。<br>内容の確認後、講師からあなたにご連絡をいたします。あなたのご希望に合うかどうかをお確かめください。</p>
+<?php endif; ?>
 
-    <div class="contact__step__list row mb-4">
-      <div class="contact__step__list-item py-2 check col-4 text-center">
-        <p class="contact__step__list-item-num text-primary">STEP 1</p>
-        <p class="md_mincho">情報入力</p>
-      </div>
-      <div class="contact__step__list-item py-2 col-4 text-center">
-        <p class="contact__step__list-item-num text-primary">STEP 2</p>
-        <p class="md_mincho">送信確認</p>
-      </div>
-      <div class="contact__step__list-item py-2 col-4 text-center">
-        <p class="contact__step__list-item-num text-primary">STEP 3</p>
-        <p class="md_mincho">送信完了</p>
-      </div>
-    </div>
-    <div class="contact___form">
-      <?php the_content(); ?>
-    </div>
+<div class="contact__step__list row mb-4">
+<div class="contact__step__list-item py-2 check col-4 text-center">
+<p class="contact__step__list-item-num text-primary">STEP 1</p>
+<p class="md_mincho">情報入力</p>
+</div>
+<div class="contact__step__list-item py-2 col-4 text-center">
+<p class="contact__step__list-item-num text-primary">STEP 2</p>
+<p class="md_mincho">送信確認</p>
+</div>
+<div class="contact__step__list-item py-2 col-4 text-center">
+<p class="contact__step__list-item-num text-primary">STEP 3</p>
+<p class="md_mincho">送信完了</p>
+</div>
+</div>
+<div class="contact___form">
+<?php the_content(); ?>
+</div>
 
-  </div>
+</div>
 </div>
 
 <?php get_footer();

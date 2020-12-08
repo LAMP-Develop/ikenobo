@@ -37,3 +37,28 @@
     }
   }
 }
+
+.wp-pagenavi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+
+  a,
+  span {
+    display: block;
+    box-sizing: border-box;
+    padding: 0.8em 1em;
+    border-top: solid 1px #eee;
+    border-left: solid 1px #eee;
+    border-bottom: solid 1px #eee;
+    &:hover,
+    &.current {
+      color: $white;
+      background-color: $primary;
+    }
+    &:last-child {
+      border-right: solid 1px #eee;
+    }
+  }
+}

@@ -1,14 +1,22 @@
 <?php
 $home = esc_url(home_url());
 $wp_url = get_template_directory_uri();
-get_header(); ?>
+get_header();
 
-<?php
 $user_id = (int)$_GET['id'];
 $users = get_userdata($user_id);
-
 $class_name = get_field('class_name', 'user_'.$user_id); // 教室名
 $thumbnail = get_field('class_pict_1', 'user_'.$user_id);
+$class_contact = get_field('class_contact', 'user_'.$user_id);
+if ($class_contact['value'] == 1) {
+    $class_email = get_field('class_email', 'user_'.$user_id);
+    $class_tel = get_field('class_tel', 'user_'.$user_id);
+    $contact_url = '/contact-teacher?tel='.$class_tel.'&email='.$class_email;
+} else {
+    $class_email = null;
+    $class_tel = null;
+    $contact_url = '/contact-class/';
+}
 ?>
 
 <section class="class__single sidebar-layout">
@@ -75,7 +83,7 @@ foreach ($calss_search_tags as $key => $tag): ?>
 <p class="md_icon_normal"><?php echo $tag['label']; ?></p>
 <?php endforeach; ?>
 </div>
-<a href="#" class="btn btn-primary col-12">お問い合わせ</a>
+<a href="<?php echo $home.$contact_url; ?>" class="btn btn-primary col-12">お問い合わせ</a>
 </div>
 
 <div class="class__single__info bg-info py-5  mb-3">
@@ -96,30 +104,6 @@ foreach ($calss_search_tags as $key => $tag): ?>
 <td class="col-3 bg-secondary">コース</td>
 <td class="col-9 bg-white"><?php echo get_field('class_schedule', 'user_'.$user_id); ?></td>
 </tr>
-<!-- <tr class="row">
-<td class="col-3 bg-secondary">曜日</td>
-<td class="col-9 bg-white">毎週<?php
-// $weeks = get_field('class_week', 'user_'.$user_id);
-// foreach ($weeks as $i => $week) {
-//     if ($i > 0) {
-//         echo '、';
-//     }
-//     echo $week.'曜日';
-// }
-?></td>
-</tr>
-<tr class="row">
-<td class="col-3 bg-secondary">時間帯</td>
-<td class="col-9 bg-white"><?php
-// $times = get_field('calss_times', 'user_'.$user_id);
-// foreach ($times as $i => $time) {
-//     if ($i > 0) {
-//         echo "<br>";
-//     }
-//     echo $time;
-// }
-?></td>
-</tr> -->
 <tr class="row">
 <td class="col-3 bg-secondary">レッスン費用</td>
 <td class="col-9 bg-white">1回 <?php echo get_field('class_lesson', 'user_'.$user_id); ?></td>
@@ -139,7 +123,6 @@ foreach ($calss_search_tags as $key => $tag): ?>
 </table>
 <div class="embed-responsive embed-responsive-16by9">
 <iframe class="embed-responsive-item" src="https://maps.google.co.jp/maps?output=embed&q=<?php echo get_field('calss_geo', 'user_'.$user_id); ?>"></iframe>
-<!-- <a class="bg-white text-center" href="#">Google mapで見る</a> -->
 </div>
 </div>
 
@@ -156,12 +139,12 @@ foreach ($calss_search_tags as $key => $tag): ?>
 </div>
 <ul class="bg-white">
 <li><?php echo get_field('teacher_sex', 'user_'.$user_id)['label']; ?></li>
-<?php if(get_field('teacher_profile', 'user_'.$user_id)): ?>
+<?php if (get_field('teacher_profile', 'user_'.$user_id)): ?>
 <li><?php echo get_field('teacher_profile', 'user_'.$user_id); ?></li>
 <?php endif; ?>
 </ul>
 </div>
-<?php if(get_field('teacher_voice', 'user_'.$user_id)): ?>
+<?php if (get_field('teacher_voice', 'user_'.$user_id)): ?>
 <div class="comment bg-white">
 <p><?php echo get_field('teacher_voice', 'user_'.$user_id); ?></p>
 </div>
@@ -169,14 +152,14 @@ foreach ($calss_search_tags as $key => $tag): ?>
 </div>
 </div>
 </div>
-<?php if(get_field('students_voice_1', 'user_'.$user_id)): ?>
+<?php if (get_field('students_voice_1', 'user_'.$user_id)): ?>
 <div class="class__single__voice my-5">
 <div class="md_topTitle mb-3 text-center">生徒の声</div>
 <div class="row">
 <div class="class__single__voice__inner col-sm-6">
 <p><?php echo get_field('students_voice_1', 'user_'.$user_id); ?></p>
 </div>
-<?php if(get_field('students_voice_2', 'user_'.$user_id)): ?>
+<?php if (get_field('students_voice_2', 'user_'.$user_id)): ?>
 <div class="class__single__voice__inner col-sm-6">
 <p><?php echo get_field('students_voice_2', 'user_'.$user_id); ?></p>
 </div>
@@ -188,16 +171,16 @@ foreach ($calss_search_tags as $key => $tag): ?>
 <?php if (get_field('class_hp_url', 'user_'.$user_id) != false || get_field('class_twitter_url', 'user_'.$user_id) != false || get_field('class_insta_url', 'user_'.$user_id) != false || get_field('class_fb_url', 'user_'.$user_id) != false): ?>
 <div class="class__single__sns  py-5">
 <div class="row">
-<?php if(get_field('class_hp_url', 'user_'.$user_id)): ?>
+<?php if (get_field('class_hp_url', 'user_'.$user_id)): ?>
 <a href="<?php echo get_field('class_hp_url', 'user_'.$user_id); ?>" class="class__single__sns__inner col-sm-3 text-center py-3 md_mincho" target="_blank">ホームページ</a>
 <?php endif; ?>
-<?php if(get_field('class_twitter_url', 'user_'.$user_id)): ?>
+<?php if (get_field('class_twitter_url', 'user_'.$user_id)): ?>
 <a href="<?php echo get_field('class_twitter_url', 'user_'.$user_id); ?>" class="class__single__sns__inner col-sm-3 text-center py-3 md_mincho">Twitter</a>
 <?php endif; ?>
-<?php if(get_field('class_insta_url', 'user_'.$user_id)): ?>
+<?php if (get_field('class_insta_url', 'user_'.$user_id)): ?>
 <a href="<?php echo get_field('class_insta_url', 'user_'.$user_id); ?>" class="class__single__sns__inner col-sm-3 text-center py-3 md_mincho">Instagram</a>
 <?php endif; ?>
-<?php if(get_field('class_fb_url', 'user_'.$user_id)): ?>
+<?php if (get_field('class_fb_url', 'user_'.$user_id)): ?>
 <a href="<?php echo get_field('class_fb_url', 'user_'.$user_id); ?>" class="class__single__sns__inner col-sm-3 text-center py-3 md_mincho">Facebook</a>
 <?php endif; ?>
 </div>
@@ -207,53 +190,37 @@ foreach ($calss_search_tags as $key => $tag): ?>
 <div class="home__column py-5">
 <div class="md_topTitle mb-5 border-line">講師コラム</div>
 <div class="row archive column">
+<?php
+$args = [
+  'posts_per_page' => 6,
+  'orderby' => 'date',
+  'order' => 'DESC',
+  'author' => $user_id,
+];
+$posts = get_posts($args);
+foreach ($posts as $post):
+setup_postdata($post);
+$t = get_the_title();
+$p = get_the_permalink();
+if (has_post_thumbnail()) {
+    $i = get_the_post_thumbnail_url(get_the_ID(), 'large');
+} else {
+    $i = $wp_url.'/dist/images/guide-1_main.png';
+}
+?>
 <div class="archive__inner col-sm-4">
-<a href="#">
-<div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
-<h3 class="md_mincho">ブログタイトルが入ります。</h3>
-<p>2020.01.01</p>
+<a href="<?php echo $p; ?>">
+<div class="img-wrap"><img src="<?php echo $i; ?>" alt="<?php echo $t; ?>"></div>
+<h3 class="md_mincho"><?php echo $t; ?></h3>
+<p><?php the_time('Y.m.d'); ?></p>
 </a>
 </div>
-<div class="archive__inner col-sm-4">
-<a href="#">
-<div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
-<h3 class="md_mincho">ブログタイトルが入ります。</h3>
-<p>2020.01.01</p>
-</a>
+<?php endforeach; wp_reset_postdata(); ?>
 </div>
-<div class="archive__inner col-sm-4">
-<a href="#">
-<div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
-<h3 class="md_mincho">ブログタイトルが入ります。</h3>
-<p>2020.01.01</p>
-</a>
-</div>
-<div class="archive__inner col-sm-4">
-<a href="#">
-<div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
-<h3 class="md_mincho">ブログタイトルが入ります。</h3>
-<p>2020.01.01</p>
-</a>
-</div>
-<div class="archive__inner col-sm-4">
-<a href="#">
-<div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
-<h3 class="md_mincho">ブログタイトルが入ります。</h3>
-<p>2020.01.01</p>
-</a>
-</div>
-<div class="archive__inner col-sm-4">
-<a href="#">
-<div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
-<h3 class="md_mincho">ブログタイトルが入ります。</h3>
-<p>2020.01.01</p>
-</a>
-</div>
-</div>
-<div class="button  text-center"><a href="#" class="md_btn_lineWhite">一覧を見る</a></div>
+<div class="button text-center"><a href="<?php echo $home; ?>/blog/" class="md_btn_lineWhite">一覧を見る</a></div>
 </div>
 
-<a href="#" class="btn btn-primary col-12 mb-5">お問い合わせ</a>
+<a href="<?php echo $home.$contact_url; ?>" class="btn btn-primary col-12 mb-5">お問い合わせ</a>
 
 </div>
 

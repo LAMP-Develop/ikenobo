@@ -14,7 +14,6 @@ $form_tags = $_GET['tags'];
 
 </main>
 
-<?php if (!is_single('contact') || !is_single('contact')): ?>
 <div class="footer__search search mt-5 py-5">
 <div class="container p-0">
 <div class="row">
@@ -103,12 +102,8 @@ $form_tags = $_GET['tags'];
 </div>
 </div>
 
-<?php else: ?>
-
-<?php endif; ?>
-
 <div id="formLink">
-<a href="<?php echo $home; ?>/contact/" class="md_tategaki md_mincho">教室お問い合わせ窓口</a>
+<a href="<?php echo $home; ?>/contact-help/" class="md_tategaki md_mincho">教室お問い合わせ窓口</a>
 </div>
 
 <footer id="footer" class="mt-3">
