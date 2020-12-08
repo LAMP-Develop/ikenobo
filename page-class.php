@@ -22,6 +22,19 @@ $args = [
     ],
 ];
 
+// フィルター：表示設定
+$args['meta_query'][] = [
+    'relation' => 'OR',
+    [
+        'key' => 'class_hidden',
+        'value' => 0,
+        'compare' => '='
+    ],[
+        'key' => 'class_hidden',
+        'compare' => 'NOT EXISTS'
+    ]
+];
+
 // フィルター：都道府県
 if ($form_pref != '' && $form_pref != null) {
     $args['meta_query'][] = [

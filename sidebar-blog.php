@@ -4,20 +4,23 @@ $wp_url = get_template_directory_uri(); ?>
 
 <div class="sidebar nomal">
 
-<!-- <div class="sidebar__more">
+<div class="sidebar__more">
 <h2 class="md_topTitle border-light text-center"><span>より深く</span><br>いけばなを知りたい方はこちら</h2>
 <div class="guide__more__list">
-<a href="<?php echo $home; ?>/guide-2/" class="guide__more__list__inner guide-2">
+<a href="<?php echo $home; ?>/beginner/" class="guide__more__list__inner guide-1">
+<p class="ttl md_mincho">1.いけばなを始める前に</p>
+</a>
+<a href="<?php echo $home; ?>/beginner#step2" class="guide__more__list__inner guide-2">
 <p class="ttl md_mincho">2.お稽古の基礎知識</p>
 </a>
-<a href="<?php echo $home; ?>/guide-3/" class="guide__more__list__inner guide-3">
+<a href="<?php echo $home; ?>/beginner#step3" class="guide__more__list__inner guide-3">
 <p class="ttl md_mincho">3.道具の選び方</p>
 </a>
-<a href="<?php echo $home; ?>/guide-4/" class="guide__more__list__inner guide-4">
+<a href="<?php echo $home; ?>/beginner#step4" class="guide__more__list__inner guide-4">
 <p class="ttl md_mincho">4.お花の楽しみ方</p>
 </a>
 </div>
-</div> -->
+</div>
 
 <div class="sidebar__blog mt-5">
 <div class="md_topTitle">IKENOBOメディア</div>
