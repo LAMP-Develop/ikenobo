@@ -96,37 +96,29 @@ $form_tags = $_GET['tags'];
 </div>
 </div>
 </div>
-<!-- トップページメインビジュアル終了 -->
-<?php elseif (is_page(['contact-teacher', 'contact-class', 'contact-conecting', 'contact-help', 'contact', 'contact-thanks', 'detail']) || is_single()) : ?>
-<div class="mt-5 pt-5">
+<?php
+// MVなし
+elseif (is_page(['contact-teacher', 'contact-class', 'contact-conecting', 'contact-help', 'contact', 'contact-thanks', 'detail']) || is_single()) : ?>
 <?php
 if (function_exists('yoast_breadcrumb')) {
     yoast_breadcrumb('<div class="bread bg-info"><p>', '</p></div>');
 }
 ?>
-</div>
-<?php elseif (is_category()) : ?>
-<!-- 記事一覧ページ -->
+<?php
+// カテゴリーページ
+elseif (is_category()) : ?>
 <div class="sub__mv column pb-5"></div>
-<!-- 記事一覧ページ終了 -->
-<?php elseif (is_archive()) : ?>
-
-<!-- 記事一覧ページ -->
+<?php
+// アーカイブページ
+elseif (is_archive()) : ?>
 <?php echo esc_html(get_post_type_object(get_post_type())->name); ?>
 <?php echo $cp_slug = get_query_var('post_type'); ?>
 <div class="sub__mv <?php echo $cp_slug ?> pb-5"></div>
-<!-- 記事一覧ページ終了 -->
-
-<?php else: ?>
-
-<!-- 下層ページメインビジュアル -->
 <?php
+else:
   global $post;
   $slug = $post->post_name;
 ?>
 <div class="sub__mv <?php echo $slug ?> pb-5"></div>
-
-<!-- 下層ページメインビジュアル終了 -->
-
 <?php endif; ?>
 <?php endif; ?>

@@ -7,30 +7,33 @@ get_header(); ?>
 <div class="md_container">
 <div class="md_topTitle mb-5 flower-01 border-line">IKENOBOメディア</div>
 <div class="row archive media">
+<?php
+$args = [
+    'posts_per_page' => 3,
+    'post_type' => 'ikenobomedia',
+    'orderby' => 'date',
+    'order' => 'DESC'
+];
+$posts = get_posts($args);
+foreach ($posts as $post): setup_postdata($post);
+$t = get_the_title();
+$p = get_the_permalink();
+if (has_post_thumbnail()) {
+    $i = get_the_post_thumbnail_url(get_the_ID(), 'large');
+} else {
+    $i = $wp_url.'/dist/images/guide-1_main.png';
+}
+?>
 <div class="archive__inner col-sm-4">
-<a href="#">
-<div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
-<h3 class="md_mincho">ブログタイトルが入ります。</h3>
-<p>2020.01.01</p>
-
+<a href="<?php echo $p; ?>">
+<div class="img-wrap"><img src="<?php echo $i; ?>" alt="<?php echo $t; ?>"></div>
+<h3 class="md_mincho"><?php echo $t; ?></h3>
+<p><?php the_time('Y.m.d'); ?></p>
 </a>
 </div>
-<div class="archive__inner col-sm-4">
-<a href="#">
-<div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
-<h3 class="md_mincho">ブログタイトルが入ります。</h3>
-<p>2020.01.01</p>
-</a>
+<?php endforeach; wp_reset_postdata(); ?>
 </div>
-<div class="archive__inner col-sm-4">
-<a href="#">
-<div class="img-wrap"><img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="ブログタイトルが入ります。"></div>
-<h3 class="md_mincho">ブログタイトルが入ります。</h3>
-<p>2020.01.01</p>
-</a>
-</div>
-</div>
-<div class="button  text-center"><a href="<?php echo $home; ?>/media/" class="md_btn_lineWhite">詳しく見る</a></div>
+<div class="button  text-center"><a href="<?php echo $home; ?>/ikenobomedia/" class="md_btn_lineWhite">詳しく見る</a></div>
 </div>
 </div>
 
