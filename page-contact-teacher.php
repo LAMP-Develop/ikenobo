@@ -23,14 +23,17 @@ if (isset($_GET['email'])) {
 <h3 class="contact-teacher-ttl md_mincho mb-4">電話でお問い合わせ</h3>
 <p class="mb-4">お電話では「池坊のホームページを見て」とお伝え下さい。<br>レッスン中の場合など、出られない場合もあります。改めておかけ直しください。</p>
 <div class="w-100 text-center">
-<a class="btn btn-primary text-center pl-5 pr-5" href="<?php echo $home ?>"><img class="mr-2" src="<?php echo $wp_url; ?>/dist/images/icon_phone.svg" alt="電話アイコン">教室へ電話する</a>
+<a class="btn btn-primary text-center pl-5 pr-5" href="tel:<?php echo $tel; ?>"><img class="mr-2" src="<?php echo $wp_url; ?>/dist/images/icon_phone.svg" alt="電話アイコン">教室へ電話する</a>
 </div>
-<a class="d-block w-100 text-center mt-3" href="tel:<?php echo $tel; ?>">TEL：<?php echo $tel; ?></a>
+<!-- <a class="d-block w-100 text-center mt-3" href="tel:<?php echo $tel; ?>">TEL：<?php echo $tel; ?></a> -->
 </div>
 <div class="col-sm-6 mb-4">
 <h3 class="contact-teacher-ttl md_mincho mb-4">メールでお問い合わせ</h3>
 <div class="w-100 text-center">
-<a class="btn btn-primary text-center pl-5 pr-5" href="mailto:<?php echo $email; ?>"><img class="mr-2" src="<?php echo $wp_url; ?>/dist/images/icon_mail.svg" alt="メールアイコン">メールでお問い合わせ</a>
+<a class="btn btn-primary text-center pl-5 pr-5" href="mailto:<?php echo $email; ?>">
+<img class="d-inline-block align-middle mr-2" src="<?php echo $wp_url; ?>/dist/images/icon_mail.svg" alt="メールアイコン">
+<span class="d-inline-block align-middle">メールでお問い合わせ</span>
+</a>
 </div>
 </div>
 </div>

@@ -23,7 +23,7 @@ $form_tags = $_GET['tags'];
 <div class="row">
 <div class="form-group row col-sm-6">
 <label class="col-4">都道府県</label>
-<select class="col-8" name="pref">
+<select class="col-8 form-control" name="pref">
 <option value="" selected>都道府県</option>
 <option value="北海道" <?php echo $form_pref == '北海道' ? 'selected' : ''; ?>>北海道</option>
 <option value="青森県" <?php echo $form_pref == '青森県' ? 'selected' : ''; ?>>青森県</option>

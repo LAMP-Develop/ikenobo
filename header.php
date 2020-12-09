@@ -71,7 +71,7 @@ $wp_url = get_template_directory_uri(); ?>
 <li class="global-nav__item"><a href="" class="linkRight md_mincho">企業・学校関係者の方へ</a></li>
 <li class="global-nav__item"><a href="" class="linkRight md_mincho">アクセス</a></li>
 <li class="global-nav__item"><a href="" class="linkRight md_mincho">プレスリリース</a></li> -->
-<li class="global-nav__item"><a href="event/index.html" class="linkContact md_mincho">お問い合わせ</a></li>
+<li class="global-nav__item"><a href="<?php echo $home; ?>/contact-help/" class="linkContact md_mincho">教室お問い合わせ窓口</a></li>
 </ul>
 </nav>
 <div class="hamburger" id="js-hamburger">

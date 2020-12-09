@@ -42,7 +42,7 @@ if (has_post_thumbnail()) {
     $i = $wp_url.'/dist/images/guide-1_main.png';
 }
 ?>
-<a href="<?php $p; ?>" class="archive__inner row">
+<a href="<?php echo $p; ?>" class="archive__inner row">
 <div class="col-5 img-wrap">
 <img src="<?php echo $i; ?>" alt="<?php echo $t; ?>">
 </div>

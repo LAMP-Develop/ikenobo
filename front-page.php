@@ -46,7 +46,7 @@ if (has_post_thumbnail()) {
 <img src="<?php echo $wp_url; ?>/dist/images/guide-1_main.png" alt="いけばなを始める前に" srcset="<?php echo $wp_url; ?>/dist/images/guide-1_main.png 1x, <?php echo $wp_url; ?>/dist/images/guide-1_main@2x.png 2x">
 <div class="info">
 <div class="md_subTitle mb-3">いけばなを始める前に</div>
-<div class="subText md_js_matchheight">いけばなをはじめてみたい方やいけばなを体験してみたい人を対象にした回数制のレッスンとなります。持ち物など特に不要ですので、気軽にレッスンにお越し下さい。</div>
+<div class="subText md_js_matchheight">いけばなって実際どういうものなの？いけばなって何が身につくの？など、いけばなに感じる疑問やいけばなを始める前に知っておきたい基本的な知識などをお教えします。</div>
 <div class="button text-right"><a href="<?php echo $home; ?>/beginner/" class="md_textLink_normal">STEP1のコラムをみる</a></div>
 </div>
 </div>
@@ -54,7 +54,7 @@ if (has_post_thumbnail()) {
 <img src="<?php echo $wp_url; ?>/dist/images/guide-2_main.png" alt="お稽古の基礎知識" srcset="<?php echo $wp_url; ?>/dist/images/guide-2_main.png 1x, <?php echo $wp_url; ?>/dist/images/guide-2_main@2x.png 2x">
 <div class="info">
 <div class="md_subTitle mb-3">お稽古の基礎知識</div>
-<div class="subText md_js_matchheight">いけばなをはじめてみたい方やいけばなを体験してみたい人を対象にした回数制のレッスンとなります。持ち物など特に不要ですので、気軽にレッスンにお越し下さい。</div>
+<div class="subText md_js_matchheight">いけばなを学びたいけど、いきなり教室へ習いに行くのは不安という方に、お稽古の内容や教室の様子をお伝えします。お稽古にかかる費用や通う回数などお稽古をはじめる前に知っておきたい情報も合わせてご紹介します。</div>
 <div class="button text-right"><a href="<?php echo $home; ?>/beginner#step2" class="md_textLink_normal">STEP2のコラムをみる</a></div>
 </div>
 </div>
@@ -62,7 +62,7 @@ if (has_post_thumbnail()) {
 <img src="<?php echo $wp_url; ?>/dist/images/guide-3_main.png" alt="道具の選び方" srcset="<?php echo $wp_url; ?>/dist/images/guide-3_main.png 1x, <?php echo $wp_url; ?>/dist/images/guide-3_main@2x.png 2x">
 <div class="info">
 <div class="md_subTitle mb-3">道具の選び方</div>
-<div class="subText md_js_matchheight">いけばなをはじめてみたい方やいけばなを体験してみたい人を対象にした回数制のレッスンとなります。持ち物など特に不要ですので、気軽にレッスンにお越し下さい。</div>
+<div class="subText md_js_matchheight">「花ばさみ」「剣山」「花器」など、いけばなで使うさまざまな道具。どういったものを選べば良いのか、選ぶ時に気をつけておきたい注意点など、道具を揃える前に読んでおきたい情報をお届けします。</div>
 <div class="button text-right"><a href="<?php echo $home; ?>/beginner#step3" class="md_textLink_normal">STEP3のコラムをみる</a></div>
 </div>
 </div>
@@ -70,7 +70,7 @@ if (has_post_thumbnail()) {
 <img src="<?php echo $wp_url; ?>/dist/images/guide-4_main.png" alt="お花の楽しみ方" srcset="<?php echo $wp_url; ?>/dist/images/guide-4_main.png 1x, <?php echo $wp_url; ?>/dist/images/guide-4_main@2x.png 2x">
 <div class="info">
 <div class="md_subTitle mb-3">お花の楽しみ方</div>
-<div class="subText md_js_matchheight">いけばなをはじめてみたい方やいけばなを体験してみたい人を対象にした回数制のレッスンとなります。持ち物など特に不要ですので、気軽にレッスンにお越し下さい。</div>
+<div class="subText md_js_matchheight">お稽古に通うことだけがいけばなの楽しみ方ではありません。<br>最も身近な場所で言えば、自宅でもお花を楽しむことができますよ。毎日の生活の中でいけばなを楽しむヒントをお届けします。</div>
 <div class="button text-right"><a href="<?php echo $home; ?>/beginner#step4" class="md_textLink_normal">STEP4のコラムをみる</a></div>
 </div>
 </div>

@@ -20,8 +20,11 @@ get_header(); ?>
 <div id="step1" class="guide__step pb-5">
 <div class="md_container">
 <p class="guide__step--ttl">STEP1</p>
-<h2 class="md_topTitle text-center">いけばなとはなにか知ろう！</h2>
-<p class="guide__step-about">いけばなに興味があるけれど、私にもできるの？どんなふうにお花をいけるの？など、はじめてで気になることがある方は多いと思います。<br>まずいけばなとはどういっことなのか、いままで知らなかった発見ができます。</p>
+<h2 class="md_topTitle text-center">いけばなを始める前に</h2>
+<p class="guide__step-about">「お花をきれいに生けてみたいけど、やっぱり難しいんじゃない？」や「いけばなにはセンスが必要？」など、いけばなを始める前に感じる不安を解消しましょう。
+<br>このページでは、いけばなの知識がまったく無い初心者の方に向けて、いけばなを始めるにあたって知っておきたい知識や、いけばなを通して得られるメリットなどをご紹介しています。
+<br>誰でも最初は初心者です。
+<br>まずはいけばなに興味を持って、いけばなを知ることから初めてみましょう。</p>
 <div class="row archive media py-5">
 <?php
 $args = [
@@ -58,7 +61,7 @@ if (has_post_thumbnail()) {
 <div class="md_container">
 <p class="guide__step--ttl">STEP2</p>
 <h2 class="md_topTitle text-center">お稽古の基礎知識</h2>
-<p class="guide__step-about">いけばなを学びたいけど、いきなり教室へ習いに行くのは不安という方に、お稽古の内容や教室の様子をお伝えします。<br>お稽古にかかる費用や通う回数などお稽古をはじめる前に知っておきたい情報も合わせてご紹介します。</p>
+<p class="guide__step-about">いけばなを習ってみたいけれど、敷居の高いイメージがあるいけばな教室。このページでは、いけばなのお稽古の内容や、教室の雰囲気など、知りたいけどよくわからないお稽古のことをお伝えします。どれくらい通えばよいの？費用はどのくらい掛かる？など習う前に知っておきたいお稽古の基本情報もお教えします。実際のいけばな教室の様子や習っている人の声などを聞きながら、お稽古をイメージしてみてください。</p>
 <div class="row archive py-5">
 <?php
 $args = [
@@ -95,7 +98,8 @@ if (has_post_thumbnail()) {
 <div class="md_container">
 <p class="guide__step--ttl">STEP3</p>
 <h2 class="md_topTitle text-center">道具の選び方</h2>
-<p class="guide__step-about">「花ばさみ」「剣山」「花器」など、いけばなで使うさまざまな道具。どういったものを選べば良いのか、<br>選ぶ時に気をつけておきたい注意点など、道具を揃える前に読んでおきたい情報をお届けします。</p>
+<p class="guide__step-about">いけばなでは「花ばさみ」や「剣山」など、いけばなだけで使う特有の道具があります。いけばなを始めるならきちんとしたものを揃えたいですよね。また、お稽古を続けるなら長く使えるものを手にしておきたいです。
+<br>このページでは、初心者の方におすすめの道具や、いけばなに必要な道具の揃え方、またお手入れの方法など、いけばなを始める上で知っておきたい道具のことをお伝えします。</p>
 <div class="row archive py-5">
 <?php
 $args = [
@@ -132,7 +136,9 @@ if (has_post_thumbnail()) {
 <div class="md_container">
 <p class="guide__step--ttl">STEP4</p>
 <h2 class="md_topTitle text-center">お花の楽しみ方</h2>
-<p class="guide__step-about">お稽古に通うことだけがいけばなの楽しみ方ではありません。<br>最も身近な場所で言えば、自宅でもお花を楽しむことができますよ。毎日の生活の中でいけばなを楽しむヒントをお届けします。</p>
+<p class="guide__step-about">いけばなは実はお家でも手軽に楽しむことができます。季節のイベントや記念日に合わせてお花を生けたり、玄関にお花を飾って人をお迎えしたりすることも、立派ないけばなの楽しみ方の一つです。
+<br>このページでは、お家でもできるいけばなの楽しみ方をご紹介します。
+<br>お花屋さんで見かけた旬のお花や、いただきものの花束も、いけばなとして楽しんでみましょう。</p>
 <div class="row archive py-5">
 <?php
 $args = [
