@@ -124,6 +124,7 @@ input[type="checkbox"]:checked::after {
         }
       }
     }
+
     .modal {
       .search {
         width: auto;
@@ -258,67 +259,67 @@ input[type="checkbox"]:checked::after {
       padding-top: 0 !important;
     }
 
-    .md_container {
-      a {
-        position: relative;
-        display: block;
+    &__wrap {
+      position: relative;
+      display: block;
+      width: 80%;
+      margin: 0 auto;
+      padding: 2rem 0;
+      border: 10px solid $info;
+      background: $white;
+      @include media-breakpoint-down(md) {
         width: 90%;
-        margin: 0 auto;
-        padding: 4rem 0;
-        background-color: $info;
+      }
+
+      &:hover {
+        .ttl {
+          &:after {
+            margin-left: 2rem;
+          }
+        }
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        right: -20px;
+        bottom: -40px;
+        width: 116px;
+        height: 149px;
+        background: url("../images/faq_flower@2x.png");
+        background-size: cover;
         @include media-breakpoint-down(md) {
-          width: 90%;
-        }
-
-        .row {
-          width: 80%;
-          margin: 0 auto;
-        }
-
-        &:hover {
-          &:before {
-            right: -50px;
-          }
-        }
-
-        &:before {
-          content: url("../images/faq_arrow.svg");
-          position: absolute;
-          top: calc(50% - 12px);
-          right: -30px;
-          transition-duration: 0.3s;
-          transition-timing-function: ease-out;
-        }
-
-        &:after {
-          content: url("../images/faq_flower.png");
-          position: absolute;
-          left: -20px;
-          bottom: -40px;
-          @include media-breakpoint-down(md) {
-            left: -60px;
-          }
+          right: -60px;
         }
       }
     }
 
-    .md_topTitle {
-      flex: 0 0 33.33333%;
-      max-width: 33.33333%;
+    &__content {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .ttl {
       font-size: 1.6rem;
-      margin: 0;
+      font-weight: bold;
+      margin: 0 0 1rem;
       padding: 0;
       line-height: 2;
+      position: relative;
+
+      &:after {
+        content: url("../images/faq_arrow.svg");
+        margin-left: 1rem;
+        transition: all 0.3s;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-out;
+      }
       @include media-breakpoint-down(md) {
         width: 100%;
         min-width: 100%;
         font-size: 1.2rem;
         margin-bottom: 1rem;
       }
-    }
-
-    .col-sm-8 {
-      padding: 0;
     }
   }
   // .home__keyword

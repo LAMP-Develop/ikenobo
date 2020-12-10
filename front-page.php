@@ -81,10 +81,10 @@ if (has_post_thumbnail()) {
 
 <div class="home__faq mb-5 py-5">
 <div class="md_container">
-<a href="<?php echo $home; ?>/faq/">
-<div class="row">
-<div class="md_topTitle">よくあるご質問</div>
-<div class="col-sm-8">いけばなをこれからはじめる方も、習い始めたばかりの人も、<br>最初に気になる様々な疑問にお答えしています。</div>
+<a class="home__faq__wrap" href="<?php echo $home; ?>/faq/">
+<div class="home__faq__content">
+<div class="ttl md_mincho">よくあるご質問</div>
+<div>いけばなをこれからはじめる方も、習い始めたばかりの人も、<br>最初に気になる様々な疑問にお答えしています。</div>
 </div>
 </a>
 </div>

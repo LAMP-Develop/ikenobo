@@ -13,12 +13,12 @@ $wp_url = get_template_directory_uri(); ?>
 <?php wp_body_open(); ?>
 
 <!-- js-loading -->
-<div id="js_loading">
+<!-- <div id="js_loading">
 <div class="spinner">
 <div class="double-bounce1"></div>
 <div class="double-bounce2"></div>
 </div>
-</div>
+</div> -->
 <!-- js-loading -->
 
 <!-- js-black-bg -->

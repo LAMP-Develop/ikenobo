@@ -76,13 +76,13 @@ select, textarea {
     a {
       line-height: 1;
       padding: 0.9rem;
-      border: 1px solid $light;
+      border: 2px solid $secondary;
+      background: $success;
       transition-duration: 0.3s;
       transition-timing-function: ease-out;
 
       &:hover {
-        background: $white;
-        border: 1px solid $white;
+        background: $secondary;
         color: $body-color;
       }
     }
