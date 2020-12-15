@@ -12,7 +12,7 @@ $form_pref = isset($_GET['pref']) ? $_GET['pref'] : null;
 <?php include('search.php'); ?>
 </div>
 
-<?php if($form_pref != '' && $form_pref != null): ?>
+<?php if ($form_pref != '' && $form_pref != null): ?>
 <div class="sidebar__blog mt-5">
 <div class="md_topTitle"><?php echo $form_pref; ?>エリアの人気ブログ</div>
 <div class="archive">
@@ -42,11 +42,29 @@ $author_args = [
 ];
 $user_query = new WP_User_Query($author_args);
 $ids = implode(',', $user_query->results);
+
+if (function_exists('wpp_get_mostpopular')) {
+  $wpp_option = array( // 表示オプションの設定
+      'author' => $ids,
+      'range' => 'last30days',
+      'post_type' => 'post',
+      'order_by' => 'views',
+      'limit' => 5
+  );
+  $wpp_query = new WPP_Query($wpp_option);
+  $wpp_query_ids = array_map(
+      function ($wppost) {
+      return (int)$wppost->id;
+  },
+      $wpp_query->get_posts()
+  );
+} else {
+$wpp_query_ids = [];
+}
+
 $args = [
-  'posts_per_page' => 5,
-  'orderby' => 'date',
-  'order' => 'DESC',
-  'author' => $ids,
+  'post__in' => $wpp_query_ids, // ここで記事IDの配列を使う
+  'orderby' => 'post__in' // 配列に入ってる順番に表示
 ];
 $posts = get_posts($args);
 foreach ($posts as $post):
