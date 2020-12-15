@@ -106,7 +106,7 @@ if (function_exists('yoast_breadcrumb')) {
 ?>
 <?php
 // カテゴリーページ
-elseif (is_category() || is_home()) : ?>
+elseif (is_category() || is_home() || is_tag()) : ?>
 <div class="sub__mv column pb-5"></div>
 <?php
 // アーカイブページ

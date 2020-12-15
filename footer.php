@@ -14,7 +14,7 @@ $form_tags = $_GET['tags'];
 
 </main>
 
-<div class="footer__search search mt-5 py-5">
+<div id="searcharea" class="footer__search search mt-5 py-5">
 <div class="container p-0">
 <div class="row">
 <div class="col-sm-4">

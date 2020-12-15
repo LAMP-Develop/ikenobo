@@ -6,7 +6,8 @@ get_header(); ?>
 <div class="md_container">
 <div class="row">
 <div class="col-md-8 p-0">
-<div class="md_topTitle text-center mb-5">全国講師コラム</div>
+<div class="md_topTitle text-center">全国講師コラム</div>
+<p class="mb-5 text-center">キーワード「<?php single_tag_title(); ?>」</p>
 <div class="row archive media">
 <?php
 if (have_posts()): while (have_posts()): the_post();

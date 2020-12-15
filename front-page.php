@@ -128,19 +128,20 @@ $class_name = get_field('class_name', 'user_'. $author_id);
 </div>
 
 <div class="home__keyword">
-<div class="md_container bg-info">
+<div class="md_container bg-info" style="z-index: 1;">
 <div class="row">
 <div class="md_topTitle mb-5 text-center">人気のキーワード</div>
 <div class="home__keyword-list text-center">
-<p class="md_icon_normal">いけばなとは</p>
-<p class="md_icon_normal">いけばなとは</p>
-<p class="md_icon_normal">いけばなとは</p>
-<p class="md_icon_normal">いけばなとは</p>
-<p class="md_icon_normal">いけばなとは</p>
-<p class="md_icon_normal">いけばなとは</p>
-<p class="md_icon_normal">いけばなとは</p>
-<p class="md_icon_normal">いけばなとは</p>
-<p class="md_icon_normal">いけばなとは</p>
+<p class="md_icon_normal"><a href="<?php echo $home; ?>/tag/いけばなの基本/">いけばなの基本</a></p>
+<p class="md_icon_normal"><a href="<?php echo $home; ?>/tag/初めてのいけばな/">初めてのいけばな</a></p>
+<p class="md_icon_normal"><a href="<?php echo $home; ?>/tag/基礎のおけいこ/">基礎のおけいこ</a></p>
+<p class="md_icon_normal"><a href="<?php echo $home; ?>/tag/花のある暮らし/">花のある暮らし</a></p>
+<p class="md_icon_normal"><a href="<?php echo $home; ?>/tag/おうちでいけばな/">おうちでいけばな</a></p>
+<p class="md_icon_normal"><a href="<?php echo $home; ?>/tag/体験レッスン/">体験レッスン</a></p>
+<p class="md_icon_normal"><a href="<?php echo $home; ?>/tag/日本文化/">日本文化</a></p>
+<p class="md_icon_normal"><a href="<?php echo $home; ?>/tag/伝統文化/">伝統文化</a></p>
+<p class="md_icon_normal"><a href="<?php echo $home; ?>/tag/自分磨き/">自分磨き</a></p>
+<p class="md_icon_normal"><a href="<?php echo $home; ?>/tag/感性を磨く/">感性を磨く</a></p>
 </div>
 </div>
 </div>
