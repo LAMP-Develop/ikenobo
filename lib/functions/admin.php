@@ -161,7 +161,6 @@ function user_profile_hide_script($hook)
         jQuery('#your-profile .user-yim-wrap').hide(); //Yahoo IM
         jQuery('#your-profile .user-jabber-wrap').hide(); //Jabber / Google Talk
         jQuery('#your-profile .user-googleplus-wrap').hide(); //Google+
-        jQuery('#your-profile .user-sessions-wrap').hide(); //セッション
         jQuery('#your-profile .user-facebook-wrap').hide(); //facebook
         jQuery('#your-profile .user-instagram-wrap').hide(); //instagram
         jQuery('#your-profile .user-linkedin-wrap').hide(); //linkedin
