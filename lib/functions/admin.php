@@ -155,16 +155,12 @@ function user_profile_hide_script($hook)
         jQuery('#your-profile .show-admin-bar').hide(); //ツールバー
         jQuery('#your-profile .user-language-wrap').hide(); //言語
         jQuery('#your-profile .user-user-login-wrap').hide(); //ユーザー名
-        jQuery('#your-profile .user-nickname-wrap').hide(); //ニックネーム
         jQuery('#your-profile .user-display-name-wrap').hide(); //ブログ上の表示名
         jQuery('#your-profile .user-url-wrap').hide(); //サイト
         jQuery('#your-profile .user-aim-wrap').hide(); //AIM
         jQuery('#your-profile .user-yim-wrap').hide(); //Yahoo IM
         jQuery('#your-profile .user-jabber-wrap').hide(); //Jabber / Google Talk
         jQuery('#your-profile .user-googleplus-wrap').hide(); //Google+
-        jQuery('#your-profile .user-description-wrap').hide(); //プロフィール情報
-        jQuery('#your-profile .user-profile-picture').hide(); //プロフィール写真
-        jQuery('#your-profile .user-pass1-wrap').hide(); //新しいパスワード
         jQuery('#your-profile .user-sessions-wrap').hide(); //セッション
         jQuery('#your-profile .user-facebook-wrap').hide(); //facebook
         jQuery('#your-profile .user-instagram-wrap').hide(); //instagram
