@@ -1,6 +1,8 @@
 <?php
 $home = esc_url(home_url());
 $wp_url = get_template_directory_uri();
+$ikenobo_site = "http://ikenobo.jp";
+
 get_header(); ?>
 
 <div class="home__media py-5 mt-5">
@@ -37,7 +39,7 @@ if (has_post_thumbnail()) {
 </div>
 </div>
 
-<div class="home__guide py-5 pl-3 pr-3">
+<div class="home__guide py-5">
 <div class="md_container">
 <div class="md_topTitle mb-5 flower-02 border-line">「はじめての方」へお役立ちコンテンツ</div>
 <div class="content">

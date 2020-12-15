@@ -11,3 +11,8 @@ require DIRECTORY.'/lib/functions/resources.php';
 
 // 管理画面のカスタマイズ
 require DIRECTORY.'/lib/functions/admin.php';
+
+function get_main_domain()
+{
+    return "https://ikenobo.jp";
+}

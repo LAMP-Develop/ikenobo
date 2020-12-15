@@ -159,6 +159,12 @@ input[type="checkbox"]:checked::after {
   // .home__guide
   &__guide {
     position: relative;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @include media-breakpoint-down(md) {
+      padding-left: 0;
+      padding-right: 0;
+    }
 
     &:after {
       content: "";
@@ -289,7 +295,9 @@ input[type="checkbox"]:checked::after {
         background: url("../images/faq_flower@2x.png");
         background-size: cover;
         @include media-breakpoint-down(md) {
-          right: -60px;
+          right: -40px;
+          width: 96px;
+          height: 124px;
         }
       }
     }

@@ -1,6 +1,8 @@
 <?php
 $home = esc_url(home_url());
-$wp_url = get_template_directory_uri(); ?>
+$wp_url = get_template_directory_uri();
+?>
+
 <!DOCTYPE HTML>
 <html <?php language_attributes(); ?>>
 <head>
@@ -31,9 +33,9 @@ $wp_url = get_template_directory_uri(); ?>
 
 <div class="leftLink">
 <ul class="clearFix">
-<li><a href="ikebanaikenobo/" class="md_mincho">池坊について</a></li>
+<li><a href="<?php echo get_main_domain(); ?>/ikebanaikenobo/" class="md_mincho">池坊について</a></li>
 <li><a href="<?php echo $home; ?>" class="md_mincho text-primary">いけばなを習う</a></li>
-<li><a href="event/index.html" class="md_mincho">花展・イベントを探す</a></li>
+<li><a href="<?php echo get_main_domain(); ?>/event/" class="md_mincho">花展・イベントを探す</a></li>
 </ul>
 </div>
 
@@ -62,13 +64,13 @@ $wp_url = get_template_directory_uri(); ?>
 <ul class="global-nav__list">
 <li class="global-nav__item">
 </li>
-<li class="global-nav__item"><a href="index.html" class="linkRight md_mincho">トップページ</a></li>
-<li class="global-nav__item"><a href="ikebanaikenobo/" class="linkRight md_mincho">池坊について</a></li>
+<li class="global-nav__item"><a href="<?php echo get_main_domain(); ?>" class="linkRight md_mincho">トップページ</a></li>
+<li class="global-nav__item"><a href="<?php echo get_main_domain(); ?>/ikebanaikenobo/" class="linkRight md_mincho">池坊について</a></li>
 <li class="global-nav__item"><a href="<?php echo $home; ?>" class="linkRight md_mincho">いけばなを習う</a></li>
-<li class="global-nav__item"><a href="event/index.html" class="linkRight md_mincho">花展・イベントを探す</a></li>
-<li class="global-nav__item"><a href="info/index.html" class="linkRight md_mincho">お知らせ</a></li>
+<li class="global-nav__item"><a href="<?php echo get_main_domain(); ?>/event/" class="linkRight md_mincho">花展・イベントを探す</a></li>
+<li class="global-nav__item"><a href="<?php echo get_main_domain(); ?>/information/" class="linkRight md_mincho">お知らせ</a></li>
 <!-- <li class="global-nav__item"><a href="" class="linkRight md_mincho">会員の方へ</a></li>
-<li class="global-nav__item"><a href="" class="linkRight md_mincho">企業・学校関係者の方へ</a></li>
+<li class="global-nav__item"><a href="" class="linkRight md_mincho">学校関係者の方へ</a></li>
 <li class="global-nav__item"><a href="" class="linkRight md_mincho">アクセス</a></li>
 <li class="global-nav__item"><a href="" class="linkRight md_mincho">プレスリリース</a></li> -->
 <li class="global-nav__item"><a href="<?php echo $home; ?>/contact-help/" class="linkContact md_mincho">教室お問い合わせ窓口</a></li>
@@ -85,5 +87,4 @@ $wp_url = get_template_directory_uri(); ?>
 <!-- /sideMenu end -->
 
 <main>
-
 <?php get_template_part('mv'); ?>

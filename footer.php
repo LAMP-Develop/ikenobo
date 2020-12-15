@@ -10,6 +10,8 @@ $form_weeks = $_GET['weeks'];
 $form_times = $_GET['times'];
 $form_price = $_GET['price'];
 $form_tags = $_GET['tags'];
+
+$ikenobo_site = "http://ikenobo.jp";
 ?>
 
 </main>
@@ -112,7 +114,7 @@ $form_tags = $_GET['tags'];
 
 <div class="snsIcon">
 <ul class="clearFix">
-<li><a href="https://www.instagram.com/ikenobo550" target="_blank">nstagram</a></li>
+<li><a href="https://www.instagram.com/ikenobo550" target="_blank">Instagram</a></li>
 <li><a href="https://www.facebook.com/ikenobo550" target="_blank">facebook</a></li>
 <li><a href="https://twitter.com/ikenobo550" target="_blank">Twitter</a></li>
 <li><a href="https://www.youtube.com/channel/UCKito0N8zn2NA6yvKXx_dfQ" target="_blank">Youtube</a></li>
@@ -127,39 +129,39 @@ $form_tags = $_GET['tags'];
 <div class="menu clearFix">
 <div class="menu01">
 <ul>
-<li class="mainLink"><a href="index.html" class="md_mincho">トップページ</a></li>
+<li class="mainLink"><a href="<?php echo get_main_domain(); ?>" class="md_mincho">トップページ</a></li>
 </ul>
 </div>
 <div class="menu02">
 <ul>
-<li class="mainLink"><a href="" class="md_mincho">池坊について</a></li>
-<li class="mainLink"><a href="" class="md_mincho">いけばなを習う</a></li>
-<li class="mainLink"><a href="" class="md_mincho">花展・イベントを探す</a></li>
-<li class="mainLink"><a href="" class="md_mincho">お知らせ</a></li>
+<li class="mainLink"><a href="<?php echo get_main_domain(); ?>/ikebanaikenobo/" class="md_mincho">池坊について</a></li>
+<li class="mainLink"><a href="<?php echo $home ?>" class="md_mincho">いけばなを習う</a></li>
+<li class="mainLink"><a href="<?php echo get_main_domain(); ?>/event/" class="md_mincho">花展・イベントを探す</a></li>
+<li class="mainLink"><a href="<?php echo get_main_domain(); ?>/information/" class="md_mincho">お知らせ</a></li>
 </ul>
 </div>
 <div class="menu03">
 <ul>
-<li class="mainLink"><a href="" class="md_mincho">会員の方へ</a></li>
-<li><a href="">会員のみなさまへ</a></li>
-<li><a href="">池坊中央研修学院</a></li>
-<li class="mainLink"><a href="index.html" class="md_mincho">企業・学校関係者の方へ</a></li>
-<li><a href="">華道でおもてなし活動</a></li>
-<li><a href="">学校関係者のみなさまへ</a></li>
+<li class="mainLink"><a href="<?php echo get_main_domain(); ?>/member/" class="md_mincho">会員の方へ</a></li>
+<li><a href="<?php echo get_main_domain(); ?>/member/">会員のみなさまへ</a></li>
+<li><a href="<?php echo get_main_domain(); ?>/kensyu/">池坊中央研修学院</a></li>
+<li class="mainLink"><a href="<?php echo get_main_domain(); ?>/gakko_kado/" class="md_mincho">企業・学校関係者の方へ</a></li>
+<li><a href="<?php echo get_main_domain(); ?>/ikebanaikenobo/omotenashi/">華道でおもてなし活動</a></li>
+<li><a href="<?php echo get_main_domain(); ?>/gakko_kado/">学校関係者のみなさまへ</a></li>
 </ul>
 </div>
 <div class="menu04">
 <ul>
-<li class="mainLink"><a href="index.html" class="md_mincho">アクセス</a></li>
-<li><a href="">池坊会館</a></li>
-<li><a href="">東京会館</a></li>
-<li class="mainLink"><a href="index.html" class="md_mincho">プレスリリース</a></li>
-<li class="mainLink"><a href="index.html" class="md_mincho">年間スケジュール</a></li>
+<li class="mainLink"><a href="<?php echo get_main_domain(); ?>/access/" class="md_mincho">アクセス</a></li>
+<li><a href="<?php echo get_main_domain(); ?>/access/#contentsKyoto">池坊会館</a></li>
+<li><a href="<?php echo get_main_domain(); ?>/access/#contentsTokyo">東京会館</a></li>
+<li class="mainLink"><a href="<?php echo get_main_domain(); ?>/pressrelease/" class="md_mincho">プレスリリース</a></li>
+<li class="mainLink"><a href="" class="md_mincho">年間スケジュール</a></li>
 </ul>
 </div>
 <div class="menu05">
 <ul>
-<li class="mainLink"><a href="index.html" class="md_mincho">関連サイト</a></li>
+<li class="mainLink"><a class="md_mincho">関連サイト</a></li>
 <li><a href="https://www.kadosha.co.jp/" target="_blank">オンラインストア花楽</a></li>
 <li><a href="https://www.ikenobo.jp/rokkakudo/" target="_blank">六角堂</a></li>
 <li><a href="https://www.ikenobo.jp/rokkakudo/highlight/ikebana.html" target="_blank">いけばな資料館</a></li>
@@ -167,6 +169,14 @@ $form_tags = $_GET['tags'];
 <li><a href="http://www.ikenobo-c.ac.jp/" target="_blank">池坊短期大学</a></li>
 </ul>
 </div>
+</div>
+
+<div class="otherLink">
+<ul class="clearFix">
+<li><a href="<?php echo get_main_domain(); ?>/copyright#kiyaku">著作権について</a></li>
+<li><a href="<?php echo get_main_domain(); ?>/privacy">個人情報の取扱いについて</a></li>
+<li><a href="<?php echo get_main_domain(); ?>/copyright">推奨環境</a></li>
+</ul>
 </div>
 
 <div class="copyright">Copyright Ikenobo. All Rights Reserved.</div>
