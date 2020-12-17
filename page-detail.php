@@ -83,7 +83,9 @@ foreach ($calss_search_tags as $key => $tag): ?>
 <p class="md_icon_normal"><?php echo $tag['label']; ?></p>
 <?php endforeach; ?>
 </div>
+<?php if (!get_field('class_hidden', 'user_'.$user_id)): ?>
 <a href="<?php echo $home.$contact_url; ?>" class="btn btn-primary col-12">お問い合わせ</a>
+<?php endif; ?>
 </div>
 
 <div class="class__single__info bg-info py-5  mb-3">
@@ -137,7 +139,7 @@ foreach ($calss_search_tags as $key => $tag): ?>
 <div class="row">
 <div class="img-wrap col-sm-2">
 <?php if (get_field('teacher_profile_pict_admin', 'user_'.$user_id)): ?>
-<img src="<?php echo get_field('teacher_profile_pict_admin', 'user_'.$user_id); ?>" alt="講師写真">
+<img class="w-100" src="<?php echo get_field('teacher_profile_pict_admin', 'user_'.$user_id); ?>" alt="講師写真">
 <?php else: ?>
 <img src="<?php echo $wp_url; ?>/dist/images/images_none.png" alt="講師写真">
 <?php endif; ?>
@@ -153,6 +155,7 @@ foreach ($calss_search_tags as $key => $tag): ?>
 <li><?php echo get_field('teacher_profile', 'user_'.$user_id); ?></li>
 <?php endif; ?>
 </ul>
+<small class="d-block mt-1" style="font-size: 10px;">ID：<?php echo get_field('teacher_montei_no', 'user_'.$user_id); ?></small>
 </div>
 <?php if (get_field('teacher_voice', 'user_'.$user_id)): ?>
 <div class="comment bg-white">
@@ -178,20 +181,38 @@ foreach ($calss_search_tags as $key => $tag): ?>
 </div>
 <?php endif; ?>
 
-<?php if (get_field('class_hp_url', 'user_'.$user_id) != false || get_field('class_twitter_url', 'user_'.$user_id) != false || get_field('class_insta_url', 'user_'.$user_id) != false || get_field('class_fb_url', 'user_'.$user_id) != false): ?>
-<div class="class__single__sns  py-5">
-<div class="row">
+<?php if (get_field('class_hp_url', 'user_'.$user_id) || get_field('class_twitter_url', 'user_'.$user_id) || get_field('class_insta_url', 'user_'.$user_id) || get_field('class_fb_url', 'user_'.$user_id) || get_field('class_blog_url', 'user_'.$user_id)): ?>
+<div class="class__single__sns py-5">
+<div class="row flex-wrap">
 <?php if (get_field('class_hp_url', 'user_'.$user_id)): ?>
-<a href="<?php echo get_field('class_hp_url', 'user_'.$user_id); ?>" class="class__single__sns__inner col-sm-3 text-center py-3 md_mincho" target="_blank">ホームページ</a>
+<a href="<?php echo get_field('class_hp_url', 'user_'.$user_id); ?>" class="class__single__sns__inner col-sm-3 text-center py-3 md_mincho mb-2" target="_blank">
+<img class="d-inline-block align-middle" src="<?php echo $wp_url; ?>/dist/images/icon_jp.png" alt="" srcset="<?php echo $wp_url; ?>/dist/images/icon_jp.png 1x, <?php echo $wp_url; ?>/dist/images/icon_jp@2x.png 2x">
+<span class="d-inline-block align-middle ml-1">ホームページ</span>
+</a>
+<?php endif; ?>
+<?php if (get_field('class_blog_url', 'user_'.$user_id)): ?>
+<a href="<?php echo get_field('class_blog_url', 'user_'.$user_id); ?>" class="class__single__sns__inner col-sm-3 text-center py-3 md_mincho mb-2" target="_blank">
+<img class="d-inline-block align-middle" src="<?php echo $wp_url; ?>/dist/images/icon_blog.png" alt="" srcset="<?php echo $wp_url; ?>/dist/images/icon_blog.png 1x, <?php echo $wp_url; ?>/dist/images/icon_blog@2x.png 2x">
+<span class="d-inline-block align-middle ml-1">ブログ</span>
+</a>
 <?php endif; ?>
 <?php if (get_field('class_twitter_url', 'user_'.$user_id)): ?>
-<a href="<?php echo get_field('class_twitter_url', 'user_'.$user_id); ?>" class="class__single__sns__inner col-sm-3 text-center py-3 md_mincho">Twitter</a>
+<a href="<?php echo get_field('class_twitter_url', 'user_'.$user_id); ?>" class="class__single__sns__inner col-sm-3 text-center py-3 md_mincho mb-2" target="_blank">
+<img class="d-inline-block align-middle" src="<?php echo $wp_url; ?>/dist/images/icon_tw.png" alt="" srcset="<?php echo $wp_url; ?>/dist/images/icon_tw.png 1x, <?php echo $wp_url; ?>/dist/images/icon_tw@2x.png 2x">
+<span class="d-inline-block align-middle ml-1">Twitter</span>
+</a>
 <?php endif; ?>
 <?php if (get_field('class_insta_url', 'user_'.$user_id)): ?>
-<a href="<?php echo get_field('class_insta_url', 'user_'.$user_id); ?>" class="class__single__sns__inner col-sm-3 text-center py-3 md_mincho">Instagram</a>
+<a href="<?php echo get_field('class_insta_url', 'user_'.$user_id); ?>" class="class__single__sns__inner col-sm-3 text-center py-3 md_mincho mb-2" target="_blank">
+<img class="d-inline-block align-middle" src="<?php echo $wp_url; ?>/dist/images/icon_ins.png" alt="" srcset="<?php echo $wp_url; ?>/dist/images/icon_ins.png 1x, <?php echo $wp_url; ?>/dist/images/icon_ins@2x.png 2x">
+<span class="d-inline-block align-middle ml-1">Instagram</span>
+</a>
 <?php endif; ?>
 <?php if (get_field('class_fb_url', 'user_'.$user_id)): ?>
-<a href="<?php echo get_field('class_fb_url', 'user_'.$user_id); ?>" class="class__single__sns__inner col-sm-3 text-center py-3 md_mincho">Facebook</a>
+<a href="<?php echo get_field('class_fb_url', 'user_'.$user_id); ?>" class="class__single__sns__inner col-sm-3 text-center py-3 md_mincho mb-2" target="_blank">
+<img class="d-inline-block align-middle" src="<?php echo $wp_url; ?>/dist/images/icon_fb.png" alt="" srcset="<?php echo $wp_url; ?>/dist/images/icon_fb.png 1x, <?php echo $wp_url; ?>/dist/images/icon_fb@2x.png 2x">
+<span class="d-inline-block align-middle ml-1">Facebook</span>
+</a>
 <?php endif; ?>
 </div>
 </div>
@@ -229,9 +250,9 @@ if (has_post_thumbnail()) {
 </div>
 <div class="button text-center"><a href="<?php echo $home; ?>/blog/" class="md_btn_lineWhite">一覧を見る</a></div>
 </div>
-
+<?php if (!get_field('class_hidden', 'user_'.$user_id)): ?>
 <a href="<?php echo $home.$contact_url; ?>" class="btn btn-primary col-12 mb-5">お問い合わせ</a>
-
+<?php endif; ?>
 </div>
 
 <div class="col-md-4 p-0 hidden-xs">

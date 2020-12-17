@@ -166,7 +166,12 @@ $thumbnail = get_field('class_pict_1', 'user_'.$user_id) != null ? get_field('cl
 ?>
 <div class="archive__inner col-sm-6">
 <a href="<?php echo $home; ?>/class/detail?id=<?php echo $user_id; ?>">
-<div class="img-wrap"><img src="<?php echo $thumbnail; ?>" alt="<?php echo $class_name; ?>"></div>
+<div class="img-wrap">
+<?php if (get_field('class_hidden', 'user_'.$user_id)): ?>
+<span class="class-hidden md_mincho">現在休講中</span>
+<?php endif; ?>
+<img src="<?php echo $thumbnail; ?>" alt="<?php echo $class_name; ?>">
+</div>
 <h3 class="md_mincho"><?php echo $class_name; ?></h3>
 <table class="w-100">
 <tr class="row">
