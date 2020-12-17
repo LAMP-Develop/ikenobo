@@ -2,7 +2,6 @@
 $home = esc_url(home_url());
 $wp_url = get_template_directory_uri();
 get_header(); ?>
-
 <section class="single sidebar-layout">
 <div class="md_container">
 <div class="row">
@@ -15,8 +14,10 @@ while (have_posts()): the_post(); ?>
 <?php
 $t = get_the_title();
 $category = get_the_category();
-$cat = $category[0];
-$cat_name = $cat->name;
+if (is_array($category)) {
+    $cat = $category[0];
+    $cat_name = $cat->name;
+}
 $posttags = get_the_tags();
 if (has_post_thumbnail()) {
     $i = get_the_post_thumbnail_url(get_the_ID(), 'large');
@@ -24,7 +25,7 @@ if (has_post_thumbnail()) {
     $i = false;
 }
 ?>
-<?php if(count($category) > 0): ?>
+<?php if (count($category) > 0): ?>
 <p class="md_icon_normal mb-2 m-0"><?php echo $cat_name; ?></p>
 <?php endif; ?>
 <div class="md_topTitle flower-04"><?php echo $t; ?></div>

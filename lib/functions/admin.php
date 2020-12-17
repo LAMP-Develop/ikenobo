@@ -89,8 +89,8 @@ add_action('pre_user_query', 'extended_user_search');
 /* 【管理画面】ユーザー一覧に項目を追加する */
 function custom_users_columns($columns)
 {
+    $columns['teacher_profile_pict_admin'] = '写真';
     $columns['teacher_birthday'] = '生年月日';
-    $columns['teacher_profile_pict'] = '写真';
     $columns['class_branch_name'] = '支部名';
     $columns['class_branch_code'] = '支部コード';
     $columns['teacher_no'] = '会員番号';
@@ -105,9 +105,13 @@ function custom_users_custom_column($dummy, $column, $user_id)
         $user_info = get_userdata($user_id);
         return $user_info->teacher_birthday;
     }
-    if ($column == 'teacher_profile_pict') {
+    if ($column == 'teacher_profile_pict_admin') {
         $user_info = get_userdata($user_id);
-        return $user_info->teacher_profile_pict;
+        if ($user_info->teacher_profile_pict_admin != null && $user_info->teacher_profile_pict_admin != '') {
+            return '<img src="'.$user_info->teacher_profile_pict_admin.'">';
+        } else {
+            return '<img src="https://secure.gravatar.com/avatar/491a67b76429f0b2c6695b8b06f288d9?s=64&d=mm&r=g" width="32">';
+        }
     }
     if ($column == 'class_branch_name') {
         $user_info = get_userdata($user_id);
@@ -148,32 +152,33 @@ function user_profile_hide_script($hook)
 {
     $script = <<<SCRIPT
     jQuery(function($) {
-        jQuery('#your-profile .user-rich-editing-wrap').hide(); //ビジュアルエディター
-        jQuery('#your-profile .user-syntax-highlighting-wrap').hide(); //シンタックスハイライト
-        jQuery('#your-profile .user-admin-color-wrap').hide(); //管理画面の配色
-        jQuery('#your-profile .user-comment-shortcuts-wrap').hide(); //キーボードショートカット
-        jQuery('#your-profile .show-admin-bar').hide(); //ツールバー
-        jQuery('#your-profile .user-language-wrap').hide(); //言語
-        jQuery('#your-profile .user-user-login-wrap').hide(); //ユーザー名
-        jQuery('#your-profile .user-display-name-wrap').hide(); //ブログ上の表示名
-        jQuery('#your-profile .user-url-wrap').hide(); //サイト
-        jQuery('#your-profile .user-aim-wrap').hide(); //AIM
-        jQuery('#your-profile .user-yim-wrap').hide(); //Yahoo IM
-        jQuery('#your-profile .user-jabber-wrap').hide(); //Jabber / Google Talk
-        jQuery('#your-profile .user-googleplus-wrap').hide(); //Google+
-        jQuery('#your-profile .user-facebook-wrap').hide(); //facebook
-        jQuery('#your-profile .user-instagram-wrap').hide(); //instagram
-        jQuery('#your-profile .user-linkedin-wrap').hide(); //linkedin
-        jQuery('#your-profile .user-myspace-wrap').hide(); //myspace
-        jQuery('#your-profile .user-pinterest-wrap').hide(); //pinterest
-        jQuery('#your-profile .user-soundcloud-wrap').hide(); //soundcloud
-        jQuery('#your-profile .user-twitter-wrap').hide(); //twitter
-        jQuery('#your-profile .user-tumblr-wrap').hide(); //tumblr
-        jQuery('#your-profile .user-youtube-wrap').hide(); //youtube
-        jQuery('#your-profile .user-wikipedia-wrap').hide(); //wikipedia
-        jQuery('#your-profile h2').hide(); //wikipedia
+        $('.column-username .avatar').hide(); //アバター
+        $('#your-profile .user-rich-editing-wrap').hide(); //ビジュアルエディター
+        $('#your-profile .user-syntax-highlighting-wrap').hide(); //シンタックスハイライト
+        $('#your-profile .user-admin-color-wrap').hide(); //管理画面の配色
+        $('#your-profile .user-comment-shortcuts-wrap').hide(); //キーボードショートカット
+        $('#your-profile .show-admin-bar').hide(); //ツールバー
+        $('#your-profile .user-language-wrap').hide(); //言語
+        $('#your-profile .user-user-login-wrap').hide(); //ユーザー名
+        $('#your-profile .user-display-name-wrap').hide(); //ブログ上の表示名
+        $('#your-profile .user-url-wrap').hide(); //サイト
+        $('#your-profile .user-aim-wrap').hide(); //AIM
+        $('#your-profile .user-yim-wrap').hide(); //Yahoo IM
+        $('#your-profile .user-jabber-wrap').hide(); //Jabber / Google Talk
+        $('#your-profile .user-googleplus-wrap').hide(); //Google+
+        $('#your-profile .user-facebook-wrap').hide(); //facebook
+        $('#your-profile .user-instagram-wrap').hide(); //instagram
+        $('#your-profile .user-linkedin-wrap').hide(); //linkedin
+        $('#your-profile .user-myspace-wrap').hide(); //myspace
+        $('#your-profile .user-pinterest-wrap').hide(); //pinterest
+        $('#your-profile .user-soundcloud-wrap').hide(); //soundcloud
+        $('#your-profile .user-twitter-wrap').hide(); //twitter
+        $('#your-profile .user-tumblr-wrap').hide(); //tumblr
+        $('#your-profile .user-youtube-wrap').hide(); //youtube
+        $('#your-profile .user-wikipedia-wrap').hide(); //wikipedia
+        $('#your-profile h2').hide(); //wikipedia
     });
-SCRIPT;
+    SCRIPT;
     wp_add_inline_script('jquery-core', $script);
 }
 add_action('admin_enqueue_scripts', 'user_profile_hide_script');

@@ -27,7 +27,7 @@
         padding: 0 0 0 1.5rem;
 
         &::before {
-          content: '◇';
+          content: "◇";
           display: inline-block;
           color: $primary;
           position: absolute;
@@ -61,13 +61,13 @@
           background: $success;
 
           &::after {
-            content: '';
+            content: "";
             position: absolute;
-            top: 0;
+            top: -1px;
             right: -14px;
-            border-top: 28.5px solid transparent;
-            border-bottom: 28.5px solid transparent;
-            border-left: 13px solid $success;
+            border-top: 25px solid transparent;
+            border-bottom: 25px solid transparent;
+            border-left: 12px solid $success;
           }
         }
 
@@ -86,7 +86,7 @@
       border: 1px solid $success;
 
       &-ttl2 {
-        font-family: "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W2" , "Hiragino Mincho Pro" , "HiraMinProN-W2" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho";
+        font-family: "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W2", "Hiragino Mincho Pro", "HiraMinProN-W2", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho";
         font-size: 0.9375rem;
         font-weight: bold;
         background: $info;
@@ -99,7 +99,7 @@
           &::after {
             font-family: "Yu Gothic", メイリオ, Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
             font-weight: nomal;
-            content: '必須';
+            content: "必須";
             background: $white;
             font-size: 0.8125rem;
             margin-left: 10px;
@@ -109,7 +109,7 @@
       }
 
       &-ttl3 {
-        font-family: "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W2" , "Hiragino Mincho Pro" , "HiraMinProN-W2" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho";
+        font-family: "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W2", "Hiragino Mincho Pro", "HiraMinProN-W2", "HGS明朝E", "ＭＳ Ｐ明朝", "MS PMincho";
         font-size: 1.125rem;
       }
 
@@ -136,7 +136,7 @@
         padding: 10px 30px 10px 10px;
 
         &::after {
-          content: '';
+          content: "";
           position: absolute;
           top: calc(50% - 2.39px);
           right: 1rem;
@@ -164,7 +164,7 @@
             }
           }
 
-          input[type=radio] {
+          input[type="radio"] {
             display: none;
           }
 
@@ -186,7 +186,7 @@
 
       .checkbox {
         .horizontal-item {
-          margin: 0 0 12px 0!important;
+          margin: 0 0 12px 0 !important;
           display: block;
         }
       }
@@ -224,7 +224,7 @@
         font-size: 0.85rem;
 
         &::before {
-          content: '◇';
+          content: "◇";
           display: inline-block;
           color: $primary;
           position: absolute;

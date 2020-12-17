@@ -14,14 +14,14 @@
 
     topBtn.hide();
 
-    $(window).on('scroll', function () {
+    $(window).on("scroll", function () {
       if ($(this).scrollTop() > 500) {
         topBtn.fadeIn();
       } else {
         topBtn.fadeOut();
       }
     });
-    topBtn.on('click', function () {
+    topBtn.on("click", function () {
       $("body,html").animate(
         {
           scrollTop: 0,
@@ -33,7 +33,7 @@
   });
 
   $(function () {
-    $('a[href^="#"]').on('click', function () {
+    $('a[href^="#"]:not([role="button"])').on("click", function () {
       var speed = 500;
       var href = $(this).attr("href");
       var target = $(href == "#" || href == "" ? "html" : href);

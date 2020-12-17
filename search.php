@@ -1,12 +1,12 @@
 <?php
 // GET検索
-$form_pref = $_GET['pref'];
-$form_address = $_GET['address'];
-$form_keywords = $_GET['keywords'];
-$form_weeks = $_GET['weeks'];
-$form_times = $_GET['times'];
-$form_price = $_GET['price'];
-$form_tags = $_GET['tags'];
+$form_pref = isset($_GET['pref']) ? $_GET['pref'] : null;
+$form_address = isset($_GET['address']) ? $_GET['address'] : null;
+$form_keywords = isset($_GET['keywords']) ? $_GET['keywords'] : null;
+$form_weeks = isset($_GET['weeks']) ? $_GET['weeks'] : null;
+$form_times = isset($_GET['times']) ? $_GET['times'] : null;
+$form_price = isset($_GET['price']) ? $_GET['price'] : null;
+$form_tags = isset($_GET['tags']) && $_GET['tags'] != '' ? $_GET['tags'] : null;
 ?>
 
 <div class="sidebar__search search">
@@ -86,7 +86,6 @@ $form_tags = $_GET['tags'];
 <td>
 <p>希望曜日</p>
 <div class="check-list week">
-<span class="check-list-item"><input class="mr-1" type="checkbox" name="weeks[]" value="">すべての曜日</span>
 <span class="check-list-item"><input class="mr-1" type="checkbox" name="weeks[]" value="月" <?php echo is_array($form_weeks) && in_array('月', $form_weeks) ? 'checked' : ''; ?>>月</span>
 <span class="check-list-item"><input class="mr-1" type="checkbox" name="weeks[]" value="火" <?php echo is_array($form_weeks) && in_array('火', $form_weeks) ? 'checked' : ''; ?>>火</span>
 <span class="check-list-item"><input class="mr-1" type="checkbox" name="weeks[]" value="水" <?php echo is_array($form_weeks) && in_array('水', $form_weeks) ? 'checked' : ''; ?>>水</span>

@@ -114,7 +114,13 @@ foreach ($calss_search_tags as $key => $tag): ?>
 </tr>
 <tr class="row">
 <td class="col-3 bg-secondary">入会金</td>
-<td class="col-9 bg-white"><?php echo get_field('class_join', 'user_'.$user_id); ?></td>
+<td class="col-9 bg-white">
+<?php if (get_field('calss_price_nyukai', 'user_'.$user_id)): ?>
+なし
+<?php else: ?>
+<?php echo get_field('class_join', 'user_'.$user_id); ?>
+<?php endif; ?>
+</td>
 </tr>
 <tr class="row">
 <td class="col-3 bg-secondary">その他</td>
@@ -130,7 +136,11 @@ foreach ($calss_search_tags as $key => $tag): ?>
 <div class="md_topTitle mb-3 text-center arrow">講師情報</div>
 <div class="row">
 <div class="img-wrap col-sm-2">
+<?php if (get_field('teacher_profile_pict_admin', 'user_'.$user_id)): ?>
+<img src="<?php echo get_field('teacher_profile_pict_admin', 'user_'.$user_id); ?>" alt="講師写真">
+<?php else: ?>
 <img src="<?php echo $wp_url; ?>/dist/images/images_none.png" alt="講師写真">
+<?php endif; ?>
 </div>
 <div class="col-sm-10">
 <div class="profile">
@@ -138,7 +148,7 @@ foreach ($calss_search_tags as $key => $tag): ?>
 <p class="text-center">講師「<?php echo $users->last_name.' '.$users->first_name; ?>」プロフィール</p>
 </div>
 <ul class="bg-white">
-<li><?php echo get_field('teacher_sex', 'user_'.$user_id)['label']; ?></li>
+<li><?php echo get_field('teacher_sex', 'user_'.$user_id)['label']; ?>講師</li>
 <?php if (get_field('teacher_profile', 'user_'.$user_id)): ?>
 <li><?php echo get_field('teacher_profile', 'user_'.$user_id); ?></li>
 <?php endif; ?>

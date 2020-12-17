@@ -3,13 +3,13 @@ $home = esc_url(home_url());
 $wp_url = get_template_directory_uri();
 
 // GET検索
-$form_pref = $_GET['pref'];
-$form_address = $_GET['address'];
-$form_keywords = $_GET['keywords'];
-$form_weeks = $_GET['weeks'];
-$form_times = $_GET['times'];
-$form_price = $_GET['price'];
-$form_tags = $_GET['tags'];
+$form_pref = isset($_GET['pref']) ? $_GET['pref']: null;
+$form_address = isset($_GET['address']) ? $_GET['address']: null;
+$form_keywords = isset($_GET['keywords']) ? $_GET['keywords']: null;
+$form_weeks = isset($_GET['weeks']) ? $_GET['weeks']: null;
+$form_times = isset($_GET['times']) ? $_GET['times']: null;
+$form_price = isset($_GET['price']) ? $_GET['price']: null;
+$form_tags = isset($_GET['tags']) ? $_GET['tags']: null;
 ?>
 
 <?php if (!is_page('class')): ?>
