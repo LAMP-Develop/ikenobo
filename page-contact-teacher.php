@@ -30,7 +30,7 @@ if (isset($_GET['email'])) {
 <div class="col-sm-6 mb-4">
 <h3 class="contact-teacher-ttl md_mincho mb-4">メールでお問い合わせ</h3>
 <div class="w-100 text-center">
-<a class="btn btn-primary text-center pl-5 pr-5" href="<?php echo $home; ?>/contact-class/">
+<a class="btn btn-primary text-center pl-5 pr-5" href="<?php echo $home; ?>/contact-class?email=<?php echo $email; ?>">
 <img class="d-inline-block align-middle mr-2" src="<?php echo $wp_url; ?>/dist/images/icon_mail.svg" alt="メールアイコン">
 <span class="d-inline-block align-middle">メールでお問い合わせ</span>
 </a>

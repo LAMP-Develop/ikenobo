@@ -44,5 +44,11 @@ $ttl = $post->post_title; ?>
 
 </div>
 </div>
-
+<?php if (is_page('contact-class')): ?>
+<script>
+jQuery(function($) {
+  $('input[name="tomail"]').val('<?php echo $_GET['email']; ?>');
+});
+</script>
+<?php endif; ?>
 <?php get_footer();

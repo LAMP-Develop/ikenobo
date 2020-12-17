@@ -25,3 +25,13 @@ function add_my_scripts()
     );
 }
 add_action('wp_enqueue_scripts', 'add_my_scripts');
+
+// mwwpform設定
+function autoback_my_mail($mail_raw, $val, $data)
+{
+    if ($data->get('tomail') !== null && $data->get('tomail') != '') {
+        $mail_raw->to = $data->get('tomail');
+    }
+    return $mail_raw;
+}
+add_filter('mwform_admin_mail_mw-wp-form-67', 'autoback_my_mail', 10, 3);
