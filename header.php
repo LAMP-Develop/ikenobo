@@ -39,7 +39,7 @@ $wp_url = get_template_directory_uri();
 </ul>
 </div>
 
-<div class="logo"><a href="index.html"><img src="<?php echo $wp_url ?>/dist/images/logo.svg" alt="池坊 IKENOBO" width="90"></a></div>
+<div class="logo"><a href="<?php echo get_main_domain(); ?>"><img src="<?php echo $wp_url ?>/dist/images/logo.svg" alt="池坊 IKENOBO" width="90"></a></div>
 
 <!-- header end -->
 </header>
