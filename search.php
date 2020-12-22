@@ -148,7 +148,6 @@ $form_tags = isset($_GET['tags']) && $_GET['tags'] != '' ? $_GET['tags'] : null;
 <span class="check-list-item"><input class="mr-1" type="checkbox" name="tags[]" value="回数制" <?php echo is_array($form_tags) && in_array('回数制', $form_tags) ? 'checked' : ''; ?>>回数制</span>
 <span class="check-list-item"><input class="mr-1" type="checkbox" name="tags[]" value="オンラインレッスン対応可" <?php echo is_array($form_tags) && in_array('オンラインレッスン対応可', $form_tags) ? 'checked' : ''; ?>>オンラインレッスン対応可</span>
 <span class="check-list-item"><input class="mr-1" type="checkbox" name="tags[]" value="バリアフリー対応" <?php echo is_array($form_tags) && in_array('バリアフリー対応', $form_tags) ? 'checked' : ''; ?>>バリアフリー対応</span>
-<span class="check-list-item"><input class="mr-1" type="checkbox" name="tags[]" value="子育て支援教室" <?php echo is_array($form_tags) && in_array('子育て支援教室', $form_tags) ? 'checked' : ''; ?>>子育て支援教室</span>
 <span class="check-list-item"><input class="mr-1" type="checkbox" name="tags[]" value="駐車場対応" <?php echo is_array($form_tags) && in_array('駐車場対応', $form_tags) ? 'checked' : ''; ?>>駐車場対応</span>
 </div>
 </td>

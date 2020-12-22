@@ -112,7 +112,7 @@ foreach ($calss_search_tags as $key => $tag): ?>
 </tr>
 <tr class="row">
 <td class="col-3 bg-secondary">体験費用</td>
-<td class="col-9 bg-white">1時間 <?php echo get_field('calss_price', 'user_'.$user_id); ?></td>
+<td class="col-9 bg-white"><?php echo get_field('class_experience', 'user_'.$user_id); ?></td>
 </tr>
 <tr class="row">
 <td class="col-3 bg-secondary">入会金</td>
