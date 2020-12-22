@@ -80,7 +80,8 @@ function extended_user_search($user_query)
             $user_query->query_from .= " JOIN wp_usermeta UM2 ON UM2.user_id = {$wpdb->users}.ID AND UM2.meta_key = 'teacher_montei_no'";
             $user_query->query_from .= " JOIN wp_usermeta UM3 ON UM3.user_id = {$wpdb->users}.ID AND UM3.meta_key = 'teacher_tel'";
             $user_query->query_from .= " JOIN wp_usermeta UM4 ON UM4.user_id = {$wpdb->users}.ID AND UM4.meta_key = 'class_branch_name'";
-            $user_query->query_where = 'WHERE 1' . $user_query->get_search_sql($search, array( 'user_login', 'user_email', 'user_nicename', 'UM1.meta_value', 'UM2.meta_value', 'UM3.meta_value', 'UM4.meta_value'), 'both');
+            $user_query->query_from .= " JOIN wp_usermeta UM5 ON UM4.user_id = {$wpdb->users}.ID AND UM5.meta_key = 'class_name'";
+            $user_query->query_where = 'WHERE 1' . $user_query->get_search_sql($search, array( 'user_login', 'user_email', 'user_nicename', 'UM1.meta_value', 'UM2.meta_value', 'UM3.meta_value', 'UM4.meta_value', 'UM5.meta_value'), 'both');
         }
     }
 }
