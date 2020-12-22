@@ -89,7 +89,7 @@ add_action('pre_user_query', 'extended_user_search');
 /* 【管理画面】ユーザー一覧に項目を追加する */
 function custom_users_columns($columns)
 {
-    $columns['class_name'] = '写真';
+    $columns['class_name'] = '教室名';
     $columns['teacher_profile_pict_admin'] = '写真';
     $columns['teacher_birthday'] = '生年月日';
     $columns['class_branch_name'] = '支部名';
