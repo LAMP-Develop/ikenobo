@@ -138,8 +138,8 @@ foreach ($calss_search_tags as $key => $tag): ?>
 <div class="md_topTitle mb-3 text-center arrow">講師情報</div>
 <div class="row">
 <div class="img-wrap col-sm-2">
-<?php if (get_field('teacher_profile_pict_admin', 'user_'.$user_id)): ?>
-<img class="w-100" src="<?php echo get_field('teacher_profile_pict_admin', 'user_'.$user_id); ?>" alt="講師写真">
+<?php if (get_field('teacher_profile_pict', 'user_'.$user_id)): ?>
+<img class="w-100" src="<?php echo get_field('teacher_profile_pict', 'user_'.$user_id); ?>" alt="<?php echo $users->last_name.' '.$users->first_name; ?>">
 <?php else: ?>
 <img src="<?php echo $wp_url; ?>/dist/images/images_none.png" alt="講師写真">
 <?php endif; ?>
