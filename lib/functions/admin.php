@@ -92,8 +92,8 @@ function custom_users_columns($columns)
     $columns['teacher_profile_pict_admin'] = '写真';
     $columns['teacher_birthday'] = '生年月日';
     $columns['class_branch_name'] = '支部名';
-    $columns['class_branch_code'] = '支部コード';
-    $columns['teacher_no'] = '会員番号';
+    // $columns['class_branch_code'] = '支部コード';
+    // $columns['teacher_no'] = '会員番号';
     $columns['teacher_montei_no'] = '門弟番号';
     $columns['teacher_address'] = '住所';
     $columns['teacher_tel'] = '電話番号';
@@ -116,12 +116,12 @@ function custom_users_custom_column($dummy, $column, $user_id)
     if ($column == 'class_branch_name') {
         return $user_info->class_branch_name;
     }
-    if ($column == 'class_branch_code') {
-        return $user_info->class_branch_code;
-    }
-    if ($column == 'teacher_no') {
-        return $user_info->teacher_no;
-    }
+    // if ($column == 'class_branch_code') {
+    //     return $user_info->class_branch_code;
+    // }
+    // if ($column == 'teacher_no') {
+    //     return $user_info->teacher_no;
+    // }
     if ($column == 'teacher_montei_no') {
         return $user_info->teacher_montei_no;
     }
