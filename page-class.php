@@ -164,11 +164,11 @@ $user_id = $user->ID;
 $class_name = get_field('class_name', 'user_'.$user_id);
 $thumbnail = get_field('class_pict_1', 'user_'.$user_id) != null ? get_field('class_pict_1', 'user_'.$user_id) : $wp_url.'/dist/images/guide-1_main.png';
 ?>
-<div class="archive__inner col-sm-6">
+<div class="archive__inner col-sm-6 <?php if (get_field('class_hidden', 'user_'.$user_id)): ?>noclass<?php endif; ?>">
 <a href="<?php echo $home; ?>/class/detail?id=<?php echo $user_id; ?>">
 <div class="img-wrap">
 <?php if (get_field('class_hidden', 'user_'.$user_id)): ?>
-<span class="class-hidden md_mincho">現在休講中</span>
+<span class="class-hidden md_mincho">休講中</span>
 <?php endif; ?>
 <img src="<?php echo $thumbnail; ?>" alt="<?php echo $class_name; ?>">
 </div>

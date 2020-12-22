@@ -101,40 +101,34 @@ function custom_users_columns($columns)
 }
 function custom_users_custom_column($dummy, $column, $user_id)
 {
+    $user_info = get_userdata($user_id);
+
     if ($column == 'teacher_birthday') {
-        $user_info = get_userdata($user_id);
         return $user_info->teacher_birthday;
     }
     if ($column == 'teacher_profile_pict_admin') {
-        $user_info = get_userdata($user_id);
         if ($user_info->teacher_profile_pict_admin != null && $user_info->teacher_profile_pict_admin != '') {
-            return '<img src="'.$user_info->teacher_profile_pict_admin.'">';
+            return '<img src="'.wp_get_attachment_url($user_info->teacher_profile_pict_admin).'" width="50">';
         } else {
             return '<img src="https://secure.gravatar.com/avatar/491a67b76429f0b2c6695b8b06f288d9?s=64&d=mm&r=g" width="32">';
         }
     }
     if ($column == 'class_branch_name') {
-        $user_info = get_userdata($user_id);
         return $user_info->class_branch_name;
     }
     if ($column == 'class_branch_code') {
-        $user_info = get_userdata($user_id);
         return $user_info->class_branch_code;
     }
     if ($column == 'teacher_no') {
-        $user_info = get_userdata($user_id);
         return $user_info->teacher_no;
     }
     if ($column == 'teacher_montei_no') {
-        $user_info = get_userdata($user_id);
         return $user_info->teacher_montei_no;
     }
     if ($column == 'teacher_address') {
-        $user_info = get_userdata($user_id);
         return $user_info->teacher_address;
     }
     if ($column == 'teacher_tel') {
-        $user_info = get_userdata($user_id);
         return $user_info->teacher_tel;
     }
 }
@@ -161,6 +155,7 @@ function user_profile_hide_script($hook)
         $('#your-profile .user-language-wrap').hide(); //言語
         $('#your-profile .user-user-login-wrap').hide(); //ユーザー名
         $('#your-profile .user-display-name-wrap').hide(); //ブログ上の表示名
+        $('#your-profile .user-profile-picture').hide(); //プロフィール
         $('#your-profile .user-url-wrap').hide(); //サイト
         $('#your-profile .user-aim-wrap').hide(); //AIM
         $('#your-profile .user-yim-wrap').hide(); //Yahoo IM
