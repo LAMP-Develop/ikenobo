@@ -11,7 +11,7 @@ $class_contact = get_field('class_contact', 'user_'.$user_id);
 if ($class_contact['value'] == 1) {
     $class_email = get_field('class_email', 'user_'.$user_id);
     $class_tel = get_field('class_tel', 'user_'.$user_id);
-    $contact_url = '/contact-teacher?tel='.$class_tel.'&email='.$class_email;
+    $contact_url = '/contact-teacher?tel='.$class_tel.'&email='.$class_email.'&teacher_name='.$users->last_name.' '.$users->first_name;
 } else {
     $class_email = null;
     $class_tel = null;
@@ -88,6 +88,7 @@ foreach ($calss_search_tags as $key => $tag): ?>
 <?php endif; ?>
 </div>
 
+<?php if (!get_field('class_hidden', 'user_'.$user_id)) { ?>
 <div class="class__single__info bg-info py-5  mb-3">
 <div class="md_topTitle mb-3 text-center arrow">基本情報</div>
 <table class="w-100">
@@ -108,7 +109,7 @@ foreach ($calss_search_tags as $key => $tag): ?>
 </tr>
 <tr class="row">
 <td class="col-3 bg-secondary">レッスン費用</td>
-<td class="col-9 bg-white">1回 <?php echo get_field('class_lesson', 'user_'.$user_id); ?></td>
+<td class="col-9 bg-white"><?php echo get_field('class_lesson', 'user_'.$user_id); ?></td>
 </tr>
 <tr class="row">
 <td class="col-3 bg-secondary">体験費用</td>
@@ -165,6 +166,8 @@ foreach ($calss_search_tags as $key => $tag): ?>
 </div>
 </div>
 </div>
+<?php } // 非表示フラグここまで ?>
+
 <?php if (get_field('students_voice_1', 'user_'.$user_id)): ?>
 <div class="class__single__voice my-5">
 <div class="md_topTitle mb-3 text-center">生徒の声</div>

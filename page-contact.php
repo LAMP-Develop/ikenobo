@@ -48,6 +48,7 @@ $ttl = $post->post_title; ?>
 <script>
 jQuery(function($) {
   $('input[name="tomail"]').val('<?php echo $_GET['email']; ?>');
+  $('input[name="teacher_name"]').val('<?php echo $_GET['teacher_name']; ?>');
 });
 </script>
 <?php endif; ?>

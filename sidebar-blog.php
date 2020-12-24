@@ -22,25 +22,25 @@ $wp_url = get_template_directory_uri(); ?>
 </div>
 </div>
 
-<div class="sidebar__blog mt-5">
+<!-- <div class="sidebar__blog mt-5">
 <div class="md_topTitle">IKENOBOメディア</div>
 <div class="archive">
 <?php
-$args = [
-    'posts_per_page' => 5,
-    'post_type' => 'ikenobomedia',
-    'orderby' => 'date',
-    'order' => 'DESC'
-];
-$posts = get_posts($args);
-foreach ($posts as $post): setup_postdata($post);
-$t = get_the_title();
-$p = get_the_permalink();
-if (has_post_thumbnail()) {
-    $i = get_the_post_thumbnail_url(get_the_ID(), 'medium');
-} else {
-    $i = $wp_url.'/dist/images/guide-1_main.png';
-}
+// $args = [
+//     'posts_per_page' => 5,
+//     'post_type' => 'ikenobomedia',
+//     'orderby' => 'date',
+//     'order' => 'DESC'
+// ];
+// $posts = get_posts($args);
+// foreach ($posts as $post): setup_postdata($post);
+// $t = get_the_title();
+// $p = get_the_permalink();
+// if (has_post_thumbnail()) {
+//     $i = get_the_post_thumbnail_url(get_the_ID(), 'medium');
+// } else {
+//     $i = $wp_url.'/dist/images/guide-1_main.png';
+// }
 ?>
 <a href="<?php echo $p; ?>" class="archive__inner row">
 <div class="col-5 img-wrap">
@@ -50,8 +50,8 @@ if (has_post_thumbnail()) {
 <h3 class="md_mincho"><?php echo $t; ?></h3>
 </div>
 </a>
-<?php endforeach; wp_reset_postdata(); ?>
+<?php // endforeach; wp_reset_postdata(); ?>
 </div>
-</div>
+</div> -->
 
 </div>

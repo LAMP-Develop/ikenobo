@@ -49,7 +49,7 @@ if (has_post_thumbnail()) {
 <a href="<?php echo $p; ?>">
 <div class="img-wrap"><img src="<?php echo $i; ?>" alt="<?php echo $t; ?>"></div>
 <h3 class="md_mincho"><?php echo $t; ?></h3>
-<p><?php echo wp_strip_all_tags(mb_substr(get_the_content(), 0, 120, 'UTF-8'), true); ?></p>
+<p><?php echo wp_strip_all_tags(mb_substr(get_the_content(), 0, 120, 'UTF-8'), true); ?>・・・</p>
 </a>
 </div>
 <?php endforeach; wp_reset_postdata(); ?>
@@ -86,7 +86,7 @@ if (has_post_thumbnail()) {
 <a href="<?php echo $p; ?>">
 <div class="img-wrap"><img src="<?php echo $i; ?>" alt="<?php echo $t; ?>"></div>
 <h3 class="md_mincho"><?php echo $t; ?></h3>
-<p><?php echo wp_strip_all_tags(mb_substr(get_the_content(), 0, 120, 'UTF-8'), true); ?></p>
+<p><?php echo wp_strip_all_tags(mb_substr(get_the_content(), 0, 120, 'UTF-8'), true); ?>・・・</p>
 </a>
 </div>
 <?php endforeach; wp_reset_postdata(); ?>
@@ -124,7 +124,7 @@ if (has_post_thumbnail()) {
 <a href="<?php echo $p; ?>">
 <div class="img-wrap"><img src="<?php echo $i; ?>" alt="<?php echo $t; ?>"></div>
 <h3 class="md_mincho"><?php echo $t; ?></h3>
-<p><?php echo wp_strip_all_tags(mb_substr(get_the_content(), 0, 120, 'UTF-8'), true); ?></p>
+<p><?php echo wp_strip_all_tags(mb_substr(get_the_content(), 0, 120, 'UTF-8'), true); ?>・・・</p>
 </a>
 </div>
 <?php endforeach; wp_reset_postdata(); ?>
@@ -163,7 +163,7 @@ if (has_post_thumbnail()) {
 <a href="<?php echo $p; ?>">
 <div class="img-wrap"><img src="<?php echo $i; ?>" alt="<?php echo $t; ?>"></div>
 <h3 class="md_mincho"><?php echo $t; ?></h3>
-<p><?php echo wp_strip_all_tags(mb_substr(get_the_content(), 0, 120, 'UTF-8'), true); ?></p>
+<p><?php echo wp_strip_all_tags(mb_substr(get_the_content(), 0, 120, 'UTF-8'), true); ?>・・・</p>
 </a>
 </div>
 <?php endforeach; wp_reset_postdata(); ?>
