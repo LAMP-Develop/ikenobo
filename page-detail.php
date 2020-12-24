@@ -26,7 +26,7 @@ if ($class_contact['value'] == 1) {
 <div class="col-sm-8 p-0">
 
 <div class="class__single__about mb-5">
-<div class="md_topTitle mb-3 flower-01"><?php echo $class_name; ?></div>
+<div class="md_topTitle mb-3 flower-01"><?php (!get_field('class_hidden', 'user_'.$user_id)) ? '': print '【休講中】'; ?><?php echo $class_name; ?></div>
 <?php if ($thumbnail): ?>
 <div id="class-slides" class="carousel slide" data-ride="carousel">
 <ol class="carousel-indicators">
