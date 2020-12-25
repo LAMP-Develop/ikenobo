@@ -16,3 +16,34 @@ function get_main_domain()
 {
     return "https://ikenobo.jp";
 }
+
+function class_title($title)
+{
+    if (is_page('detail')) {
+        $user_id = (int)$_GET['id'];
+        $class_name = get_field('class_name', 'user_'.$user_id); // 教室名
+        return $class_name.' - 【池坊公式】全国のいけばな教室検索サイト';
+    }
+    return $title;
+}
+add_filter('wpseo_title', 'class_title');
+
+function prefix_filter_canonical_example($canonical)
+{
+    if (is_page('detail')) {
+        $canonical = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    }
+    return $canonical;
+}
+add_filter('wpseo_canonical', 'prefix_filter_canonical_example');
+
+// function class_description($description)
+// {
+//     if (is_page('detail')) {
+//         $user_id = (int)$_GET['id'];
+//         $class_name = get_field('class_name', 'user_'.$user_id); // 教室名
+//         return $class_name."ページです。";
+//     }
+//     return $description;
+// }
+// add_filter('wpseo_metadesc', 'class_description');

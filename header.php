@@ -9,6 +9,19 @@ $wp_url = get_template_directory_uri();
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <?php wp_head(); ?>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-25422142-3"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() {dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-25422142-3', {
+  'linker': {
+  'domains': ['ikenobo.jp', 'ikenoboys.com', 'lesson.ikenobo.jp']
+  }
+});
+</script>
 </head>
 
 <body <?php body_class(); ?>>
