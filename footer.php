@@ -153,8 +153,8 @@ $form_tags = isset($_GET['tags']) && $_GET['tags'] != '' ? $_GET['tags'] : null;
 <li class="mainLink"><a href="<?php echo get_main_domain(); ?>/access/" class="md_mincho">アクセス</a></li>
 <li><a href="<?php echo get_main_domain(); ?>/access/#contentsKyoto">池坊会館</a></li>
 <li><a href="<?php echo get_main_domain(); ?>/access/#contentsTokyo">東京会館</a></li>
-<li class="mainLink"><a href="<?php echo get_main_domain(); ?>/pressrelease/" class="md_mincho">プレスリリース</a></li>
-<li class="mainLink"><a href="" class="md_mincho">年間スケジュール</a></li>
+<li class="mainLink"><a href="https://www.ikenobo.jp/information/10448/" class="md_mincho">プレスリリース</a></li>
+<li class="mainLink"><a href="https://www.ikenobo.jp/information/10658/" class="md_mincho">年間スケジュール</a></li>
 </ul>
 </div>
 <div class="menu05">
