@@ -54,7 +54,7 @@ if (isset($_GET['id'])) {
 <li class="contact-teacher-list-item">返信エラーでメールを送ることができない</li>
 </ul>
 <div class="w-100 text-center">
-<a class="btn btn-primary text-center pl-5 pr-5" href="<?php echo $home; ?>/contact-conecting/">お困りの場合はこちら</a>
+<a class="btn btn-primary text-center pl-5 pr-5" href="<?php echo $home; ?>/contact-conecting?email=<?php echo $email; ?>&teacher_name=<?php echo $teacher_name; ?>&id=<?php echo $user_id; ?>">お困りの場合はこちら</a>
 </div>
 </div>
 </div>
