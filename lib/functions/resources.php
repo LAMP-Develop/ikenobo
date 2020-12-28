@@ -29,8 +29,8 @@ add_action('wp_enqueue_scripts', 'add_my_scripts');
 // mwwpform設定
 function autoback_my_mail($mail_raw, $val, $data)
 {
-    if ($data->get('tomail') !== null && $data->get('tomail') != '') {
-        $mail_raw->to = $data->get('tomail');
+    if ($data->get('to_mail') !== null && $data->get('to_mail') != '') {
+        $mail_raw->to = $data->get('to_mail');
     }
     return $mail_raw;
 }

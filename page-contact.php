@@ -4,19 +4,17 @@ template name: お問い合わせ
 */
 $home = esc_url(home_url());
 $wp_url = get_template_directory_uri();
-get_header(); the_post();
-global $post;
-$ttl = $post->post_title; ?>
+get_header(); the_post(); ?>
 
 <div class="contact">
 <div class="md_container">
-<h2 class="md_topTitle mb-3 p-0"><?php echo $ttl; ?></h2>
+<h2 class="md_topTitle mb-3 p-0"><?php echo get_the_title(); ?></h2>
 
-<?php if (is_page('contact') || is_page('contact-help')): ?>
+<?php if (is_page('contact-help')): ?>
 <!-- 事務局へ直接お問い合わせ -->
 <!-- 教室紹介お問い合わせ窓口 -->
 <p class="contact__text mb-4">※こちらのお問い合わせは、<span class="text-primary">当サイト運営事務局宛</span>のお問い合せ窓口です。講師の方へのお問い合わせは、各教室詳細ページの「お問い合わせ」ボタンからお問い合わせください。</p>
-<?php elseif (is_page('contact-class')): ?>
+<?php elseif (is_page(['contact-class', 'contact'])): ?>
 <!-- 教室紹介のお問い合わせ -->
 <!-- <p class="contact__text mb-4">こちらのお問い合わせは講師への直接のお問い合わせになります。<br>内容を確認後、講師からあなたにご連絡をいたします。あなたのご希望に合うかどうかをお確かめください。</p> -->
 <?php else: ?>
@@ -44,11 +42,16 @@ $ttl = $post->post_title; ?>
 
 </div>
 </div>
-<?php if (is_page('contact-class')): ?>
+<?php if (is_page(['contact-class', 'contact'])):
+$user_id = (int)$_GET['id'];
+$users = get_userdata($user_id);
+$class_name = get_field('class_name', 'user_'.$user_id); // 教室名
+?>
 <script>
 jQuery(function($) {
-  $('input[name="tomail"]').val('<?php echo $_GET['email']; ?>');
+  $('input[name="to_mail"]').val('<?php echo $_GET['email']; ?>');
   $('input[name="teacher_name"]').val('<?php echo $_GET['teacher_name']; ?>');
+  $('input[name="class_name"]').val('<?php echo $class_name; ?>');
 });
 </script>
 <?php endif; ?>

@@ -11,11 +11,11 @@ $class_contact = get_field('class_contact', 'user_'.$user_id);
 if ($class_contact['value'] == 1) {
     $class_email = get_field('class_email', 'user_'.$user_id);
     $class_tel = get_field('class_tel', 'user_'.$user_id);
-    $contact_url = '/contact-teacher?tel='.$class_tel.'&email='.$class_email.'&teacher_name='.$users->last_name.' '.$users->first_name;
+    $contact_url = '/contact-teacher?tel='.$class_tel.'&email='.$class_email.'&teacher_name='.$users->last_name.' '.$users->first_name.'&id='.$user_id;
 } else {
     $class_email = null;
     $class_tel = null;
-    $contact_url = '/contact-class/';
+    $contact_url = '/contact?tel='.$class_tel.'&email='.$class_email.'&teacher_name='.$users->last_name.' '.$users->first_name.'&id='.$user_id;
 }
 ?>
 

@@ -98,7 +98,7 @@ $form_tags = isset($_GET['tags']) ? $_GET['tags']: null;
 </div>
 <?php
 // MVなし
-elseif (is_page(['contact-teacher', 'contact-class', 'contact-conecting', 'contact-help', 'contact', 'contact-thanks', 'detail']) || is_single()) : ?>
+elseif (is_page(['contact-confirm', 'contact-teacher', 'contact-class', 'contact-conecting', 'contact-help', 'contact', 'contact-thanks', 'detail']) || is_single()) : ?>
 <?php
 if (function_exists('yoast_breadcrumb')) {
     yoast_breadcrumb('<div class="bread bg-info"><p>', '</p></div>');

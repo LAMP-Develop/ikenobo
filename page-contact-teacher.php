@@ -18,6 +18,11 @@ if (isset($_GET['teacher_name'])) {
 } else {
     $teacher_name = null;
 }
+if (isset($_GET['id'])) {
+    $user_id = (int)$_GET['id'];
+} else {
+    $user_id = null;
+}
 ?>
 
 <div class="contact-teacher">
@@ -27,7 +32,7 @@ if (isset($_GET['teacher_name'])) {
 <div class="col-sm-6 mb-4">
 <h3 class="contact-teacher-ttl md_mincho mb-4">メールでお問い合わせ</h3>
 <div class="w-100 text-center">
-<a class="btn btn-primary text-center pl-5 pr-5" href="<?php echo $home; ?>/contact-class?email=<?php echo $email; ?>&teacher_name=<?php echo $teacher_name; ?>">
+<a class="btn btn-primary text-center pl-5 pr-5" href="<?php echo $home; ?>/contact-class?email=<?php echo $email; ?>&teacher_name=<?php echo $teacher_name; ?>&id=<?php echo $user_id; ?>">
 <img class="d-inline-block align-middle mr-2" src="<?php echo $wp_url; ?>/dist/images/icon_mail.svg" alt="メールアイコン">
 <span class="d-inline-block align-middle">メールでお問い合わせ</span>
 </a>
