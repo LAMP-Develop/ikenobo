@@ -86,7 +86,7 @@ gtag('config', 'UA-25422142-3', {
 <li class="global-nav__item"><a href="" class="linkRight md_mincho">学校関係者の方へ</a></li>
 <li class="global-nav__item"><a href="" class="linkRight md_mincho">アクセス</a></li>
 <li class="global-nav__item"><a href="" class="linkRight md_mincho">プレスリリース</a></li> -->
-<li class="global-nav__item"><a href="<?php echo $home; ?>/contact-help/" class="linkContact md_mincho">教室お問い合わせ窓口</a></li>
+<li class="global-nav__item"><a href="<?php echo $home; ?>/contact/" class="linkContact md_mincho">教室お問い合わせ窓口</a></li>
 </ul>
 </nav>
 <div class="hamburger" id="js-hamburger">
