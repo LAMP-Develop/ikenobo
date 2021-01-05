@@ -42,7 +42,7 @@ get_header(); the_post(); ?>
 
 </div>
 </div>
-<?php if (is_page(['contact-class', 'contact', 'contact-conecting'])):
+<?php if (is_page(['contact-class', 'contact-help', 'contact-conecting'])):
 $user_id = (int)$_GET['id'];
 $users = get_userdata($user_id);
 $class_name = get_field('class_name', 'user_'.$user_id); // 教室名

@@ -15,7 +15,7 @@ if ($class_contact['value'] == 1) {
 } else {
     $class_email = null;
     $class_tel = null;
-    $contact_url = '/contact?tel='.$class_tel.'&email='.$class_email.'&teacher_name='.$users->last_name.' '.$users->first_name.'&id='.$user_id;
+    $contact_url = '/contact-help?tel='.$class_tel.'&email='.$class_email.'&teacher_name='.$users->last_name.' '.$users->first_name.'&id='.$user_id;
 }
 ?>
 
