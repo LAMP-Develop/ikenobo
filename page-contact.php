@@ -42,17 +42,4 @@ get_header(); the_post(); ?>
 
 </div>
 </div>
-<?php if (is_page(['contact-class', 'contact-help', 'contact-conecting'])):
-$user_id = (int)$_GET['id'];
-$users = get_userdata($user_id);
-$class_name = get_field('class_name', 'user_'.$user_id); // 教室名
-?>
-<script>
-jQuery(function($) {
-  $('input[name="to_mail"]').val('<?php echo $_GET['email']; ?>');
-  $('input[name="teacher_name"]').val('<?php echo $_GET['teacher_name']; ?>');
-  $('input[name="class_name"]').val('<?php echo $class_name; ?>');
-});
-</script>
-<?php endif; ?>
 <?php get_footer();
