@@ -160,7 +160,7 @@
             text-align: center;
             display: block;
             @include media-breakpoint-down(md) {
-              width: 48%;
+              width: 130px;
             }
           }
 
@@ -196,12 +196,12 @@
           width: 125px;
         }
       }
-
-      input[type="checkbox"]:checked::after {
-        top: 4px;
-      }
     }
 
+    input[type="checkbox"]:checked::after {
+      top: 4px;
+    }
+    
     &-inner {
       padding: 1.5rem 1rem;
 
