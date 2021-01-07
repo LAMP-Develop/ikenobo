@@ -192,3 +192,20 @@ add_action('pre_get_posts', function ($query) {
     }
     return $query;
 });
+
+/* 管理メニュー削除 */
+function remove_menus()
+{
+    // 投稿者のみ
+    if (current_user_can('author')) {
+        remove_menu_page('index.php'); // ダッシュボード
+        remove_menu_page('edit-comments.php'); // コメント
+        remove_menu_page('tools.php'); // ツール
+
+        // カスタム投稿
+        remove_menu_page('edit.php?post_type=guide');
+        remove_menu_page('edit.php?post_type=class-faq');
+        remove_menu_page('edit.php?post_type=ikenobomedia');
+    }
+}
+add_action('admin_menu', 'remove_menus', 999);
