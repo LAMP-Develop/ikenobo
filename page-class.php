@@ -5,7 +5,7 @@ $wp_url = get_template_directory_uri();
 // GET検索
 $form_pref = isset($_GET['pref']) ? $_GET['pref'] : null;
 $form_address = isset($_GET['address']) ? $_GET['address'] : null;
-$form_keywords = isset($_GET['keywords']) ? $_GET['keywords'] : null;
+$form_keywords = isset($_GET['keywords']) ? esc_attr(trim($_GET['keywords'])) : null;
 $form_weeks = isset($_GET['weeks']) ? $_GET['weeks'] : null;
 $form_times = isset($_GET['times']) ? $_GET['times'] : null;
 $form_price = isset($_GET['price']) ? $_GET['price'] : null;
@@ -22,19 +22,6 @@ $args = [
     ],
 ];
 
-// フィルター：表示設定
-// $args['meta_query'][] = [
-//     'relation' => 'OR',
-//     [
-//         'key' => 'class_hidden',
-//         'value' => 0,
-//         'compare' => '='
-//     ],[
-//         'key' => 'class_hidden',
-//         'compare' => 'NOT EXISTS'
-//     ]
-// ];
-
 // フィルター：都道府県
 if ($form_pref != '' && $form_pref != null) {
     $args['meta_query'][] = [
@@ -46,10 +33,15 @@ if ($form_pref != '' && $form_pref != null) {
 
 // フィルター：キーワード
 if ($form_keywords != '' && $form_keywords != null) {
+    // $args['search'] = "*".$form_keywords."*";
+    // $args['search_columns'] = [
+    //     'display_name',
+    //     'user_nicename',
+    // ];
     $args['meta_query'][] = [
         'relation' => 'OR',
         [
-            'key' => 'calss_address_1', // 住所
+            'key' => 'calss_address_1',
             'value' => $form_keywords,
             'compare' => 'LIKE'
         ],
@@ -126,8 +118,8 @@ if (is_array($form_tags)) {
         ];
     }
 }
-
 $user_query = new WP_User_Query($args);
+
 get_header(); ?>
 
 <div class="sub__mv sub__mv__class bg-info pb-5">

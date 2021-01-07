@@ -72,7 +72,7 @@ add_filter('manage_posts_columns', 'sort_posts_column');
 
 function extended_user_search($user_query)
 {
-    if ($user_query->query_vars['search']) {
+    if ($user_query->query_vars['search'] && is_admin()) {
         $search = trim($user_query->query_vars['search'], '*');
         if ($_REQUEST['s'] == $search) {
             global $wpdb;
@@ -174,3 +174,21 @@ function user_profile_hide_script($hook)
     wp_add_inline_script('jquery-core', $script);
 }
 add_action('admin_enqueue_scripts', 'user_profile_hide_script');
+
+
+/* メディアライブラリ権限 */
+add_action('pre_get_posts', function ($query) {
+    global $current_user;
+
+    if (!is_admin()) {
+        return $query;
+    }
+    if ($current_user->user_level >= 3) {
+        return $query;
+    }
+
+    if ($query->get('post_type') == 'attachment') {
+        $query->set('author', $current_user->data->ID);
+    }
+    return $query;
+});
