@@ -140,6 +140,7 @@ $form_tags = isset($_GET['tags']) && $_GET['tags'] != '' ? $_GET['tags'] : null;
 <span class="check-list-item"><input class="mr-1" type="checkbox" name="tags[]" value="体験あり" <?php echo is_array($form_tags) && in_array('体験あり', $form_tags) ? 'checked' : ''; ?>>体験あり</span>
 <span class="check-list-item"><input class="mr-1" type="checkbox" name="tags[]" value="見学あり" <?php echo is_array($form_tags) && in_array('見学あり', $form_tags) ? 'checked' : ''; ?>>見学あり</span>
 <span class="check-list-item"><input class="mr-1" type="checkbox" name="tags[]" value="女性生徒のみ" <?php echo is_array($form_tags) && in_array('女性生徒のみ', $form_tags) ? 'checked' : ''; ?>>女性生徒のみ</span>
+<span class="check-list-item"><input class="mr-1" type="checkbox" name="tags[]" value="男性生徒のみ" <?php echo is_array($form_tags) && in_array('男性生徒のみ', $form_tags) ? 'checked' : ''; ?>>男性生徒のみ</span>
 <span class="check-list-item"><input class="mr-1" type="checkbox" name="tags[]" value="女性講師" <?php echo is_array($form_tags) && in_array('女性講師', $form_tags) ? 'checked' : ''; ?>>女性講師</span>
 <span class="check-list-item"><input class="mr-1" type="checkbox" name="tags[]" value="男性講師" <?php echo is_array($form_tags) && in_array('男性講師', $form_tags) ? 'checked' : ''; ?>>男性講師</span>
 <span class="check-list-item"><input class="mr-1" type="checkbox" name="tags[]" value="ビギナーズレッスン対応可" <?php echo is_array($form_tags) && in_array('ビギナーズレッスン対応可', $form_tags) ? 'checked' : ''; ?>>ビギナーズレッスン対応可</span>

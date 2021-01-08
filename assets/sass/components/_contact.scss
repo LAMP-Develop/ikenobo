@@ -160,7 +160,7 @@
             text-align: center;
             display: block;
             @include media-breakpoint-down(md) {
-              width: 130px;
+              width: 85px;
             }
           }
 
@@ -201,7 +201,7 @@
     input[type="checkbox"]:checked::after {
       top: 4px;
     }
-    
+
     &-inner {
       padding: 1.5rem 1rem;
 
