@@ -103,7 +103,7 @@ $form_tags = isset($_GET['tags']) && $_GET['tags'] != '' ? $_GET['tags'] : null;
 </div>
 
 <div id="formLink">
-<a href="<?php echo $home; ?>/contact-help/" class="md_tategaki md_mincho">教室お問い合わせ窓口</a>
+<a href="<?php echo $home; ?>/contact/" class="md_tategaki md_mincho">教室お問い合わせ窓口</a>
 </div>
 
 <footer id="footer" class="mt-3">
