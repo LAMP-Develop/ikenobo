@@ -38,6 +38,21 @@ if (has_post_thumbnail()) {
 <div class="single-main">
 <?php the_content(); ?>
 </div>
+
+<!--カスタム投稿タイプ-->
+<?php if ( is_singular( array('guide','class-faq','ikenobomedia') )): //全国講師コラム
+  $user = $post->post_author;
+  ?>
+  <!-- 何も表示しない -->
+<?php else : //その他 ?>
+  <div class="wp-block-buttons mb-5">
+    <div class="wp-block-button">
+      <a class="wp-block-button__link bg-primary md_mincho" href="https://lesson.ikenobo.jp/class/detail/?id=<?php echo $post->post_author  ?>" target="_blank" rel="noreferrer noopener">この教室について詳しく見る</a>
+    </div>
+  </div>
+
+<?php endif; ?>
+
 </article>
 <?php endwhile; endif; ?>
 </div>
