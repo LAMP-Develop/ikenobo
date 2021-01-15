@@ -44,10 +44,13 @@ if (has_post_thumbnail()) {
   $user = $post->post_author;
   ?>
   <!-- 何も表示しない -->
-<?php else : //その他 ?>
+<?php else : //その他
+  $author_id = get_the_author_meta('ID');
+  $class_name = get_field('class_name', 'user_'. $author_id);
+?>
   <div class="wp-block-buttons mb-5">
     <div class="wp-block-button">
-      <a class="wp-block-button__link bg-primary md_mincho" href="https://lesson.ikenobo.jp/class/detail/?id=<?php echo $post->post_author  ?>" target="_blank" rel="noreferrer noopener">この教室について詳しく見る</a>
+      <a class="wp-block-button__link bg-primary md_mincho" href="https://lesson.ikenobo.jp/class/detail/?id=<?php echo $post->post_author  ?>" target="_blank" rel="noreferrer noopener"><?php echo $class_name; ?>を詳しく見る</a>
     </div>
   </div>
 
