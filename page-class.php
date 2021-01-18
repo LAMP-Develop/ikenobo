@@ -10,6 +10,7 @@ $form_weeks = isset($_GET['weeks']) ? $_GET['weeks'] : null;
 $form_times = isset($_GET['times']) ? $_GET['times'] : null;
 $form_price = isset($_GET['price']) ? $_GET['price'] : null;
 $form_tags = isset($_GET['tags']) && $_GET['tags'] != '' ? $_GET['tags'] : null;
+$form_teacher_montei_no = isset($_GET['teacher_montei_no']) ? $_GET['teacher_montei_no'] : null;
 
 $user_per_page = 10;
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -21,6 +22,15 @@ $args = [
     'meta_query' => [
     ],
 ];
+
+// フィルター：門弟番号
+if ($form_teacher_montei_no != '' && $form_teacher_montei_no != null) {
+    $args['meta_query'][] = [
+        'key' => 'teacher_montei_no',
+        'value' => $form_teacher_montei_no,
+        'compare' => '='
+    ];
+}
 
 // フィルター：都道府県
 if ($form_pref != '' && $form_pref != null) {
