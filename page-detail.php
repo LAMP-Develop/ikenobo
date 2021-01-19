@@ -151,7 +151,9 @@ foreach ($calss_search_tags as $key => $tag): ?>
 <p class="text-center">講師「<?php echo $users->last_name.' '.$users->first_name; ?>」プロフィール</p>
 </div>
 <ul class="bg-white">
+<?php if (get_field('teacher_sex', 'user_'.$user_id)['label'] != '非表示'): ?>
 <li><?php echo get_field('teacher_sex', 'user_'.$user_id)['label']; ?>講師</li>
+<?php endif; ?>
 <?php if (get_field('teacher_profile', 'user_'.$user_id)): ?>
 <li><?php echo get_field('teacher_profile', 'user_'.$user_id); ?></li>
 <?php endif; ?>
