@@ -68,6 +68,11 @@ if ($form_keywords != '' && $form_keywords != null) {
             'value' => $form_keywords,
             'compare' => 'LIKE'
         ],
+        [
+            'key' => 'teacher_montei_no',
+            'value' => $form_keywords,
+            'compare' => 'LIKE'
+        ],
     ];
 }
 
