@@ -11,6 +11,7 @@ $form_times = isset($_GET['times']) ? $_GET['times'] : null;
 $form_price = isset($_GET['price']) ? $_GET['price'] : null;
 $form_tags = isset($_GET['tags']) && $_GET['tags'] != '' ? $_GET['tags'] : null;
 $form_teacher_montei_no = isset($_GET['teacher_montei_no']) ? $_GET['teacher_montei_no'] : null;
+$form_teacher = isset($_GET['teacher']) && $_GET['teacher'] != '' ? $_GET['teacher'] : null;
 
 $user_per_page = 10;
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -22,6 +23,13 @@ $args = [
     'meta_query' => [
     ],
 ];
+
+// フィルター：講師名
+if ($form_teacher != '' && $form_teacher != null) {
+    $form_teacher = preg_replace("/( |　)/", "", $form_teacher);
+    $args['search'] = '*'.esc_attr($form_teacher).'*';
+    $args['meta_query'] = ['relation' => 'OR'];
+}
 
 // フィルター：門弟番号
 if ($form_teacher_montei_no != '' && $form_teacher_montei_no != null) {
@@ -43,11 +51,6 @@ if ($form_pref != '' && $form_pref != null) {
 
 // フィルター：キーワード
 if ($form_keywords != '' && $form_keywords != null) {
-    // $args['search'] = "*".$form_keywords."*";
-    // $args['search_columns'] = [
-    //     'display_name',
-    //     'user_nicename',
-    // ];
     $args['meta_query'][] = [
         'relation' => 'OR',
         [
@@ -62,16 +65,6 @@ if ($form_keywords != '' && $form_keywords != null) {
         ],
         [
             'key' => 'class_name',
-            'value' => $form_keywords,
-            'compare' => 'LIKE'
-        ],
-        [
-            'key' => 'first_name',
-            'value' => $form_keywords,
-            'compare' => 'LIKE'
-        ],
-        [
-            'key' => 'last_name',
             'value' => $form_keywords,
             'compare' => 'LIKE'
         ],

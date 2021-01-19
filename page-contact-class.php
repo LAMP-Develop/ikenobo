@@ -1,14 +1,11 @@
 <?php
-
 $home = esc_url(home_url());
 $wp_url = get_template_directory_uri();
 get_header(); the_post(); ?>
 
 <div class="contact">
 <div class="md_container">
-<h2 class="md_topTitle mb-3 p-0"><?php echo get_the_title(); ?></h2>
-
-<p class="contact__text mb-4">※こちらのお問い合わせは、<span class="text-primary">当サイト運営事務局宛</span>のお問い合せ窓口です。講師の方へのお問い合わせは、各教室詳細ページの「お問い合わせ」ボタンからお問い合わせください。</p>
+<h2 class="md_topTitle mb-3 p-0"><?php the_title(); ?></h2>
 
 <div class="contact__step__list row mb-4">
 <div class="contact__step__list-item input py-2 col-4 text-center">
@@ -30,4 +27,5 @@ get_header(); the_post(); ?>
 
 </div>
 </div>
+
 <?php get_footer();

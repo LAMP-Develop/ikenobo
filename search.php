@@ -7,6 +7,7 @@ $form_weeks = isset($_GET['weeks']) ? $_GET['weeks'] : null;
 $form_times = isset($_GET['times']) ? $_GET['times'] : null;
 $form_price = isset($_GET['price']) ? $_GET['price'] : null;
 $form_tags = isset($_GET['tags']) && $_GET['tags'] != '' ? $_GET['tags'] : null;
+$form_teacher = isset($_GET['teacher']) && $_GET['teacher'] != '' ? $_GET['teacher'] : null;
 ?>
 
 <div class="sidebar__search search">
@@ -74,8 +75,13 @@ $form_tags = isset($_GET['tags']) && $_GET['tags'] != '' ? $_GET['tags'] : null;
 <input type="text" class="form-control col-8" name="address" placeholder="" value="<?php echo $form_address; ?>">
 </td>
 <td class="row">
+<label class="col-4" for="name">講師名</label>
+<input type="text" class="form-control col-8" name="teacher" placeholder="" value="<?php echo $form_teacher; ?>">
+</select>
+</td>
+<td class="row">
 <label class="col-4" for="name">フリーワード</label>
-<input type="text" class="form-control col-8" name="keywords" placeholder="○○駅、教室名、講師名" value="<?php echo $form_keywords; ?>">
+<input type="text" class="form-control col-8" name="keywords" placeholder="○○駅、教室名" value="<?php echo $form_keywords; ?>">
 </select>
 </td>
 </tr>

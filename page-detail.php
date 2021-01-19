@@ -41,7 +41,7 @@ if ($class_contact['value'] == 1) {
 <li data-target="#class-slides" data-slide-to="3"></li>
 <?php endif; ?>
 </ol>
-<div class="carousel-inner">
+<div class="carousel-inner detail-carousel">
 <div class="carousel-item active">
 <img src="<?php echo $thumbnail; ?>" class="d-block w-100" alt="<?php echo $class_name; ?>">
 </div>

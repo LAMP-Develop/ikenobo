@@ -84,7 +84,7 @@ $form_tags = isset($_GET['tags']) && $_GET['tags'] != '' ? $_GET['tags'] : null;
 </div>
 <div class="form-group row">
 <label class="col-3">フリーワード</label>
-<input type="text" class="form-control col-9" name="keywords" placeholder="○○駅、教室名、講師名" value="<?php echo $form_keywords; ?>">
+<input type="text" class="form-control col-9" name="keywords" placeholder="○○駅、教室名" value="<?php echo $form_keywords; ?>">
 </div>
 <div class="row">
 <div class="search-btn border-light col-6">
@@ -220,7 +220,7 @@ function fail(error){
 }
 </script>
 
-<?php if (is_page(['contact-class', 'contact-help', 'contact-conecting'])):
+<?php if (is_page(['contact-class', 'contact-help', 'contact-conecting', 'contact'])):
 $user_id = (int)$_GET['id'];
 $users = get_userdata($user_id);
 $class_name = get_field('class_name', 'user_'.$user_id); // 教室名
@@ -230,6 +230,17 @@ jQuery(function($) {
   $('input[name="to_mail"]').val('<?php echo $_GET['email']; ?>');
   $('input[name="teacher_name"]').val('<?php echo $_GET['teacher_name']; ?>');
   $('input[name="class_name"]').val('<?php echo $class_name; ?>');
+  $('input[name="class_url"]').val('<?php echo $home.'/class/detail/?id='.$user_id; ?>');
+
+  if ($('.mw_wp_form').hasClass('mw_wp_form_input')) {
+    $('.contact__step__list-item.input').addClass('check');
+  } else if ($('.mw_wp_form').hasClass('mw_wp_form_confirm')) {
+    $('.contact__step__list-item.confirm').addClass('check');
+    $('.contact__text, .contact__form-inner-ttl, .showhidden').css('display', 'none');
+  } else if ($('.mw_wp_form').hasClass('mw_wp_form_complete')) {
+    $('.contact__step__list-item.complete').addClass('check');
+    $('.contact__text').css('display', 'none');
+  }
 });
 </script>
 <?php endif; ?>
