@@ -168,7 +168,7 @@ foreach ($calss_search_tags as $key => $tag): ?>
 </div>
 </div>
 
-<div class="button text-center"><a href="<?php echo $home; ?>/class/?teacher_montei_no=<?php echo get_field('teacher_montei_no', 'user_'.$user_id); ?>" class="md_btn_lineWhite">教室一覧を見る</a></div>
+<div class="button text-center"><a href="<?php echo $home; ?>/class/?teacher_montei_no=<?php echo get_field('teacher_montei_no', 'user_'.$user_id); ?>" class="md_btn_lineWhite">この講師の関連教室を見る</a></div>
 
 </div>
 <?php } // 非表示フラグここまで ?>
