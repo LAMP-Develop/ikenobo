@@ -170,6 +170,9 @@ function user_profile_hide_script($hook)
         $('#your-profile .user-wikipedia-wrap').hide(); //wikipedia
         $('#your-profile h2').hide(); //wikipedia
         $('#your-profile .user-description-wrap').hide(); //プロフィール
+
+        $('#your-profile .user-nickname-wrap th').append('<div style="margin-top:5px">!!!変更しないでください!!!</div>');
+        $('#your-profile .user-email-wrap th').append('<div style="margin-top:5px">!!!変更しないでください!!!</div>');
     });
     SCRIPT;
     wp_add_inline_script('jquery-core', $script);

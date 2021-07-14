@@ -22,6 +22,22 @@ $wp_url = get_template_directory_uri(); ?>
 </div>
 </div>
 
+<div class="mt-5">
+<h2 class="md_topTitle border-light text-center">人気のキーワード</h2>
+<div class="home__keyword-list" style="width: 100% !important;justify-content: flex-start;">
+<p class="md_icon_normal"><a href="<?php echo $home; ?>/category/いけばなの基本/">いけばなの基本</a></p>
+<p class="md_icon_normal"><a href="<?php echo $home; ?>/category/初めてのいけばな/">初めてのいけばな</a></p>
+<p class="md_icon_normal"><a href="<?php echo $home; ?>/category/基礎のおけいこ/">基礎のおけいこ</a></p>
+<p class="md_icon_normal"><a href="<?php echo $home; ?>/category/花のある暮らし/">花のある暮らし</a></p>
+<p class="md_icon_normal"><a href="<?php echo $home; ?>/category/おうちでいけばな/">おうちでいけばな</a></p>
+<p class="md_icon_normal"><a href="<?php echo $home; ?>/category/体験レッスン/">体験レッスン</a></p>
+<p class="md_icon_normal"><a href="<?php echo $home; ?>/category/日本文化/">日本文化</a></p>
+<p class="md_icon_normal"><a href="<?php echo $home; ?>/category/伝統文化/">伝統文化</a></p>
+<p class="md_icon_normal"><a href="<?php echo $home; ?>/category/自分磨き/">自分磨き</a></p>
+<p class="md_icon_normal"><a href="<?php echo $home; ?>/category/感性を磨く/">感性を磨く</a></p>
+</div>
+</div>
+
 <!-- <div class="sidebar__blog mt-5">
 <div class="md_topTitle">IKENOBOメディア</div>
 <div class="archive">
@@ -50,7 +66,7 @@ $wp_url = get_template_directory_uri(); ?>
 <h3 class="md_mincho"><?php echo $t; ?></h3>
 </div>
 </a>
-<?php // endforeach; wp_reset_postdata(); ?>
+<?php // endforeach; wp_reset_postdata();?>
 </div>
 </div> -->
 

@@ -30,6 +30,13 @@ if (has_post_thumbnail()) {
 <div class="archive__inner col-md-6">まだ投稿がありません。</div>
 <?php endif; ?>
 </div>
+
+<?php
+// ページネーション
+if (function_exists('pagenation')) {
+    pagenation();
+} ?>
+
 </div>
 <div class="col-md-4 p-0 hidden-xs">
 <?php include('sidebar-blog.php') ?>

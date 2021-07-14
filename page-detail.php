@@ -5,9 +5,11 @@ get_header();
 
 $user_id = (int)$_GET['id'];
 $users = get_userdata($user_id);
+$users_loginname = $users->user_login;
 $class_name = get_field('class_name', 'user_'.$user_id); // 教室名
 $thumbnail = get_field('class_pict_1', 'user_'.$user_id);
 $class_contact = get_field('class_contact', 'user_'.$user_id);
+$calss_price_kazai = get_field('calss_price_kazai', 'user_'.$user_id);
 if ($class_contact['value'] == 1) {
     $class_email = get_field('class_email', 'user_'.$user_id);
     $class_tel = get_field('class_tel', 'user_'.$user_id);
@@ -109,7 +111,7 @@ foreach ($calss_search_tags as $key => $tag): ?>
 </tr>
 <tr class="row">
 <td class="col-3 bg-secondary">レッスン費用</td>
-<td class="col-9 bg-white"><?php echo get_field('class_lesson', 'user_'.$user_id); ?></td>
+<td class="col-9 bg-white"><?php echo get_field('class_lesson', 'user_'.$user_id); ?><?php echo ($calss_price_kazai ? '（花材費込み）' : '（花材費別途）'); ?></td>
 </tr>
 <tr class="row">
 <td class="col-3 bg-secondary">体験費用</td>
@@ -171,7 +173,7 @@ foreach ($calss_search_tags as $key => $tag): ?>
 <div class="button text-center"><a href="<?php echo $home; ?>/class/?teacher_montei_no=<?php echo get_field('teacher_montei_no', 'user_'.$user_id); ?>" class="md_btn_lineWhite">この講師の関連教室を見る</a></div>
 
 </div>
-<?php } // 非表示フラグここまで ?>
+<?php } // 非表示フラグここまで?>
 
 <?php if (get_field('students_voice_1', 'user_'.$user_id)): ?>
 <div class="class__single__voice my-5">
@@ -256,7 +258,7 @@ if (has_post_thumbnail()) {
 </div>
 <?php endforeach; wp_reset_postdata(); ?>
 </div>
-<div class="button text-center"><a href="<?php echo $home; ?>/blog/" class="md_btn_lineWhite">一覧を見る</a></div>
+<div class="button text-center"><a href="<?php echo $home; ?>/author/<?php echo $users_loginname; ?>" class="md_btn_lineWhite">一覧を見る</a></div>
 </div>
 <?php if (!get_field('class_hidden', 'user_'.$user_id)): ?>
 <a href="<?php echo $home.$contact_url; ?>" class="btn btn-primary col-12 mb-5">お問い合わせ</a>

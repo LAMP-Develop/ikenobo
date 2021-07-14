@@ -1,12 +1,16 @@
 <?php
 $home = esc_url(home_url());
 $wp_url = get_template_directory_uri();
+
+$userId = get_query_var('author');
+$class_name = get_field('class_name', 'user_'.$userId);
+
 get_header(); ?>
 <div class="media sidebar-layout">
 <div class="md_container">
 <div class="row">
 <div class="col-md-8 p-0">
-<div class="md_topTitle text-center mb-5">全国講師コラム</div>
+<div class="md_topTitle text-center mb-5"><?php echo $class_name; ?>のコラム一覧</div>
 <div class="row archive media">
 <?php
 if (have_posts()): while (have_posts()): the_post();
@@ -17,21 +21,18 @@ if (has_post_thumbnail()) {
 } else {
     $i = $wp_url.'/dist/images/guide-1_main.png';
 }
-$author_id = get_the_author_meta('ID');
-$class_name = get_field('class_name', 'user_'. $author_id);
 ?>
 <div class="archive__inner col-md-6">
 <a href="<?php echo $p; ?>">
 <div class="img-wrap"><img src="<?php echo $i; ?>" alt="<?php echo $t; ?>"></div>
 <h3 class="md_mincho"><?php echo $t; ?></h3>
-<p><span class="md_icon_purple mr-2">教室名</span><?php echo $class_name; ?></p>
-<!-- <p><?php the_time('Y.m.d'); ?></p> -->
+<p><?php the_time('Y.m.d'); ?></p>
 </a>
 </div>
 <?php endwhile; endif; ?>
 </div>
 
-<div class="pagenavi mb-4">
+<div class="pagenavi">
 <?php wp_pagenavi(); ?>
 </div>
 

@@ -225,6 +225,7 @@ $user_id = (int)$_GET['id'];
 $users = get_userdata($user_id);
 $class_name = get_field('class_name', 'user_'.$user_id); // 教室名
 ?>
+<?php if ($user_id != 0): ?>
 <script>
 jQuery(function($) {
   $('input[name="to_mail"]').val('<?php echo $_GET['email']; ?>');
@@ -243,6 +244,7 @@ jQuery(function($) {
   }
 });
 </script>
+<?php endif; ?>
 <?php endif; ?>
 </body>
 </html>

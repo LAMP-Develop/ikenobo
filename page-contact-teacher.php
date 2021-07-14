@@ -50,7 +50,7 @@ if (isset($_GET['id'])) {
 <h3 class="contact-teacher__help-ttl md_mincho text-center">講師への連絡が取れない方</h3>
 <ul class="contact-teacher-list my-4">
 <li class="contact-teacher-list-item">何度電話しても繋がらない</li>
-<li class="contact-teacher-list-item">メールを送って1周間経っても返信がない</li>
+<li class="contact-teacher-list-item">メールを送って1週間経っても返信がない</li>
 <li class="contact-teacher-list-item">返信エラーでメールを送ることができない</li>
 </ul>
 <div class="w-100 text-center">
