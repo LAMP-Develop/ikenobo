@@ -1,60 +1,57 @@
-const path = require("path");
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const MODE = "development";
+const enabledSourceMap = MODE === "development";
 
-module.exports = (env, argv) => ({
-  entry: "./assets/js/index.js",
-  devtool: "source-map",
+module.exports = {
+  mode: MODE,
+  entry: "./src/js/index.js",
   output: {
-    path: path.resolve(__dirname, "dist/js"),
-    filename: "bundle.js",
+    path: `${__dirname}/dist`,
+    filename: "js/bundle.js"
   },
-  optimization: {
-    minimizer: [new TerserPlugin({}), new OptimizeCssAssetsPlugin({})],
-  },
+  devtool: "source-map",
+
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.scss/,
         use: [
           {
-            loader: "babel-loader",
-            options: {
-              presets: ["@babel/preset-env"],
-            },
+            loader: MiniCssExtractPlugin.loader,
           },
-        ],
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.(sa|sc|c)ss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
               url: false,
-              sourceMap: true,
+              sourceMap: enabledSourceMap,
+              importLoaders: 2,
             },
           },
-          "sass-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: enabledSourceMap,
+            },
+          },
         ],
+      },
+      {
+        test: /\.(gif|png|jpg|svg)$/,
+        type: "dist/images",
       },
     ],
   },
+
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: "css/style.css",
+    }),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
       Popper: ["popper.js", "default"],
     }),
-    new MiniCssExtractPlugin({
-      filename: "../css/style.css",
-    }),
   ],
-  performance: {
-    hints: false,
-  },
-});
+  target: ["web", "es5"],
+};
